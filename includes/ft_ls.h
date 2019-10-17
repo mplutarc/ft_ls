@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 20:23:13 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/10/14 16:41:50 by mplutarc         ###   ########.fr       */
+/*   Updated: 2019/10/17 17:45:44 by mplutarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,16 @@
 # include <dirent.h>
 # include <stdlib.h>
 
-#include <errno.h>
-#include <string.h>
-#include <limits.h>
+# include <errno.h>
+# include <string.h>
+# include <limits.h>
+# include "../libft/libft.h"
+
+typedef struct  s_ls
+{
+    char        *flag;
+}               t_ls;
+
 
 int     main();
 
