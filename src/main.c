@@ -6,16 +6,18 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 20:23:06 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/10/17 17:55:18 by mplutarc         ###   ########.fr       */
+/*   Updated: 2019/10/17 18:36:01 by mplutarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_ls.h"
 
-void		flags(t_ls *ls, char *av, struct dirent *entry)
+int			flags(t_ls *ls, char *av, struct dirent *entry)
 {
+	// inode number == ls -i
 	if((ls->flag = ft_strchr(av, 'i')))
 		printf("Inode number: %llu\n\n ", entry->d_ino);
+	return(0);
 }
 
 unsigned	directory(char *av, char *theDir)
@@ -27,7 +29,7 @@ unsigned	directory(char *av, char *theDir)
 
 	dir = opendir(theDir); //открытие директории
 	i = 0;
-	while((entry = readdir(dir)))  //пока директория читаема, но почему-то оно прочитывает его по второму кругу, разберёшься, почему?
+	while((entry = readdir(dir)))  //пока директория читаема
 	{
 		i++;
 		if (!dir)
@@ -38,19 +40,16 @@ unsigned	directory(char *av, char *theDir)
 		printf("%s\n", entry->d_name);
 		// printf("Inode number: %llu\n filename: %s\n Type of file: [%d]\n Length of this record: %d\n\n",
 					// entry->d_ino, entry->d_name, entry->d_type, entry->d_reclen);
-		// printf("im alive\n");
 		if(av)
 			flags(ls, av, entry);
     }
-	// inode number == ls -i
 	closedir(dir);
-		printf("sega isn't here\n");
     return (0);
 }
 
 int			main(int ac, char **av)
 {
-	if(ac > 3)
+	if(ac > 3 || ft_strlen(av[1]) == 1 || ft_strlen(av[1]) >= 10)
 		return (0);
 	directory(av[1], ".");
 	return (0);
