@@ -6,11 +6,26 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 20:23:06 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/10/21 19:49:39 by mplutarc         ###   ########.fr       */
+/*   Updated: 2019/10/21 20:15:33 by mplutarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_ls.h"
+
+t_ls	*init(void)
+{
+	t_ls	*new;
+
+	new = (t_ls *)malloc(sizeof(t_ls));
+	new->flags->l = 0;
+	new->flags->i = 0;
+	new->flags->a = 0;
+	new->flags->t = 0;
+	new->flags->r = 0;
+	new->flags->big_r = 0;
+	new->index = 0;
+	return (new);
+}
 
 int		files(char *av, char *theDir)
 {
@@ -57,6 +72,7 @@ int		directory(char *theDir)
 int		main(int ac, char **av)
 {
 	int		i;
+	t_ls	*ls;
 	
 	i = 1;
 	if (ac == 1)
@@ -64,12 +80,21 @@ int		main(int ac, char **av)
 		directory(".");
 		return (0);
 	}
+	ls = init();
 	while (i < ac)
 	{
+		// if (av[i][0] == '-')
+		// 	flags(av[i]);
 		if (!opendir(av[i]))
+		{
 			files(av[i], ".");
-		else 
+			ls->index = 1;
+		}
+		else
+		{
 			directory(av[i]);
+			ls->index = 1;
+		}
 		i++;
 	}
 	return (0);
