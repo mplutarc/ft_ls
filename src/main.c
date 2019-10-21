@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 20:23:06 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/10/21 20:15:33 by mplutarc         ###   ########.fr       */
+/*   Updated: 2019/10/21 21:25:38 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,15 @@ t_ls	*init(void)
 	new->flags->big_r = 0;
 	new->index = 0;
 	return (new);
+}
+
+void    error(char *theDir)
+{
+    ft_putstr("Error opening ");
+    ft_putstr(theDir);
+    ft_putstr(": ");
+    ft_putstr(strerror(errno));
+    //printf( "Error opening %s: %s", theDir, strerror(errno));
 }
 
 int		files(char *av, char *theDir)
@@ -55,7 +64,7 @@ int		directory(char *theDir)
 	dir = opendir(theDir); //открытие директории
 	if (!dir)
 	{
-       	printf( "Error opening %s: %s", theDir, strerror(errno));
+       	error(theDir);
        	return (0);
    	}
 	while((entry = readdir(dir)))  //пока директория читаема
@@ -74,18 +83,28 @@ int		main(int ac, char **av)
 	int		i;
 	t_ls	*ls;
 	
+	if (!(ls = (t_ls *)malloc(sizeof(t_ls))))
+	    return (-1);
 	i = 1;
 	if (ac == 1)
 	{
 		directory(".");
 		return (0);
 	}
-	ls = init();
+	while (i < ac)
+    {
+        if (av[i][0] == '-' && ls->index == 1)
+            error (av[i]);
+        if (av[i][0] != '-')
+            ls->index = 1;
+        i++;
+    }
+	i = 0;
+	//ls = init();
 	while (i < ac)
 	{
-		// if (av[i][0] == '-')
 		// 	flags(av[i]);
-		if (!opendir(av[i]))
+		if (!opendir(av[i]) && fopen(av[i], "rt"))
 		{
 			files(av[i], ".");
 			ls->index = 1;
