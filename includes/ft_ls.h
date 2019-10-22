@@ -6,12 +6,13 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 20:23:13 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/10/22 17:44:55 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/10/22 19:59:27 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_LS
 # define FT_LS
+# define ERROR -1
 
 # include <unistd.h>
 # include <stdio.h>
@@ -26,7 +27,8 @@
 # include <limits.h>
 # include "../libft/libft.h"
 
-typedef struct	s_flags
+
+typedef struct s_ls
 {
 	int			l;
 	int			i;
@@ -34,13 +36,12 @@ typedef struct	s_flags
 	int			t;
 	int			r;
 	int			big_r;
-}				t_flags;
-
-typedef struct s_ls
-{
-    t_flags     *flags;
-    int         index;
+    int         flag;
+    int 		dh_index; //индекс для --
 }               t_ls;
 
+int 	directory(char *theDir);
+int		main(int ac, char **av);
+int     validation(int ac, char **av, t_ls *ls);
 
 #endif

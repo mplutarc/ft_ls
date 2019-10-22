@@ -6,14 +6,14 @@
 #    By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/08 20:23:00 by mplutarc          #+#    #+#              #
-#    Updated: 2019/10/22 17:44:54 by emaveric         ###   ########.fr        #
+#    Updated: 2019/10/22 20:15:18 by emaveric         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ft_ls
-FILES = main.c
+FILES = main.c validation.c
 SRC = $(addprefix src/, $(FILES))
-INC = incudes/ft_ls.h
+INC = includes/ft_ls.h
 OBJ = $(addprefix obj/, $(FILES:.c=.o))
 LIBFT = libft/libft.a
 FLAGS = -Wall -Wextra -Werror

@@ -72,15 +72,14 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/emaveric/ls/libft/get_next_line.c" "/Users/emaveric/ls/cmake-build-debug/CMakeFiles/ls.dir/libft/get_next_line.c.o"
   "/Users/emaveric/ls/src/flags.c" "/Users/emaveric/ls/cmake-build-debug/CMakeFiles/ls.dir/src/flags.c.o"
   "/Users/emaveric/ls/src/main.c" "/Users/emaveric/ls/cmake-build-debug/CMakeFiles/ls.dir/src/main.c.o"
+  "/Users/emaveric/ls/validation.c" "/Users/emaveric/ls/cmake-build-debug/CMakeFiles/ls.dir/validation.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH
-  "../."
   "../includes"
   "../libft"
-  "../src"
   )
 
 # Targets to which this target links.

@@ -1959,6 +1959,33 @@ src/main.c.s:
 	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/src/main.c.s
 .PHONY : src/main.c.s
 
+validation.o: validation.c.o
+
+.PHONY : validation.o
+
+# target to build an object file
+validation.c.o:
+	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/validation.c.o
+.PHONY : validation.c.o
+
+validation.i: validation.c.i
+
+.PHONY : validation.i
+
+# target to preprocess a source file
+validation.c.i:
+	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/validation.c.i
+.PHONY : validation.c.i
+
+validation.s: validation.c.s
+
+.PHONY : validation.s
+
+# target to generate assembly for a file
+validation.c.s:
+	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/validation.c.s
+.PHONY : validation.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -2172,6 +2199,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... validation.o"
+	@echo "... validation.i"
+	@echo "... validation.s"
 .PHONY : help
 
 

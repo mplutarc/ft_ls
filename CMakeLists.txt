@@ -3,10 +3,8 @@ project(ls)
 
 set(CMAKE_CXX_STANDARD 14)
 
-include_directories(.)
 include_directories(includes)
 include_directories(libft)
-include_directories(src)
 
 add_executable(ls
         includes/ft_ls.h
@@ -81,4 +79,4 @@ add_executable(ls
         src/flags.c
         src/main.c
         author
-        Makefile)
+        Makefile src/validation.c)

@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 20:23:06 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/10/22 17:44:54 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/10/22 20:05:58 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,24 +16,32 @@ t_ls	*init(void)
 {
 	t_ls	*new;
 
-	new = (t_ls *)malloc(sizeof(t_ls));
-	new->flags->l = 0;
-	new->flags->i = 0;
-	new->flags->a = 0;
-	new->flags->t = 0;
-	new->flags->r = 0;
-	new->flags->big_r = 0;
-	new->index = 0;
+	if (!(new = (t_ls *)malloc(sizeof(t_ls))))
+	    return (NULL);
+	new->l = 0;
+	new->i = 0;
+	new->a = 0;
+	new->t = 0;
+	new->r = 0;
+	new->big_r = 0;
+	// new->flag = 0;
 	return (new);
 }
 
 void    error(char *theDir)
 {
-    ft_putstr("Error opening ");
-    ft_putstr(theDir);
-    ft_putstr(": ");
-    ft_putstr(strerror(errno));
-    ft_putstr("\n");
+	char	*myerror;
+
+	myerror = ft_strjoin("Error opening ", ft_strjoin(theDir,
+				ft_strjoin(": ", strerror(errno))));
+	// myerror = ft_strcat(myerror, ": ");
+	// myerror = ft_strcat(myerror, strerror(errno));
+	ft_putendl(myerror);
+    // ft_putstr("Error opening ");
+    // ft_putstr(theDir);
+    // ft_putstr(": ");
+    // ft_putstr(strerror(errno));
+    // ft_putstr("\n");
     //printf( "Error opening %s: %s", theDir, strerror(errno));
 }
 
@@ -65,13 +73,14 @@ int		directory(char *theDir)
 	dir = opendir(theDir); //открытие директории
 	if (!dir)
 	{
+		printf("theDir is %s\n", theDir);
        	error(theDir);
        	return (0);
    	}
 	while((entry = readdir(dir)))  //пока директория читаема
 	{
 		ft_putstr(entry->d_name);
-		ft_putchar('\t');
+		ft_putchar('\n');
 		// printf("Inode number: %llu\n filename: %s\n Type of file: [%d]\n Size: %d\n\n",
 		// 			entry->d_ino, entry->d_name, entry->d_type, entry->d_reclen);
     }
@@ -85,37 +94,21 @@ int		main(int ac, char **av)
 	t_ls	*ls;
 	
 	if (!(ls = (t_ls *)malloc(sizeof(t_ls))))
-	    return (-1);
+	    return (ERROR);
 	i = 1;
 	if (ac == 1)
 	{
 		directory(".");
 		return (0);
 	}
-	while (i < ac)
-    {
-        if (av[i][0] == '-' && ls->index == 1)
-            //error(av[i]);
-           directory(av[i]);
-        if (av[i][0] != '-')
-            ls->index = 1;
-        i++;
-    }
-	i = 1;
-	//ls = init();
+	validation(ac, av, ls);
+	ls = init();
 	while (i < ac)
 	{
-		// 	flags(av[i]);
 		if (!opendir(av[i]) && fopen(av[i], "rt"))
-		{
 			files(av[i], ".");
-			//ls->index = 1;
-		}
 		else
-		{
 			directory(av[i]);
-			//ls->index = 1;
-		}
 		i++;
 	}
 	return (0);
