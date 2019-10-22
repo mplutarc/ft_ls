@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 20:23:06 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/10/22 15:31:56 by mplutarc         ###   ########.fr       */
+/*   Updated: 2019/10/22 16:30:44 by mplutarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,23 +17,30 @@ t_ls	*init(void)
 	t_ls	*new;
 
 	new = (t_ls *)malloc(sizeof(t_ls));
-	new->flags->l = 0;
-	new->flags->i = 0;
-	new->flags->a = 0;
-	new->flags->t = 0;
-	new->flags->r = 0;
-	new->flags->big_r = 0;
+	new->l = 0;
+	new->i = 0;
+	new->a = 0;
+	new->t = 0;
+	new->r = 0;
+	new->big_r = 0;
 	// new->index = 0;
 	return (new);
 }
 
 void    error(char *theDir)
 {
-    ft_putstr("Error opening ");
-    ft_putstr(theDir);
-    ft_putstr(": ");
-    ft_putstr(strerror(errno));
-    ft_putstr("\n");
+	char	*myerror;
+
+	myerror = ft_strjoin("Error opening ", ft_strjoin(theDir,
+				ft_strjoin(": ", strerror(errno))));
+	// myerror = ft_strcat(myerror, ": ");
+	// myerror = ft_strcat(myerror, strerror(errno));
+	ft_putendl(myerror);
+    // ft_putstr("Error opening ");
+    // ft_putstr(theDir);
+    // ft_putstr(": ");
+    // ft_putstr(strerror(errno));
+    // ft_putstr("\n");
     //printf( "Error opening %s: %s", theDir, strerror(errno));
 }
 
@@ -65,6 +72,7 @@ int		directory(char *theDir)
 	dir = opendir(theDir); //открытие директории
 	if (!dir)
 	{
+		printf("theDir is %s\n", theDir);
        	error(theDir);
        	return (0);
    	}
@@ -94,27 +102,29 @@ int		main(int ac, char **av)
 	}
 	while (i < ac)
     {
-        if (av[i][0] == '-' && ls->index == 1)
-            //error(av[i]);
-           directory(av[i]);
         if (av[i][0] != '-')
             ls->index = 1;
+        else if (av[i][0] == '-' && ls->index == 1)
+		{
+			printf("i = %d, ls index = %d\n", i, ls->index);
+            //error(av[i]);
+			directory(av[i]);
+			av[i][1] = '\0';
+		}
         i++;
     }
 	i = 1;
-	//ls = init();
+	ls = init();
 	while (i < ac)
 	{
-		// 	flags(av[i]);
+		//(av[i]);
 		if (!opendir(av[i]) && fopen(av[i], "rt"))
 		{
 			files(av[i], ".");
-			// ls->index = 1;
 		}
-		else
+		else if (av)
 		{
 			directory(av[i]);
-			// ls->index = 1;
 		}
 		i++;
 	}

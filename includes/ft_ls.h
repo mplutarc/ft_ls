@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 20:23:13 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/10/21 20:29:07 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/10/22 16:18:04 by mplutarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@
 # include <limits.h>
 # include "../libft/libft.h"
 
-typedef struct	s_flags
+
+typedef struct s_ls
 {
 	int			l;
 	int			i;
@@ -34,11 +35,6 @@ typedef struct	s_flags
 	int			t;
 	int			r;
 	int			big_r;
-}				t_flags;
-
-typedef struct s_ls
-{
-    t_flags     *flags;
     int         index;
 }               t_ls;
 
