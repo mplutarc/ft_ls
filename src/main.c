@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 20:23:06 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/10/21 20:15:33 by mplutarc         ###   ########.fr       */
+/*   Updated: 2019/10/22 14:25:37 by mplutarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ t_ls	*init(void)
 	new->flags->t = 0;
 	new->flags->r = 0;
 	new->flags->big_r = 0;
-	new->index = 0;
+	// new->index = 0;
 	return (new);
 }
 
@@ -61,7 +61,7 @@ int		directory(char *theDir)
 	while((entry = readdir(dir)))  //пока директория читаема
 	{
 		ft_putstr(entry->d_name);
-		ft_putchar('\t');
+		ft_putchar('\n');
 		// printf("Inode number: %llu\n filename: %s\n Type of file: [%d]\n Size: %d\n\n",
 		// 			entry->d_ino, entry->d_name, entry->d_type, entry->d_reclen);
     }
@@ -80,7 +80,7 @@ int		main(int ac, char **av)
 		directory(".");
 		return (0);
 	}
-	ls = init();
+	// ls = init();
 	while (i < ac)
 	{
 		// if (av[i][0] == '-')
@@ -88,12 +88,12 @@ int		main(int ac, char **av)
 		if (!opendir(av[i]))
 		{
 			files(av[i], ".");
-			ls->index = 1;
+			// ls->index = 1;
 		}
 		else
 		{
 			directory(av[i]);
-			ls->index = 1;
+			// ls->index = 1;
 		}
 		i++;
 	}
