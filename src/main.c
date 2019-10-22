@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 20:23:06 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/10/21 21:25:38 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/10/22 15:13:10 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void    error(char *theDir)
     ft_putstr(theDir);
     ft_putstr(": ");
     ft_putstr(strerror(errno));
+    ft_putstr("\n");
     //printf( "Error opening %s: %s", theDir, strerror(errno));
 }
 
@@ -94,12 +95,13 @@ int		main(int ac, char **av)
 	while (i < ac)
     {
         if (av[i][0] == '-' && ls->index == 1)
-            error (av[i]);
+            //error(av[i]);
+           directory(av[i]);
         if (av[i][0] != '-')
             ls->index = 1;
         i++;
     }
-	i = 0;
+	i = 1;
 	//ls = init();
 	while (i < ac)
 	{
@@ -107,12 +109,12 @@ int		main(int ac, char **av)
 		if (!opendir(av[i]) && fopen(av[i], "rt"))
 		{
 			files(av[i], ".");
-			ls->index = 1;
+			//ls->index = 1;
 		}
 		else
 		{
 			directory(av[i]);
-			ls->index = 1;
+			//ls->index = 1;
 		}
 		i++;
 	}
