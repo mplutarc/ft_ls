@@ -6,40 +6,6 @@
 
 #IncludeRegexTransform: 
 
-../includes/ft_ls.h
-unistd.h
--
-stdio.h
--
-sys/types.h
--
-sys/stat.h
--
-pwd.h
--
-grp.h
--
-dirent.h
--
-stdlib.h
--
-errno.h
--
-string.h
--
-limits.h
--
-../libft/libft.h
-../libft/libft.h
-
-../libft/libft.h
-unistd.h
--
-stdlib.h
--
-string.h
--
-
 /Users/emaveric/ls/includes/ft_ls.h
 unistd.h
 -
@@ -77,8 +43,4 @@ string.h
 /Users/emaveric/ls/src/main.c
 ../includes/ft_ls.h
 /Users/emaveric/ls/includes/ft_ls.h
-
-/Users/emaveric/ls/validation.c
-../includes/ft_ls.h
-/Users/emaveric/includes/ft_ls.h
 

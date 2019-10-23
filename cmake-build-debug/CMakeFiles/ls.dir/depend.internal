@@ -198,7 +198,7 @@ CMakeFiles/ls.dir/src/main.c.o
  /Users/emaveric/ls/includes/ft_ls.h
  /Users/emaveric/ls/libft/libft.h
  /Users/emaveric/ls/src/main.c
-CMakeFiles/ls.dir/validation.c.o
- ../includes/ft_ls.h
- ../libft/libft.h
- /Users/emaveric/ls/validation.c
+CMakeFiles/ls.dir/src/validation.c.o
+ /Users/emaveric/ls/includes/ft_ls.h
+ /Users/emaveric/ls/libft/libft.h
+ /Users/emaveric/ls/src/validation.c

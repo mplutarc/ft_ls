@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 20:23:06 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/10/22 20:05:58 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/10/23 20:23:28 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,15 @@ t_ls	*init(void)
 
 	if (!(new = (t_ls *)malloc(sizeof(t_ls))))
 	    return (NULL);
+	new->flag = 0;
+	new->e_sum = 0;
+	new->dh_index = 0;
 	new->l = 0;
 	new->i = 0;
 	new->a = 0;
 	new->t = 0;
 	new->r = 0;
 	new->big_r = 0;
-	// new->flag = 0;
 	return (new);
 }
 
@@ -57,6 +59,7 @@ int		files(char *av, char *theDir)
 		{
 			ft_putstr(entry->d_name);
 			ft_putchar('\t');
+			printf("\n");
 		}
 		// printf("Inode number: %llu\n filename: %s\n Type of file: [%d]\n Size: %d\n\n",
 		// 			entry->d_ino, entry->d_name, entry->d_type, entry->d_reclen);
@@ -73,7 +76,7 @@ int		directory(char *theDir)
 	dir = opendir(theDir); //открытие директории
 	if (!dir)
 	{
-		printf("theDir is %s\n", theDir);
+		//printf("theDir is %s\n", theDir);
        	error(theDir);
        	return (0);
    	}
@@ -91,24 +94,40 @@ int		directory(char *theDir)
 int		main(int ac, char **av)
 {
 	int		i;
+	int 	j;
 	t_ls	*ls;
-	
-	if (!(ls = (t_ls *)malloc(sizeof(t_ls))))
-	    return (ERROR);
+
 	i = 1;
+	j = 1;
 	if (ac == 1)
 	{
 		directory(".");
 		return (0);
 	}
-	validation(ac, av, ls);
-	ls = init();
+	if (!(ls = init()))
+		return (ERROR);
+	//validation(ac, av, ls);
+	if (dhyp_check(ac, av, ls) == ERROR)
+		return (ERROR); //посмотреть ошибку ориг лс если ввести 3 --- и тп
+	if (validation(ac, av, ls) == ERROR)
+		return (ERROR);
 	while (i < ac)
 	{
-		if (!opendir(av[i]) && fopen(av[i], "rt"))
-			files(av[i], ".");
-		else
+		if (i != ls->dh_index)
+		{
+			if (!opendir(av[i]) && fopen(av[i], "rt"))
+				files(av[i], ".");
+			else if (i == ls->e_index[j])
+				j++;
+			else if (i != ls->e_index[j])
+				directory(av[i]);
+		}
+	/*	else if (ls->dh_index && i == ls->dh_index)
+		{
 			directory(av[i]);
+		}*/
+		else if (i == ls->dh_index)
+			j++;
 		i++;
 	}
 	return (0);

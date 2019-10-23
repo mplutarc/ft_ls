@@ -941,18 +941,18 @@ CMakeFiles/ls.dir/src/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ls.dir/src/main.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/emaveric/ls/src/main.c -o CMakeFiles/ls.dir/src/main.c.s
 
-CMakeFiles/ls.dir/validation.c.o: CMakeFiles/ls.dir/flags.make
-CMakeFiles/ls.dir/validation.c.o: ../validation.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/emaveric/ls/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_69) "Building C object CMakeFiles/ls.dir/validation.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ls.dir/validation.c.o   -c /Users/emaveric/ls/validation.c
+CMakeFiles/ls.dir/src/validation.c.o: CMakeFiles/ls.dir/flags.make
+CMakeFiles/ls.dir/src/validation.c.o: ../src/validation.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/emaveric/ls/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_69) "Building C object CMakeFiles/ls.dir/src/validation.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ls.dir/src/validation.c.o   -c /Users/emaveric/ls/src/validation.c
 
-CMakeFiles/ls.dir/validation.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ls.dir/validation.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/emaveric/ls/validation.c > CMakeFiles/ls.dir/validation.c.i
+CMakeFiles/ls.dir/src/validation.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ls.dir/src/validation.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/emaveric/ls/src/validation.c > CMakeFiles/ls.dir/src/validation.c.i
 
-CMakeFiles/ls.dir/validation.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ls.dir/validation.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/emaveric/ls/validation.c -o CMakeFiles/ls.dir/validation.c.s
+CMakeFiles/ls.dir/src/validation.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ls.dir/src/validation.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/emaveric/ls/src/validation.c -o CMakeFiles/ls.dir/src/validation.c.s
 
 # Object files for target ls
 ls_OBJECTS = \
@@ -1024,7 +1024,7 @@ ls_OBJECTS = \
 "CMakeFiles/ls.dir/libft/get_next_line.c.o" \
 "CMakeFiles/ls.dir/src/flags.c.o" \
 "CMakeFiles/ls.dir/src/main.c.o" \
-"CMakeFiles/ls.dir/validation.c.o"
+"CMakeFiles/ls.dir/src/validation.c.o"
 
 # External object files for target ls
 ls_EXTERNAL_OBJECTS =
@@ -1097,7 +1097,7 @@ ls: CMakeFiles/ls.dir/libft/ft_toupper.c.o
 ls: CMakeFiles/ls.dir/libft/get_next_line.c.o
 ls: CMakeFiles/ls.dir/src/flags.c.o
 ls: CMakeFiles/ls.dir/src/main.c.o
-ls: CMakeFiles/ls.dir/validation.c.o
+ls: CMakeFiles/ls.dir/src/validation.c.o
 ls: CMakeFiles/ls.dir/build.make
 ls: CMakeFiles/ls.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/emaveric/ls/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_70) "Linking C executable ls"

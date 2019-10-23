@@ -1959,32 +1959,32 @@ src/main.c.s:
 	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/src/main.c.s
 .PHONY : src/main.c.s
 
-validation.o: validation.c.o
+src/validation.o: src/validation.c.o
 
-.PHONY : validation.o
+.PHONY : src/validation.o
 
 # target to build an object file
-validation.c.o:
-	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/validation.c.o
-.PHONY : validation.c.o
+src/validation.c.o:
+	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/src/validation.c.o
+.PHONY : src/validation.c.o
 
-validation.i: validation.c.i
+src/validation.i: src/validation.c.i
 
-.PHONY : validation.i
+.PHONY : src/validation.i
 
 # target to preprocess a source file
-validation.c.i:
-	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/validation.c.i
-.PHONY : validation.c.i
+src/validation.c.i:
+	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/src/validation.c.i
+.PHONY : src/validation.c.i
 
-validation.s: validation.c.s
+src/validation.s: src/validation.c.s
 
-.PHONY : validation.s
+.PHONY : src/validation.s
 
 # target to generate assembly for a file
-validation.c.s:
-	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/validation.c.s
-.PHONY : validation.c.s
+src/validation.c.s:
+	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/src/validation.c.s
+.PHONY : src/validation.c.s
 
 # Help Target
 help:
@@ -2199,9 +2199,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
-	@echo "... validation.o"
-	@echo "... validation.i"
-	@echo "... validation.s"
+	@echo "... src/validation.o"
+	@echo "... src/validation.i"
+	@echo "... src/validation.s"
 .PHONY : help
 
 

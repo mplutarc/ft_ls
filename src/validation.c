@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 17:54:51 by emaveric          #+#    #+#             */
-/*   Updated: 2019/10/22 20:17:31 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/10/23 20:57:05 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,35 @@
 // проверка на ''
 // проверка на --
 // проверка с флагами
+
+int 	*new_arr(int e_sum)
+{
+	int		*new;
+
+	if (!(new = (int *)malloc(sizeof(int) * e_sum)))
+		return (NULL);
+	return (new);
+}
+
+int 	dir_err_check(int ac, char **av, t_ls *ls)
+{
+	int 	i;
+
+	i = 1;
+	while (i < ac)
+	{
+		if (!opendir(av[i]) || !fopen(av[i], "rt"))
+			if (av[i][0] != '-' && i > ls->dh_index)
+			{
+				ls->e_sum++;
+				directory(av[i]);
+			}
+		i++;
+	}
+	if (!(ls->e_index = new_arr(ls->e_sum)))
+		return (ERROR);
+	return (0);
+}
 
 int 	dhyp_check(int ac, char **av, t_ls *ls)
 {
@@ -39,26 +68,52 @@ int 	dhyp_check(int ac, char **av, t_ls *ls)
 	return (0);
 }
 
+int 	hyp_check(int ac, char **av, t_ls *ls)
+{
+	int 	i;
+
+	i = 1;
+	while (i < ac)
+	{
+		if (av[i][0] != '-' || (av[i][0] == '-' && av[i][1] == '\0')) // папка может быть названа -
+			ls->flag = 1;
+		else if (av[i][0] == '-' && ls->flag == 1)
+		{
+			ls->e_sum++;
+			directory(av[i]);
+		}
+		i++;
+	}
+	return (0);
+}
+
 int		validation(int ac, char **av, t_ls *ls)
 {
-    int     i;
+	int 	i;
+	int 	j;
 
-    i = 1;
-    if (dhyp_check(ac, av, ls) == ERROR)
-    	return (ERROR); //посмотреть ошибку ориг лс если ввести 3 --- и тп
-    else if (dhyp_check(ac, av, ls) == 1)
-    {
-		printf("\\\\\\\\ LS->INDEX = %d \n\n", ls->dh_index);
-    	return (1); // игнорирование последующих флагов после --
-    }
-    else
-    	while (i < ac)
-    	{
-    		if (av[i][0] != '-' || (av[i][0] == '-' && av[i][1] == '\0')) // папка может быть названа -
-            	ls->flag = 1;
-    		else if (av[i][0] == '-' && ls->flag == 1)
-            	directory(av[i]);
-    		i++;
-    	}
+	j = 1;
+	i = 1;
+   hyp_check(ac, av ,ls);
+    	if (dir_err_check(ac, av, ls) == ERROR)
+    		return (ERROR);
+	ls->flag = 0;
+	while (i < ac)
+	{
+		if (!opendir(av[i]) || !fopen(av[i], "rt"))
+			if (av[i][0] != '-' && i > ls->dh_index)
+			{
+				ls->e_index[j] = i;
+				j++;
+			}
+		if (av[i][0] != '-' || (av[i][0] == '-' && av[i][1] == '\0')) // папка может быть названа -
+			ls->flag = 1;
+		else if (av[i][0] == '-' && ls->flag == 1)
+		{
+			ls->e_index[j] = i;
+			j++;
+		}
+		i++;
+	}
     return (0);
 }
