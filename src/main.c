@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 20:23:06 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/10/24 15:58:06 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/10/24 20:38:26 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ int		main(int ac, char **av)
 
 	i = 1;
 	j = 1;
-	if (ac == 1 || ft_strcmp(av[1], "--") == 0)
+	if (ac == 1 || (ft_strcmp(av[1], "--") == 0 && ac == 2))
 	{
 		directory(".");
 		return (0);

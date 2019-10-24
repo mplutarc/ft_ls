@@ -193,6 +193,8 @@ CMakeFiles/ls.dir/libft/get_next_line.c.o
  /Users/emaveric/ls/libft/get_next_line.c
  /Users/emaveric/ls/libft/libft.h
 CMakeFiles/ls.dir/src/flags.c.o
+ /Users/emaveric/ls/includes/ft_ls.h
+ /Users/emaveric/ls/libft/libft.h
  /Users/emaveric/ls/src/flags.c
 CMakeFiles/ls.dir/src/main.c.o
  /Users/emaveric/ls/includes/ft_ls.h

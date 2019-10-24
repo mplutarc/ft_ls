@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 17:54:51 by emaveric          #+#    #+#             */
-/*   Updated: 2019/10/24 15:12:59 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/10/24 20:49:53 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int 	dir_err_check(int ac, char **av, t_ls *ls)
 	while (i < ac)
 	{
 		if (!opendir(av[i]) || !fopen(av[i], "rt"))
-			if (av[i][0] != '-' && i > ls->dh_index)
+			if ((av[i][0] != '-' && i > ls->dh_index) || ft_strcmp(av[i], "-") == 0)
 			{
 				ls->e_sum++;
 				directory(av[i]);
@@ -103,7 +103,7 @@ int		validation(int ac, char **av, t_ls *ls)
 	while (i < ac)
 	{
 		if (!opendir(av[i]) || !fopen(av[i], "rt"))
-			if (av[i][0] != '-' && i > ls->dh_index)
+			if ((av[i][0] != '-' && i > ls->dh_index) || ft_strcmp(av[i], "-") == 0)
 			{
 				ls->e_index[j] = i;
 				j++;

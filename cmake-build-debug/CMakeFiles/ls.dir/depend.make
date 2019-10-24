@@ -192,6 +192,8 @@ CMakeFiles/ls.dir/libft/ft_toupper.c.o: ../libft/ft_toupper.c
 CMakeFiles/ls.dir/libft/get_next_line.c.o: ../libft/get_next_line.c
 CMakeFiles/ls.dir/libft/get_next_line.c.o: ../libft/libft.h
 
+CMakeFiles/ls.dir/src/flags.c.o: ../includes/ft_ls.h
+CMakeFiles/ls.dir/src/flags.c.o: ../libft/libft.h
 CMakeFiles/ls.dir/src/flags.c.o: ../src/flags.c
 
 CMakeFiles/ls.dir/src/main.c.o: ../includes/ft_ls.h
