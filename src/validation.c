@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 17:54:51 by emaveric          #+#    #+#             */
-/*   Updated: 2019/10/23 20:57:05 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/10/24 15:12:59 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@
 // проверка на --
 // проверка с флагами
 
-int 	*new_arr(int e_sum)
+/*int 	*new_arr(int e_sum)
 {
 	int		*new;
 
 	if (!(new = (int *)malloc(sizeof(int) * e_sum)))
 		return (NULL);
 	return (new);
-}
+}*/
 
 int 	dir_err_check(int ac, char **av, t_ls *ls)
 {
@@ -41,8 +41,10 @@ int 	dir_err_check(int ac, char **av, t_ls *ls)
 			}
 		i++;
 	}
-	if (!(ls->e_index = new_arr(ls->e_sum)))
+	if (!(ls->e_index = (int *)malloc(sizeof(int) * ls->e_sum)))
 		return (ERROR);
+/*	if (!(ls->e_index = new_arr(ls->e_sum)))
+		return (ERROR);*/
 	return (0);
 }
 

@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 20:23:13 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/10/23 19:53:14 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/10/24 15:07:35 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,13 @@ typedef struct s_ls
     int 		e_sum;
     int 		*e_index; // индекс для ошибок
     int 		dh_index; //индекс для --
-    int 		*h_index; // индекс для -
+    int 		*f_index; // индекс для флагов
 }               t_ls;
 
 int 	directory(char *theDir);
 int		main(int ac, char **av);
 int     validation(int ac, char **av, t_ls *ls);
 int 	dhyp_check(int ac, char **av, t_ls *ls);
+int 	flags(int ac, char **av, t_ls *ls);
 
 #endif

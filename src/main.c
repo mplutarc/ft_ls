@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 20:23:06 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/10/23 20:23:28 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/10/24 15:58:06 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,21 +99,22 @@ int		main(int ac, char **av)
 
 	i = 1;
 	j = 1;
-	if (ac == 1)
+	if (ac == 1 || ft_strcmp(av[1], "--") == 0)
 	{
 		directory(".");
 		return (0);
 	}
 	if (!(ls = init()))
 		return (ERROR);
-	//validation(ac, av, ls);
+	if (flags(ac, av, ls) == ERROR)
+		return (ERROR);
 	if (dhyp_check(ac, av, ls) == ERROR)
 		return (ERROR); //посмотреть ошибку ориг лс если ввести 3 --- и тп
 	if (validation(ac, av, ls) == ERROR)
 		return (ERROR);
 	while (i < ac)
 	{
-		if (i != ls->dh_index)
+		if (i != ls->dh_index && i != ls->f_index[i])
 		{
 			if (!opendir(av[i]) && fopen(av[i], "rt"))
 				files(av[i], ".");

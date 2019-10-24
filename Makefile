@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 NAME = ft_ls
-FILES = main.c validation.c
+FILES = main.c validation.c flags.c
 SRC = $(addprefix src/, $(FILES))
 INC = includes/ft_ls.h
 OBJ = $(addprefix obj/, $(FILES:.c=.o))
