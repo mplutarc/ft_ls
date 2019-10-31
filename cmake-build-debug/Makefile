@@ -1959,6 +1959,33 @@ src/main.c.s:
 	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/src/main.c.s
 .PHONY : src/main.c.s
 
+src/sorting.o: src/sorting.c.o
+
+.PHONY : src/sorting.o
+
+# target to build an object file
+src/sorting.c.o:
+	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/src/sorting.c.o
+.PHONY : src/sorting.c.o
+
+src/sorting.i: src/sorting.c.i
+
+.PHONY : src/sorting.i
+
+# target to preprocess a source file
+src/sorting.c.i:
+	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/src/sorting.c.i
+.PHONY : src/sorting.c.i
+
+src/sorting.s: src/sorting.c.s
+
+.PHONY : src/sorting.s
+
+# target to generate assembly for a file
+src/sorting.c.s:
+	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/src/sorting.c.s
+.PHONY : src/sorting.c.s
+
 src/validation.o: src/validation.c.o
 
 .PHONY : src/validation.o
@@ -2199,6 +2226,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/sorting.o"
+	@echo "... src/sorting.i"
+	@echo "... src/sorting.s"
 	@echo "... src/validation.o"
 	@echo "... src/validation.i"
 	@echo "... src/validation.s"

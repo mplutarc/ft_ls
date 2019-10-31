@@ -1,28 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnchr.c                                       :+:      :+:    :+:   */
+/*   sorting.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/23 14:28:06 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/10/29 15:11:05 by emaveric         ###   ########.fr       */
+/*   Created: 2019/10/31 15:11:20 by emaveric          #+#    #+#             */
+/*   Updated: 2019/10/31 15:19:29 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/ft_ls.h"
 
-char	*ft_strnchr(const char *s, int c, size_t end)
+int 	sorting(int ac, char **av, t_ls *ls)
 {
-	char	*str;
 
-	str = (char *)s;
-	while (*str != c || end)
-	{
-		if (*str == '\0')
-			return (NULL);
-		str++;
-		end--;
-	}
-	return (str);
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 20:23:06 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/10/24 20:38:26 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/10/31 15:19:36 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,10 +106,11 @@ int		main(int ac, char **av)
 	}
 	if (!(ls = init()))
 		return (ERROR);
-	if (flags(ac, av, ls) == ERROR)
-		return (ERROR);
 	if (dhyp_check(ac, av, ls) == ERROR)
 		return (ERROR); //посмотреть ошибку ориг лс если ввести 3 --- и тп
+	if (flags(ac, av, ls) == ERROR)
+		return (ERROR);
+	sorting(ac, av, ls);
 	if (validation(ac, av, ls) == ERROR)
 		return (ERROR);
 	while (i < ac)

@@ -79,4 +79,4 @@ add_executable(ls
         src/flags.c
         src/main.c
         author
-        Makefile src/validation.c)
+        Makefile src/validation.c src/sorting.c)

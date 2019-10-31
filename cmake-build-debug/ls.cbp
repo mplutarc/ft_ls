@@ -305,6 +305,9 @@
 		<Unit filename="/Users/emaveric/ls/src/main.c">
 			<Option target="ls"/>
 		</Unit>
+		<Unit filename="/Users/emaveric/ls/src/sorting.c">
+			<Option target="ls"/>
+		</Unit>
 		<Unit filename="/Users/emaveric/ls/src/validation.c">
 			<Option target="ls"/>
 		</Unit>

@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 19:50:58 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/10/24 20:17:16 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/10/31 15:19:29 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int 	flag_valid(int ac, char **av, t_ls *ls)
 	f_sum = 0;
 	while (i < ac)
 	{
-		if ((!opendir(av[i]) || !fopen(av[i], "rt")) && ft_strcmp(av[i], "-") != 0)
+		if ((i < ls->dh_index || ls->dh_index == 0) && (av[i][0] == '-' && ft_strcmp(av[i], "-") != 0))
 			f_sum++;
 		else
 			break;
@@ -32,7 +32,7 @@ int 	flag_valid(int ac, char **av, t_ls *ls)
 	i = 1;
 	while (i < ac)
 	{
-		if ((!opendir(av[i]) || !fopen(av[i], "rt")) && ft_strcmp(av[i], "-") != 0)
+		if ((i < ls->dh_index || ls->dh_index == 0) && (av[i][0] == '-' && ft_strcmp(av[i], "-") != 0))
 			ls->f_index[i] = i;
 		else
 			break;
