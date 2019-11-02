@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 20:23:13 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/10/31 15:19:29 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/11/02 20:38:52 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,12 @@
 # include <limits.h>
 # include "../libft/libft.h"
 
+struct	s_node
+{
+	char			*field; // поле данных
+	struct s_node	*left;  // левый потомок
+	struct s_node	*right; // правый потомок
+};
 
 typedef struct s_ls
 {
@@ -48,6 +54,6 @@ int		main(int ac, char **av);
 int     validation(int ac, char **av, t_ls *ls);
 int 	dhyp_check(int ac, char **av, t_ls *ls);
 int 	flags(int ac, char **av, t_ls *ls);
-int 	sorting(int ac, char **av, t_ls *ls);
+int 	sorting(int ac, char **av);
 
 #endif

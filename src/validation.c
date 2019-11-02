@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 17:54:51 by emaveric          #+#    #+#             */
-/*   Updated: 2019/10/29 16:14:33 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/11/02 18:06:31 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ int 	hyp_check(int ac, char **av, t_ls *ls)
 	{
 		if (av[i][0] != '-' || (av[i][0] == '-' && av[i][1] == '\0')) // папка может быть названа -
 			ls->flag = 1;
-		else if (av[i][0] == '-' && ls->flag == 1)
+		else if ((!opendir(av[i]) || !fopen(av[i], "rt")) && av[i][0] == '-' && ls->flag == 1)
 		{
 			ls->e_sum++;
 			directory(av[i]);
@@ -110,7 +110,7 @@ int		validation(int ac, char **av, t_ls *ls)
 			}
 		if (av[i][0] != '-' || (av[i][0] == '-' && av[i][1] == '\0')) // папка может быть названа -
 			ls->flag = 1;
-		else if (av[i][0] == '-' && ls->flag == 1)
+		else if ((!opendir(av[i]) || !fopen(av[i], "rt")) && av[i][0] == '-' && ls->flag == 1)
 		{
 			ls->e_index[j] = i;
 			j++;
