@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 20:23:06 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/11/02 20:38:52 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/11/06 15:44:28 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ int		directory(char *theDir)
        	error(theDir);
        	return (0);
    	}
-	while((entry = readdir(dir)))  //пока директория читаема
+	while ((entry = readdir(dir)))  //пока директория читаема
 	{
 		ft_putstr(entry->d_name);
 		ft_putchar('\n');
@@ -97,13 +97,17 @@ int		main(int ac, char **av)
 
 	i = 1;
 	j = 1;
-	if (ac == 1 || (ft_strcmp(av[1], "--") == 0 && ac == 2))
-	{
-		directory(".");
-		return (0);
-	}
 	if (!(ls = init()))
 		return (ERROR);
+	if (ac == 1 || (ft_strcmp(av[1], "--") == 0 && ac == 2))
+	{
+	//	sorting(ac, av);
+		//directory(".");
+		cur_dir(".", ls);
+		return (0);
+	}
+/*	if (!(ls = init()))
+		return (ERROR);*/
 	if (dhyp_check(ac, av, ls) == ERROR)
 		return (ERROR); //посмотреть ошибку ориг лс если ввести 3 --- и тп
 	if (flags(ac, av, ls) == ERROR)

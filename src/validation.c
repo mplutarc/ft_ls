@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 17:54:51 by emaveric          #+#    #+#             */
-/*   Updated: 2019/11/02 18:06:31 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/11/06 16:26:16 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,28 @@
 // проверка на --
 // проверка с флагами
 
-/*int 	*new_arr(int e_sum)
+int 	cur_dir(char *theDir, t_ls *ls)
 {
-	int		*new;
+	DIR				*dir;
+	struct dirent	*entry;
+	int 			i;
 
-	if (!(new = (int *)malloc(sizeof(int) * e_sum)))
-		return (NULL);
-	return (new);
-}*/
+	i = 0;
+	dir = opendir(theDir);
+	while ((entry = readdir(dir)))
+		i++;
+	if (!(ls->c_dir = (char **)malloc(sizeof(char *) * (i + 1))))
+		return (ERROR);
+	i = 1;
+	dir = opendir(theDir);
+	while ((entry = readdir(dir)))
+	{
+		ls->c_dir[i] = ft_strdup(entry->d_name);
+		i++;
+	}
+	sorting(i, ls->c_dir);
+	return (0);
+}
 
 int 	dir_err_check(int ac, char **av, t_ls *ls)
 {
