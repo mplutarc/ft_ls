@@ -7,10 +7,6 @@
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 20:23:06 by mplutarc          #+#    #+#             */
 /*   Updated: 2019/11/06 18:05:47 by emaveric         ###   ########.fr       */
-.fr       */
-=======
-/*   Updated: 2019/11/06 15:36:16 by mplutarc         ###   ########.fr       */
->>>>>>> e2a24c6554229d1e28584b02cbaac762649aaaf0
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,15 +108,8 @@ int		main(int ac, char **av)
 		cur_dir(".", ls);
 		return (0);
 	}
-<<<<<<< HEAD
-/*	if (!(ls = init()))
-		return (ERROR);*/
 	if (dhyp_check(ac, av, ls) == ERROR)
 		return (ERROR); //посмотреть ошибку ориг лс если ввести 3 --- и тп
-=======
-	if (!(ls = init()))
-		return (ERROR);
->>>>>>> e2a24c6554229d1e28584b02cbaac762649aaaf0
 	if (flags(ac, av, ls) == ERROR)
 		return (ERROR);
 	if (dhyp_check(ac, av, ls) == ERROR)
