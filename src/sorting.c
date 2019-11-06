@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sorting.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/31 15:11:20 by emaveric          #+#    #+#             */
-/*   Updated: 2019/11/02 20:39:25 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/11/06 15:33:23 by mplutarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,16 +36,16 @@ struct s_node	*addnode(char *str, struct s_node *tree)
 	return (tree);
 }
 
-void			print(struct s_node *tree)
-{
-	if (tree != NULL)
-	{      //Пока не встретится пустой узел
-		print(tree->left);  //Рекурсивная функция вывода левого поддерева
-		//if (!opendir(tree->field) || !fopen(tree->field, "rt"))
-			directory(tree->field);
-		print(tree->right); //Рекурсивная функция вывода правого поддерева
-	}
-}
+// void			print(struct s_node *tree)
+// {
+// 	if (tree != NULL)
+// 	{      //Пока не встретится пустой узел
+// 		print(tree->left);  //Рекурсивная функция вывода левого поддерева
+// 		//if (!opendir(tree->field) || !fopen(tree->field, "rt"))
+// 			directory(tree->field);
+// 		print(tree->right); //Рекурсивная функция вывода правого поддерева
+// 	}
+// }
 
 int				sorting(int	ac, char **av)
 {
