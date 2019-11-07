@@ -69,6 +69,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/ls.dir/src/main.c.o"
   "CMakeFiles/ls.dir/src/validation.c.o"
   "CMakeFiles/ls.dir/src/sorting.c.o"
+  "CMakeFiles/ls.dir/src/output.c.o"
   "ls.pdb"
   "ls"
 )

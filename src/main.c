@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 20:23:06 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/11/07 18:17:22 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/11/07 22:37:16 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,10 +68,11 @@ int		files(char *av, char *theDir)
 	return (0);
 }
 
-int		directory(char *theDir)
+int		directory(char *theDir, t_ls *ls)
 {
     DIR				*dir;
     struct	dirent	*entry;
+    struct	s_node	*sub_tree;
 
 	dir = opendir(theDir); //открытие директории
 	if (!dir)
@@ -80,13 +81,20 @@ int		directory(char *theDir)
        	error(theDir);
        	return (0);
    	}
+	sub_tree = NULL;
 	while ((entry = readdir(dir)))  //пока директория читаема
 	{
-		ft_putstr(entry->d_name);
-		ft_putchar('\n');
+//		sub_tree = addnode(entry->d_name, sub_tree);
+		if (!(sub_tree = addnode(entry->d_name, sub_tree)))
+			return (ERROR);
+/*		ft_putstr(entry->d_name);
+		ft_putchar('\n');*/
+
 		// printf("Inode number: %llu\n filename: %s\n Type of file: [%d]\n Size: %d\n\n",
 		// 			entry->d_ino, entry->d_name, entry->d_type, entry->d_reclen);
     }
+	ls->flag = 2;
+	output(ls, sub_tree);
 	closedir(dir);
     return (0);
 }
@@ -97,30 +105,26 @@ int		main(int ac, char **av)
 	int 	j;
 	t_ls	*ls;
 
-	i = 1;
+	i = 2;
 	j = 1;
 	if (!(ls = init()))
 		return (ERROR);
+	if (validation(ac, av, ls) == ERROR)
+		return (ERROR);
 	if (ac == 1 || (ft_strcmp(av[1], "--") == 0 && ac == 2))
+		//|| (ac == 2 && ft_strcmp(av[1], ".") == 0))
 	{
-	//	sorting(ac, av);
-		//directory(".");
+		ls->flag = 2;
 		cur_dir(".", ls);
 		return (0);
 	}
-	if (dhyp_check(ac, av, ls) == ERROR)
-		return (ERROR); //посмотреть ошибку ориг лс если ввести 3 --- и тп
 	if (flags(ac, av, ls) == ERROR)
 		return (ERROR);
-	if (dhyp_check(ac, av, ls) == ERROR)
-		return (ERROR); //посмотреть ошибку ориг лс если ввести 3 --- и тп
-	if (validation(ac, av, ls) == ERROR)
-		return (ERROR);
-	printf("\n\n\n");
-	if (sorting(ac, av) == ERROR)
+/*	if (validation(ac, av, ls) == ERROR)
+		return (ERROR)*/;
+	if (sorting(ac, av, ls) == ERROR)
    		return (ERROR);
-	printf ("\n\n\n\n");
-	while (i < ac)
+/*	while (i < ac)
 	{
 		if (i != ls->dh_index && i != ls->f_index[i])
 		{
@@ -131,13 +135,13 @@ int		main(int ac, char **av)
 			else if (i != ls->e_index[j])
 				directory(av[i]);
 		}
-	/*	else if (ls->dh_index && i == ls->dh_index)
+	*//*	else if (ls->dh_index && i == ls->dh_index)
 		{
 			directory(av[i]);
-		}*/
+		}*//*
 		else if (i == ls->dh_index)
 			j++;
 		i++;
-	}
+	}*/
 	return (0);
 }

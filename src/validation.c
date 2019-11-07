@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 17:54:51 by emaveric          #+#    #+#             */
-/*   Updated: 2019/11/07 18:17:15 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/11/07 20:21:44 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,53 @@ int 	cur_dir(char *theDir, t_ls *ls)
 		ls->c_dir[i] = ft_strdup(entry->d_name);
 		i++;
 	}
-	sorting(i, ls->c_dir);
+	sorting(i, ls->c_dir, ls);
 	return (0);
 }
 
-int 	dir_err_check(int ac, char **av, t_ls *ls)
+int 	flag_ind(int ac, char **av, t_ls *ls)
+{
+	int		i;
+
+	i = 1;
+	while (i < ac)
+	{
+		if ((i < ls->dh_index || ls->dh_index == 0) &&
+			(av[i][0] == '-' && ft_strcmp(av[i], "-") != 0))
+		{
+			ls->f_index[i] = i;
+			find_flag(ls, av, i);
+			printf("FLAG %d is %s\n", i, av[i]);
+		}
+		else
+			break;
+		i++;
+	}
+	return (0);
+}
+
+int 	flag_sum(int ac, char **av, t_ls *ls)
+{
+	int 	i;
+	int 	f_sum;
+
+	i = 1;
+	f_sum = 0;
+	while (i < ac)
+	{
+		if ((i < ls->dh_index || ls->dh_index == 0) && (av[i][0] == '-' && ft_strcmp(av[i], "-") != 0))
+			f_sum++;
+		else
+			break;
+		i++;
+	}
+	if (!(ls->f_index = (int *)malloc(sizeof(int) * f_sum)))
+		return (ERROR);
+	flag_ind(ac, av, ls);
+	return (0);
+}
+
+/*int 	dir_err_check(int ac, char **av, t_ls *ls)
 {
 	int 	i;
 
@@ -48,19 +90,17 @@ int 	dir_err_check(int ac, char **av, t_ls *ls)
 	while (i < ac)
 	{
 		if (!opendir(av[i]) || !fopen(av[i], "rt"))
-			if ((av[i][0] != '-'/* && i > ls->dh_index*/) || ft_strcmp(av[i], "-") == 0)
+			if ((av[i][0] != '-') || ft_strcmp(av[i], "-") == 0)
 			{
 				ls->e_sum++;
-				directory(av[i]);
+				//directory(av[i]);
 			}
 		i++;
 	}
 	if (!(ls->e_index = (int *)malloc(sizeof(int) * ls->e_sum)))
 		return (ERROR);
-/*	if (!(ls->e_index = new_arr(ls->e_sum)))
-		return (ERROR);*/
 	return (0);
-}
+}*/
 
 int 	dhyp_check(int ac, char **av, t_ls *ls)
 {
@@ -69,6 +109,8 @@ int 	dhyp_check(int ac, char **av, t_ls *ls)
 	i = 1;
 	while (i < ac)
 	{
+		if (av[i][0] != '-' || ft_strcmp(av[i], "-") == 0)
+			break;
 		if (av[i][0] == '-' && av[i][1] == '-')
 		{
 			if (av[i][2] != '\0')
@@ -84,7 +126,7 @@ int 	dhyp_check(int ac, char **av, t_ls *ls)
 	return (0);
 }
 
-int 	hyp_check(int ac, char **av, t_ls *ls)
+/*int 	hyp_check(int ac, char **av, t_ls *ls)
 {
 	int 	i;
 
@@ -96,16 +138,20 @@ int 	hyp_check(int ac, char **av, t_ls *ls)
 		else if ((!opendir(av[i]) || !fopen(av[i], "rt")) && av[i][0] == '-' && ls->flag == 1)
 		{
 			ls->e_sum++;
-			directory(av[i]);
+			//directory(av[i]);
 		}
 		i++;
 	}
 	return (0);
-}
+}*/
 
 int		validation(int ac, char **av, t_ls *ls)
 {
-	int 	i;
+	if (dhyp_check(ac, av, ls) == ERROR)
+		return (ERROR); //посмотреть ошибку ориг лс если ввести 3 --- и тп
+	if (flag_sum(ac, av, ls) == ERROR)
+		return (ERROR);
+/*	int 	i;
 	int 	j;
 
 	j = 1;
@@ -117,7 +163,7 @@ int		validation(int ac, char **av, t_ls *ls)
 	while (i < ac)
 	{
 		if (!opendir(av[i]) || !fopen(av[i], "rt"))
-			if ((av[i][0] != '-' /*&& i > ls->dh_index*/) || ft_strcmp(av[i], "-") == 0)
+			if ((av[i][0] != '-') || ft_strcmp(av[i], "-") == 0)
 			{
 				ls->e_index[j] = i;
 				j++;
@@ -130,6 +176,6 @@ int		validation(int ac, char **av, t_ls *ls)
 			j++;
 		}
 		i++;
-	}
+	}*/
     return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/31 15:11:20 by emaveric          #+#    #+#             */
-/*   Updated: 2019/11/07 18:17:43 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/11/07 22:35:39 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ struct s_node	*addnode(char *str, struct s_node *tree)
 	return (tree);
 }
 
-void			e_print(struct s_node *tree)
+/*void			e_print(struct s_node *tree)
 {
 	if (tree != NULL)
 	{      //Пока не встретится пустой узел
@@ -46,24 +46,24 @@ void			e_print(struct s_node *tree)
 			directory(tree->field);
 		e_print(tree->right); //Рекурсивная функция вывода правого поддерева
 	}
-}
+}*/
 
-void			print(struct s_node *tree)
-{
+/* void			print(struct s_node *tree)
+ {
 	if (tree != NULL)
-	{      //Пока не встретится пустой узел
-		print(tree->left);  //Рекурсивная функция вывода левого поддерева
-		if (opendir(tree->field) || fopen(tree->field, "rt"))
-		{
-			ft_putstr(tree->field);
-			ft_putchar('\n');
-			//directory(tree->field);
+ 	{      //Пока не встретится пустой узел
+ 		print(tree->left);  //Рекурсивная функция вывода левого поддерева
+ 		if (opendir(tree->field) || fopen(tree->field, "rt"))
+ 		{
+ 			ft_putstr(tree->field);
+ 			ft_putchar('\n');
+ 			//directory(tree->field);
 		}
-		print(tree->right); //Рекурсивная функция вывода правого поддерева
-	}
-}
+ 		print(tree->right); //Рекурсивная функция вывода правого поддерева
+ 		 }
+ }*/
 
-int				sorting(int	ac, char **av)
+int				sorting(int	ac, char **av, t_ls *ls)
 {
 	struct s_node	*tree;
 	int				i;
@@ -72,12 +72,14 @@ int				sorting(int	ac, char **av)
 	tree = NULL;
 	while (i < ac)
 	{
-		if (!(tree = addnode(av[i], tree)))
-			return (ERROR);
+	/*	if (ft_strcmp(av[i], ".") == 0)
+			cur_dir(".", ls);*/
+		if (i != ls->f_index[i] && i != ls->dh_index)
+			if (!(tree = addnode(av[i], tree)))
+				return (ERROR);
 		i++;
 	}
-	e_print(tree);
-	print(tree);
+	output(ls, tree);
 	return (0);
 }
 

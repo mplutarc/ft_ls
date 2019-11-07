@@ -1959,6 +1959,33 @@ src/main.c.s:
 	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/src/main.c.s
 .PHONY : src/main.c.s
 
+src/output.o: src/output.c.o
+
+.PHONY : src/output.o
+
+# target to build an object file
+src/output.c.o:
+	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/src/output.c.o
+.PHONY : src/output.c.o
+
+src/output.i: src/output.c.i
+
+.PHONY : src/output.i
+
+# target to preprocess a source file
+src/output.c.i:
+	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/src/output.c.i
+.PHONY : src/output.c.i
+
+src/output.s: src/output.c.s
+
+.PHONY : src/output.s
+
+# target to generate assembly for a file
+src/output.c.s:
+	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/src/output.c.s
+.PHONY : src/output.c.s
+
 src/sorting.o: src/sorting.c.o
 
 .PHONY : src/sorting.o
@@ -2226,6 +2253,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/output.o"
+	@echo "... src/output.i"
+	@echo "... src/output.s"
 	@echo "... src/sorting.o"
 	@echo "... src/sorting.i"
 	@echo "... src/sorting.s"

@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 20:23:13 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/11/07 18:17:22 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/11/07 21:44:30 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,12 +50,18 @@ typedef struct		s_ls
 	char 		**c_dir; // for "."
 }               t_ls;
 
-int 	directory(char *theDir);
-int		main(int ac, char **av);
-int     validation(int ac, char **av, t_ls *ls);
-int 	dhyp_check(int ac, char **av, t_ls *ls);
-int 	flags(int ac, char **av, t_ls *ls);
-int 	sorting(int ac, char **av);
-int 	cur_dir(char *theDir, t_ls *ls);
+int 			directory(char *theDir, t_ls *ls);
+int				main(int ac, char **av);
+int				validation(int ac, char **av, t_ls *ls);
+int 			dhyp_check(int ac, char **av, t_ls *ls);
+int 			flags(int ac, char **av, t_ls *ls);
+int 			sorting(int ac, char **av, t_ls *ls);
+int 			cur_dir(char *theDir, t_ls *ls);
+void			print(struct s_node *tree, t_ls *ls);
+void			e_print(struct s_node *tree, t_ls *ls);
+int 			output(t_ls *ls, struct s_node *tree);
+void			find_flag(t_ls *ls, char **av, int i);
+void			find_flag2(t_ls *ls, char **av, int i);
+struct s_node	*addnode(char *str, struct s_node *tree);
 
 #endif

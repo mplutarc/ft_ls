@@ -200,6 +200,10 @@ CMakeFiles/ls.dir/src/main.c.o: ../includes/ft_ls.h
 CMakeFiles/ls.dir/src/main.c.o: ../libft/libft.h
 CMakeFiles/ls.dir/src/main.c.o: ../src/main.c
 
+CMakeFiles/ls.dir/src/output.c.o: ../includes/ft_ls.h
+CMakeFiles/ls.dir/src/output.c.o: ../libft/libft.h
+CMakeFiles/ls.dir/src/output.c.o: ../src/output.c
+
 CMakeFiles/ls.dir/src/sorting.c.o: ../includes/ft_ls.h
 CMakeFiles/ls.dir/src/sorting.c.o: ../libft/libft.h
 CMakeFiles/ls.dir/src/sorting.c.o: ../src/sorting.c
