@@ -6,20 +6,50 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 19:50:58 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/11/06 18:05:47 by emaveric         ###   ########.fr       */
-.fr       */
-=======
-/*   Updated: 2019/11/06 15:34:30 by mplutarc         ###   ########.fr       */
->>>>>>> e2a24c6554229d1e28584b02cbaac762649aaaf0
+/*   Updated: 2019/11/07 15:20:56 by mplutarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_ls.h"
 
-// t_ls	find_flag()
-// {
-	
-// }
+void			find_flag(t_ls *ls, char **av, int i)
+{
+	if (ft_strchr(av[ls->f_index[i]], 'l'))
+	{
+		ls->l = 1;
+		printf("found -l\n");
+	}
+	if (ft_strchr(av[ls->f_index[i]], 'i'))
+	{
+		ls->i = 1;
+		printf("found -i\n");
+	}
+	if (ft_strchr(av[ls->f_index[i]], 'a'))
+	{
+		ls->a = 1;
+		printf("found -a\n");
+	}
+	find_flag2(ls, av, i);
+}
+
+void			find_flag2(t_ls *ls, char **av, int i)
+{
+	if (ft_strchr(av[ls->f_index[i]], 'r'))
+	{
+		ls->r = 1;
+		printf("found -r\n");
+	}
+	if (ft_strchr(av[ls->f_index[i]], 't'))
+	{
+		ls->t = 1;
+		printf("found -t\n");
+	}
+	if (ft_strchr(av[ls->f_index[i]], 'R'))
+	{
+		ls->big_r = 1;
+		printf("found -R\n");
+	}
+}
 
 void			print(struct s_node *tree)
 {
@@ -53,7 +83,11 @@ int 	flag_valid(int ac, char **av, t_ls *ls)
 	while (i < ac)
 	{
 		if ((i < ls->dh_index || ls->dh_index == 0) && (av[i][0] == '-' && ft_strcmp(av[i], "-") != 0))
+		{
 			ls->f_index[i] = i;
+			find_flag(ls, av, i);
+			printf("FLAG %d is %s\n", i, av[i]);
+		}
 		else
 			break;
 		i++;
@@ -65,5 +99,6 @@ int 	flags(int ac, char **av, t_ls *ls)
 {
 	if (flag_valid(ac, av, ls) == ERROR)
 		return (ERROR);
+	// find_flag(ls, av);
 	return (0);
 }

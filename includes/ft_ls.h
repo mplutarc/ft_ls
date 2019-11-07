@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 20:23:13 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/11/06 18:06:11 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/11/06 18:24:45 by mplutarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,6 @@ int 	dhyp_check(int ac, char **av, t_ls *ls);
 int 	flags(int ac, char **av, t_ls *ls);
 int 	sorting(int ac, char **av);
 int 	cur_dir(char *theDir, t_ls *ls);
+void	print(struct s_node *tree);
 
 #endif
