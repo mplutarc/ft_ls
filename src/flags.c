@@ -6,11 +6,30 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 19:50:58 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/11/07 15:20:56 by mplutarc         ###   ########.fr       */
+/*   Updated: 2019/11/07 18:53:25 by mplutarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_ls.h"
+
+void			find_flag2(t_ls *ls, char **av, int i)
+{
+	if (ft_strchr(av[ls->f_index[i]], 'r'))
+	{
+		ls->r = 1;
+		printf("found -r\n");
+	}
+	if (ft_strchr(av[ls->f_index[i]], 't'))
+	{
+		ls->t = 1;
+		printf("found -t\n");
+	}
+	if (ft_strchr(av[ls->f_index[i]], 'R'))
+	{
+		ls->big_r = 1;
+		printf("found -R\n");
+	}
+}
 
 void			find_flag(t_ls *ls, char **av, int i)
 {
@@ -30,25 +49,6 @@ void			find_flag(t_ls *ls, char **av, int i)
 		printf("found -a\n");
 	}
 	find_flag2(ls, av, i);
-}
-
-void			find_flag2(t_ls *ls, char **av, int i)
-{
-	if (ft_strchr(av[ls->f_index[i]], 'r'))
-	{
-		ls->r = 1;
-		printf("found -r\n");
-	}
-	if (ft_strchr(av[ls->f_index[i]], 't'))
-	{
-		ls->t = 1;
-		printf("found -t\n");
-	}
-	if (ft_strchr(av[ls->f_index[i]], 'R'))
-	{
-		ls->big_r = 1;
-		printf("found -R\n");
-	}
 }
 
 void			print(struct s_node *tree)
