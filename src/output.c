@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 19:11:32 by emaveric          #+#    #+#             */
-/*   Updated: 2019/11/11 21:11:10 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/11/11 21:37:02 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,17 +28,15 @@ void	print(struct s_node *tree, t_ls *ls)
 	if (tree != NULL)
 	{      //Пока не встретится пустой узел
 		print(tree->left, ls);  //Рекурсивная функция вывода левого поддерева
-		if (ls->flag == 2 && ls->big_r == 0)//(!opendir(tree->field) && fopen(tree->field, "rt"))
-		{
-			tree->field = ft_strcut(tree->field, '/');
-			ft_putendl(tree->field);
-		}
-		else
-		{
-			//tree->field = ft_strcut(tree->field, '/');
-			/*if ((ft_strcmp(tree->field, ".") == 0) || (ft_strcmp(tree->field, "..") == 0))
-				ft_putendl(tree->field);*/
-			 //if (ls->big_r == 1)
+		if ((opendir(tree->field) || fopen(tree->field, "rt"))) {
+			if (ls->flag == 2 && ls->big_r == 0)//(!opendir(tree->field) && fopen(tree->field, "rt"))
+			{
+				tree->field = ft_strcut(tree->field, '/');
+				ft_putendl(tree->field);
+			}
+			else if (!opendir(tree->field) && fopen(tree->field, "rt"))
+				ft_putendl(tree->field);
+			else
 				directory(tree->field, ls);
 		}
 	/*	else if (fopen(tree->field, "r"))
