@@ -23,6 +23,7 @@ struct s_node	*addnode(char *str, struct s_node *tree)
 	{
 		if (!(tree = (struct s_node *)malloc(sizeof(struct s_node))))
 			return (NULL);
+
 		tree->field = str;   //поле данных
 		tree->left = NULL;
 		tree->right = NULL; //ветви инициализируем пустотой

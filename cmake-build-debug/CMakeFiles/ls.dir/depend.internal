@@ -116,6 +116,9 @@ CMakeFiles/ls.dir/libft/ft_strcmp.c.o
 CMakeFiles/ls.dir/libft/ft_strcpy.c.o
  /Users/emaveric/ls/libft/ft_strcpy.c
  /Users/emaveric/ls/libft/libft.h
+CMakeFiles/ls.dir/libft/ft_strcut.c.o
+ /Users/emaveric/ls/libft/ft_strcut.c
+ /Users/emaveric/ls/libft/libft.h
 CMakeFiles/ls.dir/libft/ft_strdel.c.o
  /Users/emaveric/ls/libft/ft_strdel.c
  /Users/emaveric/ls/libft/libft.h
@@ -208,6 +211,8 @@ CMakeFiles/ls.dir/src/sorting.c.o
  /Users/emaveric/ls/includes/ft_ls.h
  /Users/emaveric/ls/libft/libft.h
  /Users/emaveric/ls/src/sorting.c
+CMakeFiles/ls.dir/src/test/test.c.o
+ /Users/emaveric/ls/src/test/test.c
 CMakeFiles/ls.dir/src/validation.c.o
  /Users/emaveric/ls/includes/ft_ls.h
  /Users/emaveric/ls/libft/libft.h

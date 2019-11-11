@@ -6,5 +6,5 @@ C_FLAGS = -g
 
 C_DEFINES = 
 
-C_INCLUDES = -I/Users/emaveric/ls/includes -I/Users/emaveric/ls/libft 
+C_INCLUDES = -I/Users/emaveric/ls/. -I/Users/emaveric/ls/includes -I/Users/emaveric/ls/libft -I/Users/emaveric/ls/src 
 

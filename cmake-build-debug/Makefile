@@ -1203,6 +1203,33 @@ libft/ft_strcpy.c.s:
 	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/libft/ft_strcpy.c.s
 .PHONY : libft/ft_strcpy.c.s
 
+libft/ft_strcut.o: libft/ft_strcut.c.o
+
+.PHONY : libft/ft_strcut.o
+
+# target to build an object file
+libft/ft_strcut.c.o:
+	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/libft/ft_strcut.c.o
+.PHONY : libft/ft_strcut.c.o
+
+libft/ft_strcut.i: libft/ft_strcut.c.i
+
+.PHONY : libft/ft_strcut.i
+
+# target to preprocess a source file
+libft/ft_strcut.c.i:
+	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/libft/ft_strcut.c.i
+.PHONY : libft/ft_strcut.c.i
+
+libft/ft_strcut.s: libft/ft_strcut.c.s
+
+.PHONY : libft/ft_strcut.s
+
+# target to generate assembly for a file
+libft/ft_strcut.c.s:
+	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/libft/ft_strcut.c.s
+.PHONY : libft/ft_strcut.c.s
+
 libft/ft_strdel.o: libft/ft_strdel.c.o
 
 .PHONY : libft/ft_strdel.o
@@ -2013,6 +2040,33 @@ src/sorting.c.s:
 	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/src/sorting.c.s
 .PHONY : src/sorting.c.s
 
+src/test/test.o: src/test/test.c.o
+
+.PHONY : src/test/test.o
+
+# target to build an object file
+src/test/test.c.o:
+	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/src/test/test.c.o
+.PHONY : src/test/test.c.o
+
+src/test/test.i: src/test/test.c.i
+
+.PHONY : src/test/test.i
+
+# target to preprocess a source file
+src/test/test.c.i:
+	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/src/test/test.c.i
+.PHONY : src/test/test.c.i
+
+src/test/test.s: src/test/test.c.s
+
+.PHONY : src/test/test.s
+
+# target to generate assembly for a file
+src/test/test.c.s:
+	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/src/test/test.c.s
+.PHONY : src/test/test.c.s
+
 src/validation.o: src/validation.c.o
 
 .PHONY : src/validation.o
@@ -2169,6 +2223,9 @@ help:
 	@echo "... libft/ft_strcpy.o"
 	@echo "... libft/ft_strcpy.i"
 	@echo "... libft/ft_strcpy.s"
+	@echo "... libft/ft_strcut.o"
+	@echo "... libft/ft_strcut.i"
+	@echo "... libft/ft_strcut.s"
 	@echo "... libft/ft_strdel.o"
 	@echo "... libft/ft_strdel.i"
 	@echo "... libft/ft_strdel.s"
@@ -2259,6 +2316,9 @@ help:
 	@echo "... src/sorting.o"
 	@echo "... src/sorting.i"
 	@echo "... src/sorting.s"
+	@echo "... src/test/test.o"
+	@echo "... src/test/test.i"
+	@echo "... src/test/test.s"
 	@echo "... src/validation.o"
 	@echo "... src/validation.i"
 	@echo "... src/validation.s"

@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 20:23:06 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/11/07 22:37:16 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/11/11 20:53:01 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ int		directory(char *theDir, t_ls *ls)
     DIR				*dir;
     struct	dirent	*entry;
     struct	s_node	*sub_tree;
+    char			*str;
 
 	dir = opendir(theDir); //открытие директории
 	if (!dir)
@@ -82,11 +83,14 @@ int		directory(char *theDir, t_ls *ls)
        	return (0);
    	}
 	sub_tree = NULL;
+	str = (char *)malloc(sizeof(char) * (ft_strlen(theDir) + 2));
+	str = ft_strcpy(str, theDir);
+	ft_strcat(str, "/");
 	while ((entry = readdir(dir)))  //пока директория читаема
 	{
-//		sub_tree = addnode(entry->d_name, sub_tree);
-		if (!(sub_tree = addnode(entry->d_name, sub_tree)))
-			return (ERROR);
+		if ((ft_strcmp(entry->d_name, ".") != 0) && (ft_strcmp(entry->d_name, "..") != 0))
+			if (!(sub_tree = addnode(ft_strjoin(str, entry->d_name), sub_tree)))
+				return (ERROR);
 /*		ft_putstr(entry->d_name);
 		ft_putchar('\n');*/
 
@@ -94,6 +98,7 @@ int		directory(char *theDir, t_ls *ls)
 		// 			entry->d_ino, entry->d_name, entry->d_type, entry->d_reclen);
     }
 	ls->flag = 2;
+	//print_without_err(sub_tree, ls);
 	output(ls, sub_tree);
 	closedir(dir);
     return (0);
@@ -112,10 +117,8 @@ int		main(int ac, char **av)
 	if (validation(ac, av, ls) == ERROR)
 		return (ERROR);
 	if (ac == 1 || (ft_strcmp(av[1], "--") == 0 && ac == 2))
-		//|| (ac == 2 && ft_strcmp(av[1], ".") == 0))
 	{
-		ls->flag = 2;
-		cur_dir(".", ls);
+		directory(".", ls);
 		return (0);
 	}
 	if (flags(ac, av, ls) == ERROR)

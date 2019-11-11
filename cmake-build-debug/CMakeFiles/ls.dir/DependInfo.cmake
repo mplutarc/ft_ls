@@ -44,6 +44,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/emaveric/ls/libft/ft_strclr.c" "/Users/emaveric/ls/cmake-build-debug/CMakeFiles/ls.dir/libft/ft_strclr.c.o"
   "/Users/emaveric/ls/libft/ft_strcmp.c" "/Users/emaveric/ls/cmake-build-debug/CMakeFiles/ls.dir/libft/ft_strcmp.c.o"
   "/Users/emaveric/ls/libft/ft_strcpy.c" "/Users/emaveric/ls/cmake-build-debug/CMakeFiles/ls.dir/libft/ft_strcpy.c.o"
+  "/Users/emaveric/ls/libft/ft_strcut.c" "/Users/emaveric/ls/cmake-build-debug/CMakeFiles/ls.dir/libft/ft_strcut.c.o"
   "/Users/emaveric/ls/libft/ft_strdel.c" "/Users/emaveric/ls/cmake-build-debug/CMakeFiles/ls.dir/libft/ft_strdel.c.o"
   "/Users/emaveric/ls/libft/ft_strdup.c" "/Users/emaveric/ls/cmake-build-debug/CMakeFiles/ls.dir/libft/ft_strdup.c.o"
   "/Users/emaveric/ls/libft/ft_strequ.c" "/Users/emaveric/ls/cmake-build-debug/CMakeFiles/ls.dir/libft/ft_strequ.c.o"
@@ -74,14 +75,17 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/emaveric/ls/src/main.c" "/Users/emaveric/ls/cmake-build-debug/CMakeFiles/ls.dir/src/main.c.o"
   "/Users/emaveric/ls/src/output.c" "/Users/emaveric/ls/cmake-build-debug/CMakeFiles/ls.dir/src/output.c.o"
   "/Users/emaveric/ls/src/sorting.c" "/Users/emaveric/ls/cmake-build-debug/CMakeFiles/ls.dir/src/sorting.c.o"
+  "/Users/emaveric/ls/src/test/test.c" "/Users/emaveric/ls/cmake-build-debug/CMakeFiles/ls.dir/src/test/test.c.o"
   "/Users/emaveric/ls/src/validation.c" "/Users/emaveric/ls/cmake-build-debug/CMakeFiles/ls.dir/src/validation.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH
+  "../."
   "../includes"
   "../libft"
+  "../src"
   )
 
 # Targets to which this target links.

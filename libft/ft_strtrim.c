@@ -6,12 +6,11 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/17 18:42:27 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/11/07 18:17:22 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/11/09 18:49:19 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 char	*ft_strtrim(char const *s)
 {

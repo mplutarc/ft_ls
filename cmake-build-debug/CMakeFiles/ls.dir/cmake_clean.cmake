@@ -67,9 +67,11 @@ file(REMOVE_RECURSE
   "CMakeFiles/ls.dir/libft/get_next_line.c.o"
   "CMakeFiles/ls.dir/src/flags.c.o"
   "CMakeFiles/ls.dir/src/main.c.o"
-  "CMakeFiles/ls.dir/src/validation.c.o"
-  "CMakeFiles/ls.dir/src/sorting.c.o"
   "CMakeFiles/ls.dir/src/output.c.o"
+  "CMakeFiles/ls.dir/src/sorting.c.o"
+  "CMakeFiles/ls.dir/src/validation.c.o"
+  "CMakeFiles/ls.dir/src/test/test.c.o"
+  "CMakeFiles/ls.dir/libft/ft_strcut.c.o"
   "ls.pdb"
   "ls"
 )

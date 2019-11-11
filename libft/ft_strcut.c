@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl.c                                       :+:      :+:    :+:   */
+/*   ft_strcut.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mplutarc <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/08 20:25:14 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/11/09 18:49:19 by emaveric         ###   ########.fr       */
+/*   Created: 2019/11/11 20:33:56 by emaveric          #+#    #+#             */
+/*   Updated: 2019/11/11 20:33:56 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl(char const *s)
+char	*ft_strcut(const char *s, int c)
 {
-	ft_putstr(s);
-	ft_putchar('\n');
+	int		i;
+
+	i = 0;
+	while (s[i] != (char)c)
+	{
+		if (!s[i++])
+			return (NULL);
+	}
+	return ((char *)&s[i + 1]);
 }
