@@ -6,12 +6,12 @@
 #    By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/08 20:23:00 by mplutarc          #+#    #+#              #
-#    Updated: 2019/11/09 18:49:19 by emaveric         ###   ########.fr        #
+#    Updated: 2019/11/14 17:39:40 by emaveric         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ft_ls
-FILES = main.c validation.c flags.c sorting.c output.c
+FILES = main.c validation.c flags.c sorting.c output.c flags_output.c
 SRC = $(addprefix src/, $(FILES))
 INC = includes/ft_ls.h
 OBJ = $(addprefix obj/, $(FILES:.c=.o))

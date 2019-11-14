@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 20:23:06 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/11/11 20:53:01 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/11/14 16:53:14 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ t_ls	*init(void)
 	new->t = 0;
 	new->r = 0;
 	new->big_r = 0;
+	new->f_sum = 0;
 	return (new);
 }
 
@@ -78,7 +79,6 @@ int		directory(char *theDir, t_ls *ls)
 	dir = opendir(theDir); //открытие директории
 	if (!dir)
 	{
-		//printf("theDir is %s\n", theDir);
        	error(theDir);
        	return (0);
    	}
@@ -87,18 +87,14 @@ int		directory(char *theDir, t_ls *ls)
 	str = ft_strcpy(str, theDir);
 	ft_strcat(str, "/");
 	while ((entry = readdir(dir)))  //пока директория читаема
-	{
-		if ((ft_strcmp(entry->d_name, ".") != 0) && (ft_strcmp(entry->d_name, "..") != 0))
-			if (!(sub_tree = addnode(ft_strjoin(str, entry->d_name), sub_tree)))
+		if (ls->r == 1)
+		{
+			if (!(sub_tree = addnode_flag_r(ft_strjoin(str, entry->d_name), sub_tree)))
 				return (ERROR);
-/*		ft_putstr(entry->d_name);
-		ft_putchar('\n');*/
-
-		// printf("Inode number: %llu\n filename: %s\n Type of file: [%d]\n Size: %d\n\n",
-		// 			entry->d_ino, entry->d_name, entry->d_type, entry->d_reclen);
-    }
+		}
+		else if (!(sub_tree = addnode(ft_strjoin(str, entry->d_name), sub_tree)))
+			return (ERROR);
 	ls->flag = 2;
-	//print_without_err(sub_tree, ls);
 	output(ls, sub_tree);
 	closedir(dir);
     return (0);
@@ -116,15 +112,14 @@ int		main(int ac, char **av)
 		return (ERROR);
 	if (validation(ac, av, ls) == ERROR)
 		return (ERROR);
-	if (ac == 1 || (ft_strcmp(av[1], "--") == 0 && ac == 2))
+	if (ac == 1 || (ft_strcmp(av[1], "--") == 0 && ac == 2) || ls->f_sum == ac - 1
+		|| (ft_strcmp(av[ls->f_sum + 1], "--") == 0 && ac == ls->f_sum + 2))
 	{
 		directory(".", ls);
 		return (0);
 	}
 	if (flags(ac, av, ls) == ERROR)
 		return (ERROR);
-/*	if (validation(ac, av, ls) == ERROR)
-		return (ERROR)*/;
 	if (sorting(ac, av, ls) == ERROR)
    		return (ERROR);
 /*	while (i < ac)

@@ -72,6 +72,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/emaveric/ls/libft/ft_toupper.c" "/Users/emaveric/ls/cmake-build-debug/CMakeFiles/ls.dir/libft/ft_toupper.c.o"
   "/Users/emaveric/ls/libft/get_next_line.c" "/Users/emaveric/ls/cmake-build-debug/CMakeFiles/ls.dir/libft/get_next_line.c.o"
   "/Users/emaveric/ls/src/flags.c" "/Users/emaveric/ls/cmake-build-debug/CMakeFiles/ls.dir/src/flags.c.o"
+  "/Users/emaveric/ls/src/flags_output.c" "/Users/emaveric/ls/cmake-build-debug/CMakeFiles/ls.dir/src/flags_output.c.o"
   "/Users/emaveric/ls/src/main.c" "/Users/emaveric/ls/cmake-build-debug/CMakeFiles/ls.dir/src/main.c.o"
   "/Users/emaveric/ls/src/output.c" "/Users/emaveric/ls/cmake-build-debug/CMakeFiles/ls.dir/src/output.c.o"
   "/Users/emaveric/ls/src/sorting.c" "/Users/emaveric/ls/cmake-build-debug/CMakeFiles/ls.dir/src/sorting.c.o"

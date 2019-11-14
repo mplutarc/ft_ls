@@ -1959,6 +1959,33 @@ src/flags.c.s:
 	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/src/flags.c.s
 .PHONY : src/flags.c.s
 
+src/flags_output.o: src/flags_output.c.o
+
+.PHONY : src/flags_output.o
+
+# target to build an object file
+src/flags_output.c.o:
+	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/src/flags_output.c.o
+.PHONY : src/flags_output.c.o
+
+src/flags_output.i: src/flags_output.c.i
+
+.PHONY : src/flags_output.i
+
+# target to preprocess a source file
+src/flags_output.c.i:
+	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/src/flags_output.c.i
+.PHONY : src/flags_output.c.i
+
+src/flags_output.s: src/flags_output.c.s
+
+.PHONY : src/flags_output.s
+
+# target to generate assembly for a file
+src/flags_output.c.s:
+	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/src/flags_output.c.s
+.PHONY : src/flags_output.c.s
+
 src/main.o: src/main.c.o
 
 .PHONY : src/main.o
@@ -2307,6 +2334,9 @@ help:
 	@echo "... src/flags.o"
 	@echo "... src/flags.i"
 	@echo "... src/flags.s"
+	@echo "... src/flags_output.o"
+	@echo "... src/flags_output.i"
+	@echo "... src/flags_output.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

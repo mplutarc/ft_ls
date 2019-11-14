@@ -199,6 +199,10 @@ CMakeFiles/ls.dir/src/flags.c.o
  /Users/emaveric/ls/includes/ft_ls.h
  /Users/emaveric/ls/libft/libft.h
  /Users/emaveric/ls/src/flags.c
+CMakeFiles/ls.dir/src/flags_output.c.o
+ /Users/emaveric/ls/includes/ft_ls.h
+ /Users/emaveric/ls/libft/libft.h
+ /Users/emaveric/ls/src/flags_output.c
 CMakeFiles/ls.dir/src/main.c.o
  /Users/emaveric/ls/includes/ft_ls.h
  /Users/emaveric/ls/libft/libft.h

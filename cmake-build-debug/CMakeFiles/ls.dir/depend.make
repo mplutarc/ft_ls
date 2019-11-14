@@ -199,6 +199,10 @@ CMakeFiles/ls.dir/src/flags.c.o: ../includes/ft_ls.h
 CMakeFiles/ls.dir/src/flags.c.o: ../libft/libft.h
 CMakeFiles/ls.dir/src/flags.c.o: ../src/flags.c
 
+CMakeFiles/ls.dir/src/flags_output.c.o: ../includes/ft_ls.h
+CMakeFiles/ls.dir/src/flags_output.c.o: ../libft/libft.h
+CMakeFiles/ls.dir/src/flags_output.c.o: ../src/flags_output.c
+
 CMakeFiles/ls.dir/src/main.c.o: ../includes/ft_ls.h
 CMakeFiles/ls.dir/src/main.c.o: ../libft/libft.h
 CMakeFiles/ls.dir/src/main.c.o: ../src/main.c

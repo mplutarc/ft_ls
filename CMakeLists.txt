@@ -84,4 +84,4 @@ add_executable(ls
         src/sorting.c
         src/validation.c
         author
-        Makefile src/test/test.c libft/ft_strcut.c)
+        Makefile src/test/test.c libft/ft_strcut.c src/flags_output.c)
