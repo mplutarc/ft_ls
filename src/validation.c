@@ -17,7 +17,7 @@
 // проверка на --
 // проверка с флагами
 
-int 	cur_dir(char *theDir, t_ls *ls)
+/*int 	cur_dir(char *theDir, t_ls *ls)
 {
 	DIR				*dir;
 	struct dirent	*entry;
@@ -38,7 +38,7 @@ int 	cur_dir(char *theDir, t_ls *ls)
 	}
 	sorting(i, ls->c_dir, ls);
 	return (0);
-}
+}*/
 
 int 	flag_ind(int ac, char **av, t_ls *ls)
 {

@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 19:11:32 by emaveric          #+#    #+#             */
-/*   Updated: 2019/11/18 15:04:58 by mplutarc         ###   ########.fr       */
+/*   Updated: 2019/11/18 16:56:31 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,7 @@ void	e_print(struct s_node *tree, t_ls *ls)
 	{      //Пока не встретится пустой узел
 		e_print(tree->left, ls);  //Рекурсивная функция вывода левого поддерева
 		if (!opendir(tree->field) && !fopen(tree->field, "rt"))
-			if (ft_strlen(tree->field) < 10)
-				printf("%s\n\n", tree->field);
-			//directory(tree->field, ls);
+			directory(tree->field, ls);
 		e_print(tree->right, ls); //Рекурсивная функция вывода правого поддерева
 	}
 }
@@ -32,8 +30,8 @@ void	print(struct s_node *tree, t_ls *ls)
 		print(tree->left, ls);  //Рекурсивная функция вывода левого поддерева
 		if ((opendir(tree->field) || fopen(tree->field, "rt")))
 		{
-			if ((ls->flag == 2 && (ls->f_sum == 0 || ls->r == 1))) /*||
-				(!opendir(tree->field) && fopen(tree->field, "rt")))*/ //&& ls->big_r == 0)//(!opendir(tree->field) && fopen(tree->field, "rt"))
+			if (ls->flag == 2) //&& (ls->f_sum == 0 || ls->r == 1))) /*||
+				//(!opendir(tree->field) && fopen(tree->field, "rt"))) //&& ls->big_r == 0)//(!opendir(tree->field) && fopen(tree->field, "rt"))
 			{
 				tree->field = ft_strcut(tree->field, '/');
 				if (tree->field[0] != '.')
@@ -58,13 +56,20 @@ int 	output(t_ls *ls, struct s_node *tree)
 	e_print(tree, ls);
 	/*if (ls->r == 1)
 		r_flag_print(tree, ls);*/
-	print(tree, ls);
+	if (ls->i == 0 && ls->big_r == 0 && ls->a == 0 && ls->l == 0)
+	    print(tree, ls);
+	else if (ls->l == 1)
+		l_flag_print(tree, ls);
+	else if (ls->a == 1)
+		a_flag_print(tree, ls);
 	/*if (ls->big_r == 1)
 	{
 		ft_putchar('\n');
 		ft_putendl(tree->field);
 		big_r_flag_print(tree, ls);
 	}*/
+	else if (ls->i == 1)
+		i_flag_print(tree, ls);
 	ls->flag = 0;
 	return (0);
 }
