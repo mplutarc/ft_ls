@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   output.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 19:11:32 by emaveric          #+#    #+#             */
-/*   Updated: 2019/11/14 20:18:19 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/11/18 15:04:58 by mplutarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,9 @@ void	e_print(struct s_node *tree, t_ls *ls)
 	{      //Пока не встретится пустой узел
 		e_print(tree->left, ls);  //Рекурсивная функция вывода левого поддерева
 		if (!opendir(tree->field) && !fopen(tree->field, "rt"))
-			directory(tree->field, ls);
+			if (ft_strlen(tree->field) < 10)
+				printf("%s\n\n", tree->field);
+			//directory(tree->field, ls);
 		e_print(tree->right, ls); //Рекурсивная функция вывода правого поддерева
 	}
 }
