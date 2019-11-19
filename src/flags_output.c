@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/14 17:25:24 by emaveric          #+#    #+#             */
-/*   Updated: 2019/11/18 17:19:31 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/11/19 15:24:09 by mplutarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,11 +53,11 @@ void    l_flag_print(struct s_node *tree, t_ls *ls)
 				{
 					ft_putstr(tree->mode);
 					ft_putchar(' ');
+					ft_putnbr(tree->links);
+					ft_putchar(' ');
 					ft_putstr(tree->uid);
 					ft_putchar(' ');
 					ft_putstr(tree->gid);
-					ft_putchar(' ');
-					ft_putnbr(tree->links);
 					ft_putchar(' ');
 					ft_putnbr(tree->size);
 					ft_putchar(' ');
