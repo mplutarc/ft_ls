@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 20:23:06 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/11/18 16:50:17 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/11/19 18:50:15 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ t_ls	*init(void)
 	new->r = 0;
 	new->big_r = 0;
 	new->f_sum = 0;
+	new->blocks = 0;
 	return (new);
 }
 
@@ -76,6 +77,7 @@ int		directory(char *theDir, t_ls *ls)
     struct	s_node	*sub_tree;
     char			*str;
     struct	stat	buf;
+
 	dir = opendir(theDir); //открытие директории
 	if (!dir)
 	{
@@ -86,16 +88,20 @@ int		directory(char *theDir, t_ls *ls)
 	str = (char *)malloc(sizeof(char) * (ft_strlen(theDir) + 2));
 	str = ft_strcpy(str, theDir);
 	ft_strcat(str, "/");
-	//buf = (stat *)malloc(sizeof(stat));
 	while ((entry = readdir(dir)))  //пока директория читаема
 	{
 		lstat(ft_strjoin(str, entry->d_name), &buf);
 		if (ls->r == 1)
 		{
-			if (!(sub_tree = addnode_flag_r(ft_strjoin(str, entry->d_name), sub_tree, buf)))
+			if (!(sub_tree = addnode_flag_r(ft_strjoin(str, entry->d_name), sub_tree, buf, ls)))
 				return (ERROR);
 		}
-		else if (!(sub_tree = addnode(ft_strjoin(str, entry->d_name), sub_tree, buf)))
+		else if (ls->t == 1)
+		{
+			if (!(sub_tree = addnode_flag_t(ft_strjoin(str, entry->d_name), sub_tree, buf, ls)))
+				return (ERROR);
+		}
+		else if (!(sub_tree = addnode(ft_strjoin(str, entry->d_name), sub_tree, buf, ls)))
 			return (ERROR);
 	}
 	ls->flag = 2;

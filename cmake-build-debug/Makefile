@@ -1500,6 +1500,33 @@ libft/ft_strmapi.c.s:
 	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/libft/ft_strmapi.c.s
 .PHONY : libft/ft_strmapi.c.s
 
+libft/ft_strname.o: libft/ft_strname.c.o
+
+.PHONY : libft/ft_strname.o
+
+# target to build an object file
+libft/ft_strname.c.o:
+	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/libft/ft_strname.c.o
+.PHONY : libft/ft_strname.c.o
+
+libft/ft_strname.i: libft/ft_strname.c.i
+
+.PHONY : libft/ft_strname.i
+
+# target to preprocess a source file
+libft/ft_strname.c.i:
+	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/libft/ft_strname.c.i
+.PHONY : libft/ft_strname.c.i
+
+libft/ft_strname.s: libft/ft_strname.c.s
+
+.PHONY : libft/ft_strname.s
+
+# target to generate assembly for a file
+libft/ft_strname.c.s:
+	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/libft/ft_strname.c.s
+.PHONY : libft/ft_strname.c.s
+
 libft/ft_strncat.o: libft/ft_strncat.c.o
 
 .PHONY : libft/ft_strncat.o
@@ -1607,6 +1634,33 @@ libft/ft_strncpy.s: libft/ft_strncpy.c.s
 libft/ft_strncpy.c.s:
 	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/libft/ft_strncpy.c.s
 .PHONY : libft/ft_strncpy.c.s
+
+libft/ft_strncut.o: libft/ft_strncut.c.o
+
+.PHONY : libft/ft_strncut.o
+
+# target to build an object file
+libft/ft_strncut.c.o:
+	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/libft/ft_strncut.c.o
+.PHONY : libft/ft_strncut.c.o
+
+libft/ft_strncut.i: libft/ft_strncut.c.i
+
+.PHONY : libft/ft_strncut.i
+
+# target to preprocess a source file
+libft/ft_strncut.c.i:
+	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/libft/ft_strncut.c.i
+.PHONY : libft/ft_strncut.c.i
+
+libft/ft_strncut.s: libft/ft_strncut.c.s
+
+.PHONY : libft/ft_strncut.s
+
+# target to generate assembly for a file
+libft/ft_strncut.c.s:
+	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/libft/ft_strncut.c.s
+.PHONY : libft/ft_strncut.c.s
 
 libft/ft_strndup.o: libft/ft_strndup.c.o
 
@@ -1986,6 +2040,33 @@ src/flags_output.c.s:
 	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/src/flags_output.c.s
 .PHONY : src/flags_output.c.s
 
+src/flags_sorting.o: src/flags_sorting.c.o
+
+.PHONY : src/flags_sorting.o
+
+# target to build an object file
+src/flags_sorting.c.o:
+	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/src/flags_sorting.c.o
+.PHONY : src/flags_sorting.c.o
+
+src/flags_sorting.i: src/flags_sorting.c.i
+
+.PHONY : src/flags_sorting.i
+
+# target to preprocess a source file
+src/flags_sorting.c.i:
+	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/src/flags_sorting.c.i
+.PHONY : src/flags_sorting.c.i
+
+src/flags_sorting.s: src/flags_sorting.c.s
+
+.PHONY : src/flags_sorting.s
+
+# target to generate assembly for a file
+src/flags_sorting.c.s:
+	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/src/flags_sorting.c.s
+.PHONY : src/flags_sorting.c.s
+
 src/main.o: src/main.c.o
 
 .PHONY : src/main.o
@@ -2283,6 +2364,9 @@ help:
 	@echo "... libft/ft_strmapi.o"
 	@echo "... libft/ft_strmapi.i"
 	@echo "... libft/ft_strmapi.s"
+	@echo "... libft/ft_strname.o"
+	@echo "... libft/ft_strname.i"
+	@echo "... libft/ft_strname.s"
 	@echo "... libft/ft_strncat.o"
 	@echo "... libft/ft_strncat.i"
 	@echo "... libft/ft_strncat.s"
@@ -2295,6 +2379,9 @@ help:
 	@echo "... libft/ft_strncpy.o"
 	@echo "... libft/ft_strncpy.i"
 	@echo "... libft/ft_strncpy.s"
+	@echo "... libft/ft_strncut.o"
+	@echo "... libft/ft_strncut.i"
+	@echo "... libft/ft_strncut.s"
 	@echo "... libft/ft_strndup.o"
 	@echo "... libft/ft_strndup.i"
 	@echo "... libft/ft_strndup.s"
@@ -2337,6 +2424,9 @@ help:
 	@echo "... src/flags_output.o"
 	@echo "... src/flags_output.i"
 	@echo "... src/flags_output.s"
+	@echo "... src/flags_sorting.o"
+	@echo "... src/flags_sorting.i"
+	@echo "... src/flags_sorting.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

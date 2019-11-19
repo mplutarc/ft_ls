@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 20:23:13 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/11/18 17:20:33 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/11/19 18:52:55 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <sys/types.h>
 # include <sys/stat.h>
 # include <pwd.h>
+# include <time.h>
 # include <grp.h>
 # include <dirent.h>
 # include <stdlib.h>
@@ -35,6 +36,8 @@ struct				s_node
 	char 			*uid;
 	char 			*gid;
 	char 			*mode;
+	char 			*time;
+	long int		sec;
 	char			*field; // поле данных
 	struct s_node	*left;  // левый потомок
 	struct s_node	*right; // правый потомок
@@ -51,6 +54,7 @@ typedef struct		s_ls
     int				flag;
     int 			e_sum;
     int 			*e_index; // индекс для ошибок
+    int 			blocks;
     int 			f_sum;
     int 			dh_index; //индекс для --
     int 			*f_index; // индекс для флагов
@@ -69,13 +73,14 @@ void				e_print(struct s_node *tree, t_ls *ls);
 int 				output(t_ls *ls, struct s_node *tree);
 void				find_flag(t_ls *ls, char **av, int i);
 void				find_flag2(t_ls *ls, char **av, int i);
-struct s_node		*addnode(char *str, struct s_node *tree, struct stat buf);
-void				r_flag_print(struct s_node *tree, t_ls *ls);
+struct s_node		*addnode(char *str, struct s_node *tree, struct stat buf, t_ls *ls);
 void				big_r_flag_print(struct s_node *tree, t_ls *ls);
-struct s_node		*addnode_flag_r(char *str, struct s_node *tree, struct stat buf);
+struct s_node		*addnode_flag_r(char *str, struct s_node *tree, struct stat buf, t_ls *ls);
 void				l_flag_print(struct s_node *tree, t_ls *ls);
 void    			a_flag_print(struct s_node *tree, t_ls *ls);
 void    			i_flag_print(struct s_node *tree, t_ls *ls);
 void				mode_to_rwx(struct s_node *tree, struct stat buf);
+struct s_node		*tree_create(char *str, struct stat buf, t_ls *ls);
+struct s_node		*addnode_flag_t(char *str, struct s_node *tree, struct stat buf, t_ls *ls);
 
 #endif

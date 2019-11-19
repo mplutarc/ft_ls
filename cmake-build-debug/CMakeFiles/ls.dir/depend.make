@@ -149,6 +149,9 @@ CMakeFiles/ls.dir/libft/ft_strmap.c.o: ../libft/libft.h
 CMakeFiles/ls.dir/libft/ft_strmapi.c.o: ../libft/ft_strmapi.c
 CMakeFiles/ls.dir/libft/ft_strmapi.c.o: ../libft/libft.h
 
+CMakeFiles/ls.dir/libft/ft_strname.c.o: ../libft/ft_strname.c
+CMakeFiles/ls.dir/libft/ft_strname.c.o: ../libft/libft.h
+
 CMakeFiles/ls.dir/libft/ft_strncat.c.o: ../libft/ft_strncat.c
 CMakeFiles/ls.dir/libft/ft_strncat.c.o: ../libft/libft.h
 
@@ -160,6 +163,9 @@ CMakeFiles/ls.dir/libft/ft_strncmp.c.o: ../libft/libft.h
 
 CMakeFiles/ls.dir/libft/ft_strncpy.c.o: ../libft/ft_strncpy.c
 CMakeFiles/ls.dir/libft/ft_strncpy.c.o: ../libft/libft.h
+
+CMakeFiles/ls.dir/libft/ft_strncut.c.o: ../libft/ft_strncut.c
+CMakeFiles/ls.dir/libft/ft_strncut.c.o: ../libft/libft.h
 
 CMakeFiles/ls.dir/libft/ft_strndup.c.o: ../libft/ft_strndup.c
 CMakeFiles/ls.dir/libft/ft_strndup.c.o: ../libft/libft.h
@@ -202,6 +208,10 @@ CMakeFiles/ls.dir/src/flags.c.o: ../src/flags.c
 CMakeFiles/ls.dir/src/flags_output.c.o: ../includes/ft_ls.h
 CMakeFiles/ls.dir/src/flags_output.c.o: ../libft/libft.h
 CMakeFiles/ls.dir/src/flags_output.c.o: ../src/flags_output.c
+
+CMakeFiles/ls.dir/src/flags_sorting.c.o: ../includes/ft_ls.h
+CMakeFiles/ls.dir/src/flags_sorting.c.o: ../libft/libft.h
+CMakeFiles/ls.dir/src/flags_sorting.c.o: ../src/flags_sorting.c
 
 CMakeFiles/ls.dir/src/main.c.o: ../includes/ft_ls.h
 CMakeFiles/ls.dir/src/main.c.o: ../libft/libft.h

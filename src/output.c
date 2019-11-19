@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 19:11:32 by emaveric          #+#    #+#             */
-/*   Updated: 2019/11/18 16:56:31 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/11/19 18:17:52 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,19 +57,25 @@ int 	output(t_ls *ls, struct s_node *tree)
 	/*if (ls->r == 1)
 		r_flag_print(tree, ls);*/
 	if (ls->i == 0 && ls->big_r == 0 && ls->a == 0 && ls->l == 0)
-	    print(tree, ls);
-	else if (ls->l == 1)
-		l_flag_print(tree, ls);
-	else if (ls->a == 1)
-		a_flag_print(tree, ls);
-	/*if (ls->big_r == 1)
-	{
-		ft_putchar('\n');
-		ft_putendl(tree->field);
-		big_r_flag_print(tree, ls);
-	}*/
+		print(tree, ls);
 	else if (ls->i == 1)
 		i_flag_print(tree, ls);
+	else if (ls->a == 1)
+		a_flag_print(tree, ls);
+		/*if (ls->big_r == 1)
+		{
+			ft_putchar('\n');
+			ft_putendl(tree->field);
+			big_r_flag_print(tree, ls);
+		}*/
+	else if (ls->l == 1)
+	{
+		ft_putstr("total");
+		ft_putchar(' ');
+		ft_putnbr(ls->blocks);
+		ft_putchar('\n');
+		l_flag_print(tree, ls);
+	}
 	ls->flag = 0;
 	return (0);
 }

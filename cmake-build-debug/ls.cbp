@@ -255,6 +255,9 @@
 		<Unit filename="/Users/emaveric/ls/libft/ft_strmapi.c">
 			<Option target="ls"/>
 		</Unit>
+		<Unit filename="/Users/emaveric/ls/libft/ft_strname.c">
+			<Option target="ls"/>
+		</Unit>
 		<Unit filename="/Users/emaveric/ls/libft/ft_strncat.c">
 			<Option target="ls"/>
 		</Unit>
@@ -265,6 +268,9 @@
 			<Option target="ls"/>
 		</Unit>
 		<Unit filename="/Users/emaveric/ls/libft/ft_strncpy.c">
+			<Option target="ls"/>
+		</Unit>
+		<Unit filename="/Users/emaveric/ls/libft/ft_strncut.c">
 			<Option target="ls"/>
 		</Unit>
 		<Unit filename="/Users/emaveric/ls/libft/ft_strndup.c">
@@ -310,6 +316,9 @@
 			<Option target="ls"/>
 		</Unit>
 		<Unit filename="/Users/emaveric/ls/src/flags_output.c">
+			<Option target="ls"/>
+		</Unit>
+		<Unit filename="/Users/emaveric/ls/src/flags_sorting.c">
 			<Option target="ls"/>
 		</Unit>
 		<Unit filename="/Users/emaveric/ls/src/main.c">
