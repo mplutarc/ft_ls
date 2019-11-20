@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 19:11:32 by emaveric          #+#    #+#             */
-/*   Updated: 2019/11/19 18:17:52 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/11/20 18:48:24 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,13 @@ void	print(struct s_node *tree, t_ls *ls)
 			if (ls->flag == 2) //&& (ls->f_sum == 0 || ls->r == 1))) /*||
 				//(!opendir(tree->field) && fopen(tree->field, "rt"))) //&& ls->big_r == 0)//(!opendir(tree->field) && fopen(tree->field, "rt"))
 			{
-				tree->field = ft_strcut(tree->field, '/');
-				if (tree->field[0] != '.')
+				//tree->field = ft_strcut(tree->field, '/');
+				if (ft_strname(tree->field, '/')[0] != '.')
 				{
-					ft_putstr(tree->field);
+					ft_putstr(ft_strname(tree->field, '/'));
 					ft_putchar('\t');
+				/*	if (ls->big_r == 1)
+						ft_putchar('\n');*/
 				}
 				//ft_putendl(tree->field);
 			}
@@ -48,6 +50,9 @@ void	print(struct s_node *tree, t_ls *ls)
 				directory(tree->field, ls);
 		}
 		print(tree->right, ls); //Рекурсивная функция вывода правого поддерева
+		if (ft_strcmp(ft_strname(tree->field, '/'), ".") == 0 && ls->big_r == 1
+			&& ls->ind != 1)
+			ft_putchar('\n');
 	}
 }
 
@@ -62,12 +67,27 @@ int 	output(t_ls *ls, struct s_node *tree)
 		i_flag_print(tree, ls);
 	else if (ls->a == 1)
 		a_flag_print(tree, ls);
-		/*if (ls->big_r == 1)
+	if (ls->big_r == 1)
+	{
+		//ls->flag = 2;
+		if (ls->flag == 0)
 		{
+			//last_dir_check(tree, ls);
+			print(tree, ls);
+			//ft_putchar('\n');
+		}
+		else if (ls->flag == 2)
+		{
+			//last_dir_check(tree, ls);
+			print(tree, ls);
 			ft_putchar('\n');
-			ft_putendl(tree->field);
 			big_r_flag_print(tree, ls);
-		}*/
+		}
+		//ft_putchar('\n');
+		//ft_putendl(tree->field);
+		//big_r_flag_print(tree, ls);
+		//ft_putchar('\n');
+	}
 	else if (ls->l == 1)
 	{
 		ft_putstr("total");

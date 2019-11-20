@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/19 18:51:41 by emaveric          #+#    #+#             */
-/*   Updated: 2019/11/19 19:12:34 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/11/20 15:30:19 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ struct s_node	*addnode_flag_t(char *str, struct s_node *tree, struct stat buf, t
 	}
 	else     // иначе
 	{
+		printf("\nTIME:field %s tree %ld buf %ld\n", tree->field, tree->sec, (long int)&buf.st_ctimespec);
 		if (tree->sec < (long int)&buf.st_ctimespec)   //Если элемент str меньше корневого, уходим влево
 			tree->left = addnode_flag_t(str, tree->left, buf, ls); //Рекурсивно добавляем элемент
 		else  //иначе уходим вправо

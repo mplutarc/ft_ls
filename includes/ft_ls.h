@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 20:23:13 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/11/19 18:52:55 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/11/20 17:38:06 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ typedef struct		s_ls
 	int				r;
 	int				big_r;
     int				flag;
+    int 			ind;
     int 			e_sum;
     int 			*e_index; // индекс для ошибок
     int 			blocks;
@@ -61,6 +62,7 @@ typedef struct		s_ls
 	char 			**c_dir; // for "."
 }					t_ls;
 
+int					files(char *av, char *theDir);
 int 				directory(char *theDir, t_ls *ls);
 int					main(int ac, char **av);
 int					validation(int ac, char **av, t_ls *ls);
@@ -82,5 +84,5 @@ void    			i_flag_print(struct s_node *tree, t_ls *ls);
 void				mode_to_rwx(struct s_node *tree, struct stat buf);
 struct s_node		*tree_create(char *str, struct stat buf, t_ls *ls);
 struct s_node		*addnode_flag_t(char *str, struct s_node *tree, struct stat buf, t_ls *ls);
-
+void				last_dir_check(struct s_node *tree, t_ls *ls);
 #endif

@@ -6,33 +6,42 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/14 17:25:24 by emaveric          #+#    #+#             */
-/*   Updated: 2019/11/19 17:22:19 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/11/20 18:33:19 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_ls.h"
 
+void	last_dir_check(struct s_node *tree, t_ls *ls)
+{
+	if (tree != NULL)
+	{      //Пока не встретится пустой узел
+		last_dir_check(tree->left, ls);  //Рекурсивная функция вывода левого поддерева
+		if ((opendir(tree->field) && fopen(tree->field, "rt")))
+			ls->ind = 1;
+		last_dir_check(tree->right, ls); //Рекурсивная функция вывода правого поддерева
+	}
+}
 
 void	big_r_flag_print(struct s_node *tree, t_ls *ls)
 {
 	if (tree != NULL)
 	{      //Пока не встретится пустой узел
 		big_r_flag_print(tree->left, ls);  //Рекурсивная функция вывода левого поддерева
-		if ((opendir(tree->field) || fopen(tree->field, "rt")))
+		if ((opendir(tree->field) && fopen(tree->field, "rt")))
 		{
-		/*	if (!opendir(tree->field) && fopen(tree->field, "rt"))
+		/*	if (ls->ind == 1)
 			{
-				tree->field = ft_strcut(tree->field, '/');
-				if (tree->field[0] != '.')
-				{
-					ft_putstr(tree->field);
-					ft_putchar('\t');
-				}
+				ft_putchar('\n');
+				ls->ind = 0;
 			}*/
-			if (opendir(tree->field) && fopen(tree->field, "rt"))
-				if (ft_strcmp(ft_strcut(tree->field, '/'), ".") != 0 &&
-						ft_strcmp(ft_strcut(tree->field, '/'), "..") != 0)
-					directory(tree->field, ls);
+			if (ft_strcmp(ft_strname(tree->field, '/'), ".") != 0 &&
+				ft_strcmp(ft_strname(tree->field, '/'), "..") != 0)
+			{
+				ft_putstr(tree->field);
+				ft_putstr(":\n");
+				directory(tree->field, ls);
+			}
 		}
 		big_r_flag_print(tree->right, ls); //Рекурсивная функция вывода правого поддерева
 	}

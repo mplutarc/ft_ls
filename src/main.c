@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 20:23:06 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/11/19 18:50:15 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/11/20 17:38:06 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ t_ls	*init(void)
 	new->big_r = 0;
 	new->f_sum = 0;
 	new->blocks = 0;
+	new->ind = 0;
 	return (new);
 }
 
