@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 20:23:13 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/11/20 17:38:06 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/11/21 20:24:52 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ typedef struct		s_ls
 	int				big_r;
     int				flag;
     int 			ind;
+    long int		sec;
     int 			e_sum;
     int 			*e_index; // индекс для ошибок
     int 			blocks;
@@ -62,7 +63,7 @@ typedef struct		s_ls
 	char 			**c_dir; // for "."
 }					t_ls;
 
-int					files(char *av, char *theDir);
+int					files(struct s_node *tree, char *theDir);
 int 				directory(char *theDir, t_ls *ls);
 int					main(int ac, char **av);
 int					validation(int ac, char **av, t_ls *ls);

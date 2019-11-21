@@ -1068,6 +1068,33 @@ libft/ft_putstr_fd.c.s:
 	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/libft/ft_putstr_fd.c.s
 .PHONY : libft/ft_putstr_fd.c.s
 
+libft/ft_strbchr.o: libft/ft_strbchr.c.o
+
+.PHONY : libft/ft_strbchr.o
+
+# target to build an object file
+libft/ft_strbchr.c.o:
+	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/libft/ft_strbchr.c.o
+.PHONY : libft/ft_strbchr.c.o
+
+libft/ft_strbchr.i: libft/ft_strbchr.c.i
+
+.PHONY : libft/ft_strbchr.i
+
+# target to preprocess a source file
+libft/ft_strbchr.c.i:
+	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/libft/ft_strbchr.c.i
+.PHONY : libft/ft_strbchr.c.i
+
+libft/ft_strbchr.s: libft/ft_strbchr.c.s
+
+.PHONY : libft/ft_strbchr.s
+
+# target to generate assembly for a file
+libft/ft_strbchr.c.s:
+	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/libft/ft_strbchr.c.s
+.PHONY : libft/ft_strbchr.c.s
+
 libft/ft_strcat.o: libft/ft_strcat.c.o
 
 .PHONY : libft/ft_strcat.o
@@ -2316,6 +2343,9 @@ help:
 	@echo "... libft/ft_putstr_fd.o"
 	@echo "... libft/ft_putstr_fd.i"
 	@echo "... libft/ft_putstr_fd.s"
+	@echo "... libft/ft_strbchr.o"
+	@echo "... libft/ft_strbchr.i"
+	@echo "... libft/ft_strbchr.s"
 	@echo "... libft/ft_strcat.o"
 	@echo "... libft/ft_strcat.i"
 	@echo "... libft/ft_strcat.s"

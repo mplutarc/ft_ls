@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 20:23:06 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/11/20 17:38:06 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/11/21 19:06:02 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void    error(char *theDir)
     //printf( "Error opening %s: %s", theDir, strerror(errno));
 }
 
-int		files(char *av, char *theDir)
+int		files(struct s_node *tree, char *theDir)
 {
 	DIR				*dir;
 	struct dirent	*entry;
@@ -58,17 +58,13 @@ int		files(char *av, char *theDir)
 	dir = opendir(theDir); //открытие директории
 	while((entry = readdir(dir)))  //пока директория читаема
 	{
-		if (entry->d_type == 8 && ft_strcmp(av, entry->d_name) == 0)
-		{
-			ft_putstr(entry->d_name);
-			ft_putchar('\t');
-			printf("\n");
-		}
+		if (entry->d_type == 8 && ft_strcmp(tree->field, entry->d_name) == 0)
+			return (0);
 		// printf("Inode number: %llu\n filename: %s\n Type of file: [%d]\n Size: %d\n\n",
 		// 			entry->d_ino, entry->d_name, entry->d_type, entry->d_reclen);
     }
 	closedir(dir);
-	return (0);
+	return (ERROR);
 }
 
 int		directory(char *theDir, t_ls *ls)

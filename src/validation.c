@@ -52,6 +52,7 @@ int 	flag_ind(int ac, char **av, t_ls *ls)
 		{
 			ls->f_index[i] = i;
 			find_flag(ls, av, i);
+			ls->f_sum++;
 			printf("FLAG %d is %s\n", i, av[i]);
 		}
 		else

@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 19:50:58 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/11/14 16:07:30 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/11/21 20:01:18 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,17 @@ void			find_flag2(t_ls *ls, char **av, int i)
 	if (ft_strchr(av[ls->f_index[i]], 'r'))
 	{
 		ls->r = 1;
-		ls->f_sum++;
 		printf("found -r\n");
 	}
 	if (ft_strchr(av[ls->f_index[i]], 't'))
 	{
 		ls->t = 1;
-		ls->f_sum++;
 		printf("found -t\n");
 	}
 	if (ft_strchr(av[ls->f_index[i]], 'R'))
 	{
 		ls->big_r = 1;
-		ls->f_sum++;
+		//ls->f_sum++;
 		printf("found -R\n");
 	}
 }
@@ -39,19 +37,16 @@ void			find_flag(t_ls *ls, char **av, int i)
 	if (ft_strchr(av[ls->f_index[i]], 'l'))
 	{
 		ls->l = 1;
-		ls->f_sum++;
 		printf("found -l\n");
 	}
 	if (ft_strchr(av[ls->f_index[i]], 'i'))
 	{
 		ls->i = 1;
-		ls->f_sum++;
 		printf("found -i\n");
 	}
 	if (ft_strchr(av[ls->f_index[i]], 'a'))
 	{
 		ls->a = 1;
-		ls->f_sum++;
 		printf("found -a\n");
 	}
 	find_flag2(ls, av, i);

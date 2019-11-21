@@ -207,6 +207,9 @@
 		<Unit filename="/Users/emaveric/ls/libft/ft_putstr_fd.c">
 			<Option target="ls"/>
 		</Unit>
+		<Unit filename="/Users/emaveric/ls/libft/ft_strbchr.c">
+			<Option target="ls"/>
+		</Unit>
 		<Unit filename="/Users/emaveric/ls/libft/ft_strcat.c">
 			<Option target="ls"/>
 		</Unit>

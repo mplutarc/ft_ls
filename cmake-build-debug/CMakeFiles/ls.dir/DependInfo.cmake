@@ -39,6 +39,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/emaveric/ls/libft/ft_putnbr_fd.c" "/Users/emaveric/ls/cmake-build-debug/CMakeFiles/ls.dir/libft/ft_putnbr_fd.c.o"
   "/Users/emaveric/ls/libft/ft_putstr.c" "/Users/emaveric/ls/cmake-build-debug/CMakeFiles/ls.dir/libft/ft_putstr.c.o"
   "/Users/emaveric/ls/libft/ft_putstr_fd.c" "/Users/emaveric/ls/cmake-build-debug/CMakeFiles/ls.dir/libft/ft_putstr_fd.c.o"
+  "/Users/emaveric/ls/libft/ft_strbchr.c" "/Users/emaveric/ls/cmake-build-debug/CMakeFiles/ls.dir/libft/ft_strbchr.c.o"
   "/Users/emaveric/ls/libft/ft_strcat.c" "/Users/emaveric/ls/cmake-build-debug/CMakeFiles/ls.dir/libft/ft_strcat.c.o"
   "/Users/emaveric/ls/libft/ft_strchr.c" "/Users/emaveric/ls/cmake-build-debug/CMakeFiles/ls.dir/libft/ft_strchr.c.o"
   "/Users/emaveric/ls/libft/ft_strclr.c" "/Users/emaveric/ls/cmake-build-debug/CMakeFiles/ls.dir/libft/ft_strclr.c.o"

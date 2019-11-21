@@ -101,6 +101,9 @@ CMakeFiles/ls.dir/libft/ft_putstr.c.o
 CMakeFiles/ls.dir/libft/ft_putstr_fd.c.o
  /Users/emaveric/ls/libft/ft_putstr_fd.c
  /Users/emaveric/ls/libft/libft.h
+CMakeFiles/ls.dir/libft/ft_strbchr.c.o
+ /Users/emaveric/ls/libft/ft_strbchr.c
+ /Users/emaveric/ls/libft/libft.h
 CMakeFiles/ls.dir/libft/ft_strcat.c.o
  /Users/emaveric/ls/libft/ft_strcat.c
  /Users/emaveric/ls/libft/libft.h

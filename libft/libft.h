@@ -96,5 +96,6 @@ int					get_next_line(const int fd, char **line);
 char				*ft_strcut(const char *s, int c);
 char				*ft_strncut(char *s, int start, int end);
 char				*ft_strname(const char *s, int c);
+char				*ft_strbchr(const char *s, int c);
 
 #endif
