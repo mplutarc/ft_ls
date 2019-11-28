@@ -77,6 +77,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/emaveric/ls/src/flags.c" "/Users/emaveric/ls/cmake-build-debug/CMakeFiles/ls.dir/src/flags.c.o"
   "/Users/emaveric/ls/src/flags_output.c" "/Users/emaveric/ls/cmake-build-debug/CMakeFiles/ls.dir/src/flags_output.c.o"
   "/Users/emaveric/ls/src/flags_sorting.c" "/Users/emaveric/ls/cmake-build-debug/CMakeFiles/ls.dir/src/flags_sorting.c.o"
+  "/Users/emaveric/ls/src/free_tree.c" "/Users/emaveric/ls/cmake-build-debug/CMakeFiles/ls.dir/src/free_tree.c.o"
   "/Users/emaveric/ls/src/main.c" "/Users/emaveric/ls/cmake-build-debug/CMakeFiles/ls.dir/src/main.c.o"
   "/Users/emaveric/ls/src/output.c" "/Users/emaveric/ls/cmake-build-debug/CMakeFiles/ls.dir/src/output.c.o"
   "/Users/emaveric/ls/src/sorting.c" "/Users/emaveric/ls/cmake-build-debug/CMakeFiles/ls.dir/src/sorting.c.o"

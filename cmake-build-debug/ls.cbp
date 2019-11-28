@@ -324,6 +324,9 @@
 		<Unit filename="/Users/emaveric/ls/src/flags_sorting.c">
 			<Option target="ls"/>
 		</Unit>
+		<Unit filename="/Users/emaveric/ls/src/free_tree.c">
+			<Option target="ls"/>
+		</Unit>
 		<Unit filename="/Users/emaveric/ls/src/main.c">
 			<Option target="ls"/>
 		</Unit>

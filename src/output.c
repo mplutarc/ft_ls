@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 19:11:32 by emaveric          #+#    #+#             */
-/*   Updated: 2019/11/21 20:08:08 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/11/28 15:05:22 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ int 	output(t_ls *ls, struct s_node *tree)
 		}
 		else if (ls->flag == 2)
 		{
-			last_dir_check(tree, ls);
+			//last_dir_check(tree, ls);
 			print(tree, ls);
 			ls->ind = 3;
 			/*if (ls->ind == 0)

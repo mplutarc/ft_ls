@@ -77,6 +77,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/ls.dir/libft/ft_strname.c.o"
   "CMakeFiles/ls.dir/src/flags_sorting.c.o"
   "CMakeFiles/ls.dir/libft/ft_strbchr.c.o"
+  "CMakeFiles/ls.dir/src/free_tree.c.o"
   "ls.pdb"
   "ls"
 )

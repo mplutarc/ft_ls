@@ -216,6 +216,10 @@ CMakeFiles/ls.dir/src/flags_sorting.c.o: ../includes/ft_ls.h
 CMakeFiles/ls.dir/src/flags_sorting.c.o: ../libft/libft.h
 CMakeFiles/ls.dir/src/flags_sorting.c.o: ../src/flags_sorting.c
 
+CMakeFiles/ls.dir/src/free_tree.c.o: ../includes/ft_ls.h
+CMakeFiles/ls.dir/src/free_tree.c.o: ../libft/libft.h
+CMakeFiles/ls.dir/src/free_tree.c.o: ../src/free_tree.c
+
 CMakeFiles/ls.dir/src/main.c.o: ../includes/ft_ls.h
 CMakeFiles/ls.dir/src/main.c.o: ../libft/libft.h
 CMakeFiles/ls.dir/src/main.c.o: ../src/main.c

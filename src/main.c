@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 20:23:06 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/11/27 16:43:35 by mplutarc         ###   ########.fr       */
+/*   Updated: 2019/11/28 20:58:16 by mplutarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,10 @@ int		files(struct s_node *tree, char *theDir)
 	while((entry = readdir(dir)))  //пока директория читаема
 	{
 		if (entry->d_type == 8 && ft_strcmp(tree->field, entry->d_name) == 0)
+		{
+			closedir(dir);
 			return (0);
+		}
 		// printf("Inode number: %llu\n filename: %s\n Type of file: [%d]\n Size: %d\n\n",
 		// 			entry->d_ino, entry->d_name, entry->d_type, entry->d_reclen);
     }
@@ -89,14 +92,15 @@ int		directory(char *theDir, t_ls *ls)
 	while ((entry = readdir(dir)))  //пока директория читаема
 	{
 		lstat(ft_strjoin(str, entry->d_name), &buf);
-		if (ls->r == 1)
-		{
-			if (!(sub_tree = addnode_flag_r(ft_strjoin(str, entry->d_name), sub_tree, buf, ls)))
-				return (ERROR);
-		}
-		else if (ls->t == 1)
+		ls->sec = buf.st_mtimespec.tv_sec;
+		if (ls->t == 1)
 		{
 			if (!(sub_tree = addnode_flag_t(ft_strjoin(str, entry->d_name), sub_tree, buf, ls)))
+				return (ERROR);
+		}
+		else if (ls->r == 1)
+		{
+			if (!(sub_tree = addnode_flag_r(ft_strjoin(str, entry->d_name), sub_tree, buf, ls)))
 				return (ERROR);
 		}
 		else if (!(sub_tree = addnode(ft_strjoin(str, entry->d_name), sub_tree, buf, ls)))
@@ -105,6 +109,9 @@ int		directory(char *theDir, t_ls *ls)
 	ls->flag = 2;
 	output(ls, sub_tree);
 	closedir(dir);
+	free(entry);
+	ft_strclr(str);
+	free_tree(sub_tree, ls);
     return (0);
 }
 
