@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 20:23:13 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/11/21 20:24:52 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/11/27 16:38:00 by mplutarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,6 @@ void				print(struct s_node *tree, t_ls *ls);
 void				e_print(struct s_node *tree, t_ls *ls);
 int 				output(t_ls *ls, struct s_node *tree);
 void				find_flag(t_ls *ls, char **av, int i);
-void				find_flag2(t_ls *ls, char **av, int i);
 struct s_node		*addnode(char *str, struct s_node *tree, struct stat buf, t_ls *ls);
 void				big_r_flag_print(struct s_node *tree, t_ls *ls);
 struct s_node		*addnode_flag_r(char *str, struct s_node *tree, struct stat buf, t_ls *ls);

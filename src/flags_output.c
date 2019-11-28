@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/14 17:25:24 by emaveric          #+#    #+#             */
-/*   Updated: 2019/11/21 19:01:28 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/11/27 18:09:22 by mplutarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,17 +66,18 @@ void    l_flag_print(struct s_node *tree, t_ls *ls)
 			tree->field = ft_strcut(tree->field, '/');
 			if (tree->field[0] != '.' || ls->a == 1)
 			{
-				ft_putstr(tree->mode);
+				ft_putnbr(tree->sec);
+				// ft_putstr(tree->mode);
 				ft_putchar(' ');
-				ft_putnbr(tree->links);
-				ft_putchar(' ');
-				ft_putstr(tree->uid);
-				ft_putchar(' ');
-				ft_putstr(tree->gid);
-				ft_putchar(' ');
-				ft_putnbr(tree->size);
-				ft_putchar(' ');
-				tree->time = ft_strncut(tree->time, 4, 16);
+				// ft_putnbr(tree->links);
+				// ft_putchar(' ');
+				// ft_putstr(tree->uid);
+				// ft_putchar(' ');
+				// ft_putstr(tree->gid);
+				// ft_putchar(' ');
+				// ft_putnbr(tree->size);
+				// ft_putchar(' ');
+				// tree->time = ft_strncut(tree->time, 4, 16);
 				ft_putstr(tree->time);
 				ft_putchar(' ');
 				ft_putendl(tree->field);

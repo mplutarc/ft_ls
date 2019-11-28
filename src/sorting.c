@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/31 15:11:20 by emaveric          #+#    #+#             */
-/*   Updated: 2019/11/21 20:27:17 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/11/27 18:13:00 by mplutarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ struct s_node	*tree_create(char *str, struct stat buf, t_ls *ls)
 		tree->uid = ft_strdup(pws->pw_name);
 	if (grp != NULL)
 		tree->gid = ft_strdup(grp->gr_name);
+	tree->field = str;   //поле данных
 	tree->ino = buf.st_ino;
 	tree->size = buf.st_size;
 	tree->links = buf.st_nlink;
@@ -54,7 +55,6 @@ struct s_node	*tree_create(char *str, struct stat buf, t_ls *ls)
 		ls->blocks += buf.st_blocks;
 	tree->sec = (long int)&buf.st_ctimespec;
 	tree->time = ft_strdup(ctime((long int *)&buf.st_ctimespec));
-	tree->field = str;   //поле данных
 	tree->left = NULL;
 	tree->right = NULL; //ветви инициализируем пустотой
 	return (tree);
