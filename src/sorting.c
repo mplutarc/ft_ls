@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/31 15:11:20 by emaveric          #+#    #+#             */
-/*   Updated: 2019/11/21 20:27:17 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/11/28 17:09:22 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ struct s_node	*tree_create(char *str, struct stat buf, t_ls *ls)
 		ls->blocks += buf.st_blocks;
 	else if (ft_strname(str, '/')[0] != '.')
 		ls->blocks += buf.st_blocks;
-	tree->sec = (long int)&buf.st_ctimespec;
+	tree->sec = buf.st_mtimespec.tv_sec;
 	tree->time = ft_strdup(ctime((long int *)&buf.st_ctimespec));
 	tree->field = str;   //поле данных
 	tree->left = NULL;

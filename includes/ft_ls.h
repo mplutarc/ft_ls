@@ -86,4 +86,6 @@ void				mode_to_rwx(struct s_node *tree, struct stat buf);
 struct s_node		*tree_create(char *str, struct stat buf, t_ls *ls);
 struct s_node		*addnode_flag_t(char *str, struct s_node *tree, struct stat buf, t_ls *ls);
 void				last_dir_check(struct s_node *tree, t_ls *ls);
+void				free_tree(struct s_node *tree, t_ls *ls);
+
 #endif

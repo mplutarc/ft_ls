@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 17:54:51 by emaveric          #+#    #+#             */
-/*   Updated: 2019/11/07 20:21:44 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/11/28 15:05:45 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,6 @@ int 	flag_ind(int ac, char **av, t_ls *ls)
 			ls->f_index[i] = i;
 			find_flag(ls, av, i);
 			ls->f_sum++;
-			printf("FLAG %d is %s\n", i, av[i]);
 		}
 		else
 			break;

@@ -216,6 +216,10 @@ CMakeFiles/ls.dir/src/flags_sorting.c.o
  /Users/emaveric/ls/includes/ft_ls.h
  /Users/emaveric/ls/libft/libft.h
  /Users/emaveric/ls/src/flags_sorting.c
+CMakeFiles/ls.dir/src/free_tree.c.o
+ /Users/emaveric/ls/includes/ft_ls.h
+ /Users/emaveric/ls/libft/libft.h
+ /Users/emaveric/ls/src/free_tree.c
 CMakeFiles/ls.dir/src/main.c.o
  /Users/emaveric/ls/includes/ft_ls.h
  /Users/emaveric/ls/libft/libft.h

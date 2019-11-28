@@ -2094,6 +2094,33 @@ src/flags_sorting.c.s:
 	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/src/flags_sorting.c.s
 .PHONY : src/flags_sorting.c.s
 
+src/free_tree.o: src/free_tree.c.o
+
+.PHONY : src/free_tree.o
+
+# target to build an object file
+src/free_tree.c.o:
+	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/src/free_tree.c.o
+.PHONY : src/free_tree.c.o
+
+src/free_tree.i: src/free_tree.c.i
+
+.PHONY : src/free_tree.i
+
+# target to preprocess a source file
+src/free_tree.c.i:
+	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/src/free_tree.c.i
+.PHONY : src/free_tree.c.i
+
+src/free_tree.s: src/free_tree.c.s
+
+.PHONY : src/free_tree.s
+
+# target to generate assembly for a file
+src/free_tree.c.s:
+	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/src/free_tree.c.s
+.PHONY : src/free_tree.c.s
+
 src/main.o: src/main.c.o
 
 .PHONY : src/main.o
@@ -2457,6 +2484,9 @@ help:
 	@echo "... src/flags_sorting.o"
 	@echo "... src/flags_sorting.i"
 	@echo "... src/flags_sorting.s"
+	@echo "... src/free_tree.o"
+	@echo "... src/free_tree.i"
+	@echo "... src/free_tree.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
