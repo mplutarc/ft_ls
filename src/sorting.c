@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/31 15:11:20 by emaveric          #+#    #+#             */
-/*   Updated: 2019/11/29 16:14:07 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/11/29 19:59:43 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,11 @@ void			mode_to_rwx(struct s_node *tree, struct stat buf)
 
 	i = 0;
 	tree->mode = (char *)malloc(sizeof(char) * 11);
-	tree->mode[i++] = (S_ISDIR((unsigned short int)buf.st_mode) ? 'd' : '-');
+	if ((buf.st_mode & S_IFLNK) == 40960)
+		tree->mode[i] = 'l';
+	else
+		tree->mode[i] = (S_ISDIR((unsigned short int)buf.st_mode) ? 'd' : '-');
+	i++;
 	tree->mode[i++] = ((buf.st_mode & S_IRUSR) ? 'r' : '-');
 	tree->mode[i++] = ((buf.st_mode & S_IWUSR) ? 'w' : '-');
 	tree->mode[i++] = ((buf.st_mode & S_IXUSR) ? 'x' : '-');
@@ -45,6 +49,7 @@ struct s_node	*tree_create(char *str, struct stat buf, t_ls *ls)
 		tree->uid = ft_strdup(pws->pw_name);
 	if (grp != NULL)
 		tree->gid = ft_strdup(grp->gr_name);
+	tree->field = str;   //поле данных
 	tree->ino = buf.st_ino;
 	tree->size = buf.st_size;
 	tree->links = buf.st_nlink;
@@ -54,7 +59,6 @@ struct s_node	*tree_create(char *str, struct stat buf, t_ls *ls)
 		ls->blocks += buf.st_blocks;
 	tree->sec = buf.st_mtimespec.tv_sec;
 	tree->time = ft_strdup(ctime((long int *)&buf.st_ctimespec));
-	tree->field = str;   //поле данных
 	tree->left = NULL;
 	tree->right = NULL; //ветви инициализируем пустотой
 	return (tree);

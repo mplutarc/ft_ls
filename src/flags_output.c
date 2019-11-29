@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/14 17:25:24 by emaveric          #+#    #+#             */
-/*   Updated: 2019/11/28 19:40:37 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/11/29 21:19:56 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,28 +33,29 @@ void	big_r_flag_print(struct s_node *tree, t_ls *ls)
 		big_r_flag_print(tree->left, ls);  //Рекурсивная функция вывода левого поддерева
 		if (opendir(tree->field))
 		{
-			if (ls->ind == 3 &&
-			(ft_strcmp(ft_strname(tree->field, '/'), ".") != 0 &&
-			ft_strcmp(ft_strname(tree->field, '/'), "..") != 0))
-			{
-				ft_putchar('\n');
-				last_dir_check(tree, ls);
-			}
-			if (ls->ind == 1 &&
-			(ft_strcmp(ft_strname(tree->field, '/'), ".") != 0 &&
-			ft_strcmp(ft_strname(tree->field, '/'), "..") != 0))
-			{
-				ft_putchar('\n');
-				//ls->ind = 3;
-			}
+			if (ls->ind == 3)
+				if (ft_strcmp(ft_strname(tree->field, '/'), ".") != 0 &&
+					ft_strcmp(ft_strname(tree->field, '/'), "..") != 0)
+				{
+					ft_putchar('\n');
+					last_dir_check(tree, ls);
+				}
+			if (ls->ind == 1)
+				if (ft_strcmp(ft_strname(tree->field, '/'), ".") != 0 &&
+				ft_strcmp(ft_strname(tree->field, '/'), "..") != 0)
+				{
+					ft_putchar('\n');
+					//ls->ind = 3;
+				}
 			if (ft_strcmp(ft_strname(tree->field, '/'), ".") != 0 &&
 				ft_strcmp(ft_strname(tree->field, '/'), "..") != 0 &&
-					(ft_strname(tree->field, '/')[0] != '.' || ls->a == 1))
+					(ft_strname(tree->field, '/')[0] != '.' || ls->a == 1)
+					&& tree->mode[0] != 'l')
 			{
 				ft_putstr(tree->field);
 				ft_putstr(":\n");
 				directory(tree->field, ls);
-				//ls->ind = 1;
+				ls->ind = 1;
 			}
 		}
 		big_r_flag_print(tree->right, ls); //Рекурсивная функция вывода правого поддерева
@@ -70,6 +71,11 @@ void    l_flag_print(struct s_node *tree, t_ls *ls)
 		{
 			if (ft_strname(tree->field, '/')[0] != '.' || ls->a == 1)
 			{
+				if (ls->i == 1)
+				{
+					ft_putnbr(tree->ino);
+					ft_putchar(' ');
+				}
 				ft_putstr(tree->mode);
 				ft_putchar(' ');
 				ft_putnbr(tree->links);
@@ -86,8 +92,6 @@ void    l_flag_print(struct s_node *tree, t_ls *ls)
 				ft_putendl(ft_strname(tree->field, '/'));
 			}
 		}
-/*			else if (!opendir(tree->field) && fopen(tree->field, "rt"))
-				ft_putendl(tree->field);*/
 		else if (opendir(tree->field))
 			directory(tree->field, ls);
 		l_flag_print(tree->right, ls); //Рекурсивная функция вывода правого поддерева

@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 20:23:06 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/11/29 16:14:07 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/11/29 19:59:43 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ t_ls	*init(void)
 	new->f_sum = 0;
 	new->blocks = 0;
 	new->ind = 0;
+	new->sec = 0;
 	return (new);
 }
 
@@ -42,6 +43,7 @@ void    error(char *theDir)
 	// myerror = ft_strcat(myerror, ": ");
 	// myerror = ft_strcat(myerror, strerror(errno));
 	ft_putendl(myerror);
+	free(myerror);
     // ft_putstr("Error opening ");
     // ft_putstr(theDir);
     // ft_putstr(": ");
@@ -61,6 +63,7 @@ int		files(struct s_node *tree, char *theDir)
 		if (entry->d_type == 8 && ft_strcmp(tree->field, entry->d_name) == 0)
 		{
 			closedir(dir);
+			//free(entry);
 			return (0);
 		}
 		// printf("Inode number: %llu\n filename: %s\n Type of file: [%d]\n Size: %d\n\n",
@@ -92,14 +95,14 @@ int		directory(char *theDir, t_ls *ls)
 	{
 		lstat(ft_strjoin(str, entry->d_name), &buf);
 		ls->sec = buf.st_mtimespec.tv_sec;
-		if (ls->r == 1)
-		{
-			if (!(sub_tree = addnode_flag_r(ft_strjoin(str, entry->d_name), sub_tree, buf, ls)))
-				return (ERROR);
-		}
-		else if (ls->t == 1)
+		if (ls->t == 1)
 		{
 			if (!(sub_tree = addnode_flag_t(ft_strjoin(str, entry->d_name), sub_tree, buf, ls)))
+				return (ERROR);
+		}
+		else if (ls->r == 1)
+		{
+			if (!(sub_tree = addnode_flag_r(ft_strjoin(str, entry->d_name), sub_tree, buf, ls)))
 				return (ERROR);
 		}
 		else if (!(sub_tree = addnode(ft_strjoin(str, entry->d_name), sub_tree, buf, ls)))
@@ -108,9 +111,10 @@ int		directory(char *theDir, t_ls *ls)
 	ls->flag = 2;
 	output(ls, sub_tree);
 	closedir(dir);
-	//free(entry);
-	//ft_strclr(str);
-//	free_tree(sub_tree, ls);
+//	free(entry);
+	free(str);
+//	ft_strclr(str);
+	//free_tree(sub_tree, ls);
     return (0);
 }
 

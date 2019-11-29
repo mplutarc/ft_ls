@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   flags_sorting.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/19 18:51:41 by emaveric          #+#    #+#             */
-/*   Updated: 2019/11/28 17:08:26 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/11/29 16:16:46 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,19 @@ struct s_node	*addnode_flag_t(char *str, struct s_node *tree, struct stat buf, t
 	else     // иначе
 	{
 		if (ls->sec > tree->sec)   //Если элемент str меньше корневого, уходим влево
-			tree->left = addnode_flag_t(str, tree->left, buf, ls); //Рекурсивно добавляем элемент
+		{
+			if(ls->r == 0)
+				tree->left = addnode_flag_t(str, tree->left, buf, ls); //Рекурсивно добавляем элемент
+			else if (ls->r == 1)
+				tree->right = addnode_flag_t(str, tree->right, buf, ls);
+		}
 		else  //иначе уходим вправо
-			tree->right = addnode_flag_t(str, tree->right, buf, ls); //Рекурсивно добавляем элемент
+		{
+			if(ls->r == 1)
+				tree->left = addnode_flag_t(str, tree->left, buf, ls); //Рекурсивно добавляем элемент
+			else if (ls->r == 0)
+				tree->right = addnode_flag_t(str, tree->right, buf, ls); //Рекурсивно добавляем элемент
+		}
 	}
 	return (tree);
 }
