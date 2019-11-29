@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 20:23:06 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/11/28 18:26:30 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/11/29 16:14:07 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,9 +108,9 @@ int		directory(char *theDir, t_ls *ls)
 	ls->flag = 2;
 	output(ls, sub_tree);
 	closedir(dir);
-	free(entry);
-	ft_strclr(str);
-	free_tree(sub_tree, ls);
+	//free(entry);
+	//ft_strclr(str);
+//	free_tree(sub_tree, ls);
     return (0);
 }
 

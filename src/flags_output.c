@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/14 17:25:24 by emaveric          #+#    #+#             */
-/*   Updated: 2019/11/28 16:53:26 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/11/28 19:40:37 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,7 @@ void    l_flag_print(struct s_node *tree, t_ls *ls)
 		l_flag_print(tree->left, ls);  //Рекурсивная функция вывода левого поддерева
 		if (ls->flag == 2 || (ls->flag == 0 && files(tree, ".") == 0))
 		{
-			tree->field = ft_strcut(tree->field, '/');
-			if (tree->field[0] != '.' || ls->a == 1)
+			if (ft_strname(tree->field, '/')[0] != '.' || ls->a == 1)
 			{
 				ft_putstr(tree->mode);
 				ft_putchar(' ');
@@ -84,7 +83,7 @@ void    l_flag_print(struct s_node *tree, t_ls *ls)
 				tree->time = ft_strncut(tree->time, 4, 16);
 				ft_putstr(tree->time);
 				ft_putchar(' ');
-				ft_putendl(tree->field);
+				ft_putendl(ft_strname(tree->field, '/'));
 			}
 		}
 /*			else if (!opendir(tree->field) && fopen(tree->field, "rt"))
@@ -121,12 +120,11 @@ void    i_flag_print(struct s_node *tree, t_ls *ls)
 		i_flag_print(tree->left, ls);  //Рекурсивная функция вывода левого поддерева
 		if (ls->flag == 2 || (ls->flag == 0 && files(tree, ".") == 0))
 		{
-			tree->field = ft_strcut(tree->field, '/');
-			if (tree->field[0] != '.' || ls->a == 1)
+			if (ft_strname(tree->field, '/')[0] != '.' || ls->a == 1)
 			{
 				ft_putnbr(tree->ino);
 				ft_putchar(' ');
-				ft_putstr(tree->field);
+				ft_putstr(ft_strname(tree->field, '/'));
 				ft_putchar('\t');
 			}
 		}
