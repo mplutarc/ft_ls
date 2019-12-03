@@ -17,7 +17,7 @@ SRC = $(addprefix src/, $(FILES))
 INC = includes/ft_ls.h
 OBJ = $(addprefix obj/, $(FILES:.c=.o))
 LIBFT = libft/libft.a
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -Weverything
 
 
 all: lib ft_ls

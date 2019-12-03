@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 20:23:13 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/11/29 16:16:46 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/12/03 19:18:28 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ struct				s_node
 	char 			*uid;
 	char 			*gid;
 	char 			*mode;
+	int 			flag;
 	char 			*time;
 	long int		sec;
 	char			*field; // поле данных
@@ -56,7 +57,7 @@ typedef struct		s_ls
     long int		sec;
     int 			e_sum;
     int 			*e_index; // индекс для ошибок
-    int 			blocks;
+	int 			blocks;
     int 			f_sum;
     int 			dh_index; //индекс для --
     int 			*f_index; // индекс для флагов

@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/31 15:11:20 by emaveric          #+#    #+#             */
-/*   Updated: 2019/11/29 19:59:43 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/12/03 17:32:55 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,22 +71,12 @@ struct s_node	*addnode(char *str, struct s_node *tree, struct stat buf, t_ls *ls
 
 	if (tree == NULL)     // Если дерева нет, то формируем корень
 	{
-		tree = tree_create(str, buf, ls);
-		/*if (!(tree = (struct s_node *)malloc(sizeof(struct s_node))))
+		if (!(tree = tree_create(str, buf, ls)))
 			return (NULL);
-		mode_to_rwx(tree, buf);
-		pws = getpwuid(buf.st_uid);
-		grp = getgrgid(buf.st_gid);
-		if (pws != NULL)
-			tree->uid = ft_strdup(pws->pw_name);
-		if (grp != NULL)
-			tree->gid = ft_strdup(grp->gr_name);
-		tree->ino = buf.st_ino;
-		tree->size = buf.st_size;
-		tree->links = buf.st_nlink;
-		tree->field = str;   //поле данных
-		tree->left = NULL;
-		tree->right = NULL; //ветви инициализируем пустотой*/
+		tree->flag = 0;
+		if (ft_strcmp(ft_strname(tree->field, '/'), ".") == 0 ||
+			ft_strcmp(ft_strname(tree->field, '/'), "..") == 0)
+			tree->flag = 1;
 	}
 	else     // иначе
 	{
@@ -109,7 +99,12 @@ int				sorting(int	ac, char **av, t_ls *ls, struct stat buf)
 	{
 		if (i != ls->f_index[i] && i != ls->dh_index)
 		{
-			if (ls->r == 1)
+			if (ls->t == 1)
+			{
+				if (!(tree = addnode_flag_t(av[i], tree, buf, ls)))
+					return (ERROR);
+			}
+			else if (ls->r == 1)
 			{
 				if (!(tree = addnode_flag_r(av[i], tree, buf, ls)))
 					return (ERROR);

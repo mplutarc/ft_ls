@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/19 18:51:41 by emaveric          #+#    #+#             */
-/*   Updated: 2019/11/29 16:16:46 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/12/03 19:18:28 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@ struct s_node	*addnode_flag_t(char *str, struct s_node *tree, struct stat buf, t
 	if (tree == NULL)     // Если дерева нет, то формируем корень
 	{
 		tree = tree_create(str, buf, ls);
+		tree->flag = 0;
+		if (ft_strcmp(ft_strname(tree->field, '/'), ".") == 0 ||
+			ft_strcmp(ft_strname(tree->field, '/'), "..") == 0)
+			tree->flag = 1;
 		/*if (!(tree = (struct s_node *)malloc(sizeof(struct s_node))))
 			return (NULL);
 		tree->field = str;   //поле данных
@@ -28,14 +32,14 @@ struct s_node	*addnode_flag_t(char *str, struct s_node *tree, struct stat buf, t
 	{
 		if (ls->sec > tree->sec)   //Если элемент str меньше корневого, уходим влево
 		{
-			if(ls->r == 0)
+			if (ls->r == 0)
 				tree->left = addnode_flag_t(str, tree->left, buf, ls); //Рекурсивно добавляем элемент
 			else if (ls->r == 1)
 				tree->right = addnode_flag_t(str, tree->right, buf, ls);
 		}
 		else  //иначе уходим вправо
 		{
-			if(ls->r == 1)
+			if (ls->r == 1)
 				tree->left = addnode_flag_t(str, tree->left, buf, ls); //Рекурсивно добавляем элемент
 			else if (ls->r == 0)
 				tree->right = addnode_flag_t(str, tree->right, buf, ls); //Рекурсивно добавляем элемент
@@ -49,6 +53,10 @@ struct s_node	*addnode_flag_r(char *str, struct s_node *tree, struct stat buf, t
 	if (tree == NULL)     // Если дерева нет, то формируем корень
 	{
 		tree = tree_create(str, buf, ls);
+		tree->flag = 0;
+		if (ft_strcmp(ft_strname(tree->field, '/'), ".") == 0 ||
+			ft_strcmp(ft_strname(tree->field, '/'), "..") == 0)
+			tree->flag = 1;
 		/*if (!(tree = (struct s_node *)malloc(sizeof(struct s_node))))
 			return (NULL);
 		tree->field = str;   //поле данных

@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 20:23:06 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/11/29 19:59:43 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/12/03 19:18:28 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ t_ls	*init(void)
 	new->r = 0;
 	new->big_r = 0;
 	new->f_sum = 0;
-	new->blocks = 0;
 	new->ind = 0;
 	new->sec = 0;
 	return (new);
@@ -81,7 +80,8 @@ int		directory(char *theDir, t_ls *ls)
     char			*str;
     struct	stat	buf;
 
-	dir = opendir(theDir); //открытие директории
+	ls->blocks = 0;
+    dir = opendir(theDir); //открытие директории
 	if (!dir)
 	{
        	error(theDir);
@@ -106,11 +106,12 @@ int		directory(char *theDir, t_ls *ls)
 				return (ERROR);
 		}
 		else if (!(sub_tree = addnode(ft_strjoin(str, entry->d_name), sub_tree, buf, ls)))
-			return (ERROR);
+				return (ERROR);
 	}
 	ls->flag = 2;
-	output(ls, sub_tree);
 	closedir(dir);
+	output(ls, sub_tree);
+	//closedir(dir);
 //	free(entry);
 	free(str);
 //	ft_strclr(str);
