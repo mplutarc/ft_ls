@@ -222,6 +222,9 @@
 		<Unit filename="/Users/emaveric/ls/libft/ft_strcmp.c">
 			<Option target="ls"/>
 		</Unit>
+		<Unit filename="/Users/emaveric/ls/libft/ft_strcmp_free.c">
+			<Option target="ls"/>
+		</Unit>
 		<Unit filename="/Users/emaveric/ls/libft/ft_strcpy.c">
 			<Option target="ls"/>
 		</Unit>
@@ -244,6 +247,9 @@
 			<Option target="ls"/>
 		</Unit>
 		<Unit filename="/Users/emaveric/ls/libft/ft_strjoin.c">
+			<Option target="ls"/>
+		</Unit>
+		<Unit filename="/Users/emaveric/ls/libft/ft_strjoin_free.c">
 			<Option target="ls"/>
 		</Unit>
 		<Unit filename="/Users/emaveric/ls/libft/ft_strlcat.c">

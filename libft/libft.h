@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/08 20:00:49 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/11/29 16:14:07 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/12/04 19:41:23 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,9 @@ size_t				ft_count_words(char const *s, char c);
 int					get_next_line(const int fd, char **line);
 char				*ft_strcut(const char *s, int c);
 char				*ft_strncut(char *s, int start, int end);
-char				*ft_strname(const char *s, int c);
+char				*ft_strname(char *s, int c);
 char				*ft_strbchr(const char *s, int c);
+char				*ft_strjoin_free(char *s1, char *s2, int opt);
+int 				ft_strcmp_free(char *s1, char *s2, int opt);
 
 #endif

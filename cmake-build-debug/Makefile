@@ -1203,6 +1203,33 @@ libft/ft_strcmp.c.s:
 	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/libft/ft_strcmp.c.s
 .PHONY : libft/ft_strcmp.c.s
 
+libft/ft_strcmp_free.o: libft/ft_strcmp_free.c.o
+
+.PHONY : libft/ft_strcmp_free.o
+
+# target to build an object file
+libft/ft_strcmp_free.c.o:
+	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/libft/ft_strcmp_free.c.o
+.PHONY : libft/ft_strcmp_free.c.o
+
+libft/ft_strcmp_free.i: libft/ft_strcmp_free.c.i
+
+.PHONY : libft/ft_strcmp_free.i
+
+# target to preprocess a source file
+libft/ft_strcmp_free.c.i:
+	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/libft/ft_strcmp_free.c.i
+.PHONY : libft/ft_strcmp_free.c.i
+
+libft/ft_strcmp_free.s: libft/ft_strcmp_free.c.s
+
+.PHONY : libft/ft_strcmp_free.s
+
+# target to generate assembly for a file
+libft/ft_strcmp_free.c.s:
+	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/libft/ft_strcmp_free.c.s
+.PHONY : libft/ft_strcmp_free.c.s
+
 libft/ft_strcpy.o: libft/ft_strcpy.c.o
 
 .PHONY : libft/ft_strcpy.o
@@ -1418,6 +1445,33 @@ libft/ft_strjoin.s: libft/ft_strjoin.c.s
 libft/ft_strjoin.c.s:
 	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/libft/ft_strjoin.c.s
 .PHONY : libft/ft_strjoin.c.s
+
+libft/ft_strjoin_free.o: libft/ft_strjoin_free.c.o
+
+.PHONY : libft/ft_strjoin_free.o
+
+# target to build an object file
+libft/ft_strjoin_free.c.o:
+	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/libft/ft_strjoin_free.c.o
+.PHONY : libft/ft_strjoin_free.c.o
+
+libft/ft_strjoin_free.i: libft/ft_strjoin_free.c.i
+
+.PHONY : libft/ft_strjoin_free.i
+
+# target to preprocess a source file
+libft/ft_strjoin_free.c.i:
+	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/libft/ft_strjoin_free.c.i
+.PHONY : libft/ft_strjoin_free.c.i
+
+libft/ft_strjoin_free.s: libft/ft_strjoin_free.c.s
+
+.PHONY : libft/ft_strjoin_free.s
+
+# target to generate assembly for a file
+libft/ft_strjoin_free.c.s:
+	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/libft/ft_strjoin_free.c.s
+.PHONY : libft/ft_strjoin_free.c.s
 
 libft/ft_strlcat.o: libft/ft_strlcat.c.o
 
@@ -2385,6 +2439,9 @@ help:
 	@echo "... libft/ft_strcmp.o"
 	@echo "... libft/ft_strcmp.i"
 	@echo "... libft/ft_strcmp.s"
+	@echo "... libft/ft_strcmp_free.o"
+	@echo "... libft/ft_strcmp_free.i"
+	@echo "... libft/ft_strcmp_free.s"
 	@echo "... libft/ft_strcpy.o"
 	@echo "... libft/ft_strcpy.i"
 	@echo "... libft/ft_strcpy.s"
@@ -2409,6 +2466,9 @@ help:
 	@echo "... libft/ft_strjoin.o"
 	@echo "... libft/ft_strjoin.i"
 	@echo "... libft/ft_strjoin.s"
+	@echo "... libft/ft_strjoin_free.o"
+	@echo "... libft/ft_strjoin_free.i"
+	@echo "... libft/ft_strjoin_free.s"
 	@echo "... libft/ft_strlcat.o"
 	@echo "... libft/ft_strlcat.i"
 	@echo "... libft/ft_strlcat.s"

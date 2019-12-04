@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/31 15:11:20 by emaveric          #+#    #+#             */
-/*   Updated: 2019/12/03 17:32:55 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/12/04 20:23:33 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ void			mode_to_rwx(struct s_node *tree, struct stat buf)
 	tree->mode[i++] = ((buf.st_mode & S_IROTH) ? 'r' : '-');
 	tree->mode[i++] = ((buf.st_mode & S_IWOTH) ? 'w' : '-');
 	tree->mode[i++] = ((buf.st_mode & S_IXOTH) ? 'x' : '-');
+	tree->mode[i] = '\0';
 }
 
 struct s_node	*tree_create(char *str, struct stat buf, t_ls *ls)
@@ -40,7 +41,7 @@ struct s_node	*tree_create(char *str, struct stat buf, t_ls *ls)
 	struct group	*grp;
 	struct s_node	*tree;
 
-	if (!(tree = (struct s_node *)malloc(sizeof(struct s_node))))
+	if (!(tree = (struct s_node *)ft_memalloc(sizeof(struct s_node))))
 		return (NULL);
 	mode_to_rwx(tree, buf);
 	pws = getpwuid(buf.st_uid);
@@ -66,17 +67,24 @@ struct s_node	*tree_create(char *str, struct stat buf, t_ls *ls)
 
 struct s_node	*addnode(char *str, struct s_node *tree, struct stat buf, t_ls *ls)
 {
-	struct passwd	*pws;
-	struct group	*grp;
+	char *tmp;
 
 	if (tree == NULL)     // Если дерева нет, то формируем корень
 	{
 		if (!(tree = tree_create(str, buf, ls)))
 			return (NULL);
 		tree->flag = 0;
-		if (ft_strcmp(ft_strname(tree->field, '/'), ".") == 0 ||
-			ft_strcmp(ft_strname(tree->field, '/'), "..") == 0)
+		if (ft_strcmp_free(tmp = ft_strname(tree->field, '/'), ".", 1) == 0 ||
+			ft_strcmp_free(tmp = ft_strname(tree->field, '/'), "..", 1) == 0)
 			tree->flag = 1;
+		/*if (!(tree = (struct s_node *)malloc(sizeof(struct s_node))))
+			return (NULL);
+		tree->field = str;   //поле данных
+		tree->ino = buf.st_ino;
+		tree->left = NULL;
+		tree->right = NULL; //ветви инициализируем пустотой*/
+	/*	if (tmp)
+			free(tmp);*/
 	}
 	else     // иначе
 	{
@@ -102,15 +110,25 @@ int				sorting(int	ac, char **av, t_ls *ls, struct stat buf)
 			if (ls->t == 1)
 			{
 				if (!(tree = addnode_flag_t(av[i], tree, buf, ls)))
-					return (ERROR);
+				{
+					free_tree(tree);
+					return(ERROR);
+				}
 			}
 			else if (ls->r == 1)
 			{
 				if (!(tree = addnode_flag_r(av[i], tree, buf, ls)))
-					return (ERROR);
+				{
+					free_tree(tree);
+					return(ERROR);
+				}
+					//return (ERROR);
 			}
 			else if (!(tree = addnode(av[i], tree, buf, ls)))
-				return (ERROR);
+			{
+				free_tree(tree);
+				return(ERROR);
+			}
 		}
 		i++;
 	}

@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/19 18:51:41 by emaveric          #+#    #+#             */
-/*   Updated: 2019/12/03 19:18:28 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/12/04 21:33:59 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,18 @@
 
 struct s_node	*addnode_flag_t(char *str, struct s_node *tree, struct stat buf, t_ls *ls)
 {
+	char 	*tmp; ////////
+
 	if (tree == NULL)     // Если дерева нет, то формируем корень
 	{
-		tree = tree_create(str, buf, ls);
+		if (!(tree = tree_create(str, buf, ls)))
+			return (NULL);
 		tree->flag = 0;
-		if (ft_strcmp(ft_strname(tree->field, '/'), ".") == 0 ||
-			ft_strcmp(ft_strname(tree->field, '/'), "..") == 0)
+		if (ft_strcmp((tmp = ft_strname(tree->field, '/')), ".") == 0 ||
+			ft_strcmp(tmp = ft_strname(tree->field, '/'), "..") == 0)
 			tree->flag = 1;
+//		if (tmp != NULL)
+//			free(tmp);
 		/*if (!(tree = (struct s_node *)malloc(sizeof(struct s_node))))
 			return (NULL);
 		tree->field = str;   //поле данных
@@ -50,12 +55,15 @@ struct s_node	*addnode_flag_t(char *str, struct s_node *tree, struct stat buf, t
 
 struct s_node	*addnode_flag_r(char *str, struct s_node *tree, struct stat buf, t_ls *ls)
 {
+	char *tmp; /////////
+
 	if (tree == NULL)     // Если дерева нет, то формируем корень
 	{
-		tree = tree_create(str, buf, ls);
+		if (!(tree = tree_create(str, buf, ls)))
+			return (NULL);
 		tree->flag = 0;
-		if (ft_strcmp(ft_strname(tree->field, '/'), ".") == 0 ||
-			ft_strcmp(ft_strname(tree->field, '/'), "..") == 0)
+		if (ft_strcmp(tmp = ft_strname(tree->field, '/'), ".") == 0 ||
+			ft_strcmp(tmp = ft_strname(tree->field, '/'), "..") == 0)
 			tree->flag = 1;
 		/*if (!(tree = (struct s_node *)malloc(sizeof(struct s_node))))
 			return (NULL);

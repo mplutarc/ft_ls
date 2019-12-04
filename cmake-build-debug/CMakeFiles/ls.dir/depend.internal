@@ -116,6 +116,9 @@ CMakeFiles/ls.dir/libft/ft_strclr.c.o
 CMakeFiles/ls.dir/libft/ft_strcmp.c.o
  /Users/emaveric/ls/libft/ft_strcmp.c
  /Users/emaveric/ls/libft/libft.h
+CMakeFiles/ls.dir/libft/ft_strcmp_free.c.o
+ /Users/emaveric/ls/libft/ft_strcmp_free.c
+ /Users/emaveric/ls/libft/libft.h
 CMakeFiles/ls.dir/libft/ft_strcpy.c.o
  /Users/emaveric/ls/libft/ft_strcpy.c
  /Users/emaveric/ls/libft/libft.h
@@ -139,6 +142,9 @@ CMakeFiles/ls.dir/libft/ft_striteri.c.o
  /Users/emaveric/ls/libft/libft.h
 CMakeFiles/ls.dir/libft/ft_strjoin.c.o
  /Users/emaveric/ls/libft/ft_strjoin.c
+ /Users/emaveric/ls/libft/libft.h
+CMakeFiles/ls.dir/libft/ft_strjoin_free.c.o
+ /Users/emaveric/ls/libft/ft_strjoin_free.c
  /Users/emaveric/ls/libft/libft.h
 CMakeFiles/ls.dir/libft/ft_strlcat.c.o
  /Users/emaveric/ls/libft/ft_strlcat.c

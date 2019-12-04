@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   ft_strcmp_free.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/15 19:33:01 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/12/04 18:05:51 by emaveric         ###   ########.fr       */
+/*   Created: 2019/12/04 17:26:29 by emaveric          #+#    #+#             */
+/*   Updated: 2019/12/04 17:30:51 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memalloc(size_t size)
+int 	ft_strcmp_free(char *s1, char *s2, int opt)
 {
-	void *mal;
+	int 	numb;
 
-	mal = malloc(size);
-	if (mal)
-	{
-		ft_bzero(mal, size);
-		return (mal);
-	}
-	return (NULL);
+	numb = ft_strcmp(s1, s2);
+	if (opt == 1 || opt > 2)
+		free(s1);
+	if (opt >= 2)
+		free(s2);
+	return (numb);
 }

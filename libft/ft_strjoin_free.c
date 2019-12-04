@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   ft_strjoin_free.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/15 19:33:01 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/12/04 18:05:51 by emaveric         ###   ########.fr       */
+/*   Created: 2019/12/04 16:51:56 by emaveric          #+#    #+#             */
+/*   Updated: 2019/12/04 17:56:43 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memalloc(size_t size)
+char 	*ft_strjoin_free(char *s1, char *s2, int opt)
 {
-	void *mal;
+	char *res;
 
-	mal = malloc(size);
-	if (mal)
-	{
-		ft_bzero(mal, size);
-		return (mal);
-	}
-	return (NULL);
+	res = ft_strjoin(s1, s2);
+	if (opt == 1 || opt > 2)
+		free(s1);
+	if (opt >= 2)
+		free(s2);
+/*	if (!res)
+		return (NULL);*/
+	return (res);
 }

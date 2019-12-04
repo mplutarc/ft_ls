@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 20:23:13 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/12/03 19:18:28 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/12/04 18:48:34 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,7 @@ void				mode_to_rwx(struct s_node *tree, struct stat buf);
 struct s_node		*tree_create(char *str, struct stat buf, t_ls *ls);
 struct s_node		*addnode_flag_t(char *str, struct s_node *tree, struct stat buf, t_ls *ls);
 void				last_dir_check(struct s_node *tree, t_ls *ls);
-void				free_tree(struct s_node *tree, t_ls *ls);
+void				free_tree(struct s_node *tree);
+void				free_ls(t_ls *ls);
 
 #endif
