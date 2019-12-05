@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/31 15:11:20 by emaveric          #+#    #+#             */
-/*   Updated: 2019/12/04 20:23:33 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/12/05 21:07:29 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void			mode_to_rwx(struct s_node *tree, struct stat buf)
 	int		i;
 
 	i = 0;
-	tree->mode = (char *)malloc(sizeof(char) * 11);
+	tree->mode = (char *)ft_memalloc(sizeof(char) * 11);
 	if ((buf.st_mode & S_IFLNK) == 40960)
 		tree->mode[i] = 'l';
 	else
@@ -41,7 +41,9 @@ struct s_node	*tree_create(char *str, struct stat buf, t_ls *ls)
 	struct group	*grp;
 	struct s_node	*tree;
 
-	if (!(tree = (struct s_node *)ft_memalloc(sizeof(struct s_node))))
+//	if (!(tree = (struct s_node *)ft_memalloc(sizeof(struct s_node))))
+//		return (NULL);
+	if (!(tree = (struct s_node *)malloc(sizeof(struct s_node))))
 		return (NULL);
 	mode_to_rwx(tree, buf);
 	pws = getpwuid(buf.st_uid);
@@ -72,7 +74,11 @@ struct s_node	*addnode(char *str, struct s_node *tree, struct stat buf, t_ls *ls
 	if (tree == NULL)     // Если дерева нет, то формируем корень
 	{
 		if (!(tree = tree_create(str, buf, ls)))
+		{
+			free_tree(tree);
 			return (NULL);
+		}
+		//	return (NULL);
 		tree->flag = 0;
 		if (ft_strcmp_free(tmp = ft_strname(tree->field, '/'), ".", 1) == 0 ||
 			ft_strcmp_free(tmp = ft_strname(tree->field, '/'), "..", 1) == 0)
@@ -99,19 +105,23 @@ struct s_node	*addnode(char *str, struct s_node *tree, struct stat buf, t_ls *ls
 int				sorting(int	ac, char **av, t_ls *ls, struct stat buf)
 {
 	struct s_node	*tree;
+	struct s_node	*sub_tree;
 	int				i;
 
 	i = 1;
 	tree = NULL;
+	sub_tree = NULL;
 	while (i < ac)
 	{
+		if (sub_tree == NULL)
+			sub_tree = tree;
 		if (i != ls->f_index[i] && i != ls->dh_index)
 		{
 			if (ls->t == 1)
 			{
 				if (!(tree = addnode_flag_t(av[i], tree, buf, ls)))
 				{
-					free_tree(tree);
+					free_tree(sub_tree);
 					return(ERROR);
 				}
 			}
@@ -119,14 +129,14 @@ int				sorting(int	ac, char **av, t_ls *ls, struct stat buf)
 			{
 				if (!(tree = addnode_flag_r(av[i], tree, buf, ls)))
 				{
-					free_tree(tree);
+					free_tree(sub_tree);
 					return(ERROR);
 				}
 					//return (ERROR);
 			}
 			else if (!(tree = addnode(av[i], tree, buf, ls)))
 			{
-				free_tree(tree);
+				free_tree(sub_tree);
 				return(ERROR);
 			}
 		}

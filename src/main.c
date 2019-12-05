@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 20:23:06 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/12/04 21:33:03 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/12/05 21:31:13 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,7 @@ int		directory(char *theDir, t_ls *ls)
     char			*str;
     struct	stat	buf;
     char 			*tmp;
+	struct	s_node	*tree;
 
 	ls->blocks = 0;
     dir = opendir(theDir); //открытие директории
@@ -87,12 +88,15 @@ int		directory(char *theDir, t_ls *ls)
        	error(theDir);
        	return (0);
    	}
+	tree = NULL;
 	sub_tree = NULL;
 	str = (char *)ft_memalloc(sizeof(char) * (ft_strlen(theDir) + 2));
 	str = ft_strcpy(str, theDir);
 	ft_strcat(str, "/");
 	while ((entry = readdir(dir)))  //пока директория читаема
 	{
+		if (tree == NULL)
+			tree = sub_tree;
 		lstat(tmp = ft_strjoin(str, entry->d_name), &buf);
 		free(tmp);
 		ls->sec = buf.st_mtimespec.tv_sec;
@@ -100,7 +104,9 @@ int		directory(char *theDir, t_ls *ls)
 		{
 			if (!(sub_tree = addnode_flag_t(ft_strjoin(str, entry->d_name), sub_tree, buf, ls)))
 			{
-				free_tree(sub_tree);
+				//free_tree(sub_tree);
+				closedir(dir);
+				free(str);
 				return(ERROR);
 			}
 		}
@@ -108,6 +114,7 @@ int		directory(char *theDir, t_ls *ls)
 		{
 			if (!(sub_tree = addnode_flag_r(ft_strjoin(str, entry->d_name), sub_tree, buf, ls)))
 			{
+				closedir(dir);
 				free_tree(sub_tree);
 				return(ERROR);
 			}
@@ -126,7 +133,8 @@ int		directory(char *theDir, t_ls *ls)
 	free(str);
 	//ft_strclr(str);
 	//free(&buf);
-	//free_tree(sub_tree);
+	//free_tree(tree);
+
     return (0);
 }
 
@@ -159,30 +167,6 @@ int		main(int ac, char **av)
 		free_ls(ls);
 		return (ERROR);
 	}
-/*	while (i < ac)
-	{
-		if (i != ls->dh_index && i != ls->f_index[i])
-		{
-			if (!opendir(av[i]) && fopen(av[i], "rt"))
-				files(av[i], ".");
-			else if (i == ls->e_index[j])
-				j++;
-			else if (i != ls->e_index[j])
-				directory(av[i]);
-		}
-	*//*	else if (ls->dh_index && i == ls->dh_index)
-		{
-			directory(av[i]);
-		}*//*
-		else if (i == ls->dh_index)
-			j++;
-		i++;
-		{
-		free_ls(ls);
-		return (ERROR);
-		}
-	}*/
 	free_ls(ls);
-	//free_buf(buf);
 	return (0);
 }

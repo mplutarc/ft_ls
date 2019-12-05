@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/28 17:41:40 by emaveric          #+#    #+#             */
-/*   Updated: 2019/12/04 21:33:03 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/12/05 17:34:13 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 void		free_ls(t_ls *ls)
 {
-	free(ls->f_index);
+	if (ls->f_index)
+		free(ls->f_index);
 	free(ls);
 }
 
@@ -42,6 +43,6 @@ void	free_tree(struct s_node *tree)
 			free(tree);
 			tree = NULL;
 		}
-		//free_tree(sub_tree->right); //Рекурсивная функция вывода правого поддерева
+	//	free_tree(sub_tree->right); //Рекурсивная функция вывода правого поддерева
 	}
 }
