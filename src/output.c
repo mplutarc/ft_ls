@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 19:11:32 by emaveric          #+#    #+#             */
-/*   Updated: 2019/12/05 21:07:29 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/12/09 18:30:12 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	e_print(struct s_node *tree, t_ls *ls)
 	if (tree != NULL)
 	{      //Пока не встретится пустой узел
 		e_print(tree->left, ls);  //Рекурсивная функция вывода левого поддерева
-		if (files(tree, ".") == ERROR && tree->mode[0] != 'd') //&& !opendir(tree->field))
+		if (files(tree, ".") == ERROR && (tree->mode[0] != 'd' && ls->flag != 0)) //&& !opendir(tree->field))
 			directory(tree->field, ls);
 		e_print(tree->right, ls); //Рекурсивная функция вывода правого поддерева
 	}
@@ -25,15 +25,13 @@ void	e_print(struct s_node *tree, t_ls *ls)
 
 void	print(struct s_node *tree, t_ls *ls)
 {
-	char	*tmp;
-
 	if (tree != NULL)
 	{      //Пока не встретится пустой узел
 		print(tree->left, ls);  //Рекурсивная функция вывода левого поддерева
 		if (ls->flag == 2 || (ls->flag == 0 && files(tree, ".") == 0))
 		{
 			//tree->field = ft_strcut(tree->field, '/');
-			if ((tmp = ft_strname(tree->field, '/'))[0] != '.' || ls->a == 1)
+			if ((ft_strname(tree->field, '/'))[0] != '.' || ls->a == 1)
 			{
 				if (ls->i == 1)
 					i_flag_print(tree, ls);
@@ -41,17 +39,14 @@ void	print(struct s_node *tree, t_ls *ls)
 					l_flag_print(tree, ls);
 				else
 				{
-					//ft_putstr(ft_strname(tree->field, '/'));
-					ft_putstr(tmp);
+					ft_putstr(ft_strname(tree->field, '/'));
 					ft_putchar('\t');
-					free(tmp);
 				}
 			}
 			//ft_putendl(tree->field);
 		}
 		else if (tree->mode[0] == 'd' || ls->flag == 0)// && tree->mode[0] != 'l')
 			directory(tree->field, ls);
-		//}
 		print(tree->right, ls); //Рекурсивная функция вывода правого поддерева
 		/*if (ft_strcmp(ft_strname(tree->field, '/'), ".") == 0 && ls->big_r == 1
 			&& ls->ind != 1)

@@ -15,19 +15,6 @@
 char	*ft_strname(char *s, int c)
 {
 	int		i;
-	char 	*new;
-	char 	*tmp;
-
-//	i = ft_strlen(s);
-//	if (!(new = ft_strdup(s)))
-//		return (NULL);
-//	while (new[i] != (char)c)
-//	{
-//		if (!new[--i])
-//			return ((char *)new);
-//	}
-//	//tmp = &new[i + 1];
-//	return ((char *)&new[i + 1]);
 
 	i = ft_strlen(s);
 	while (s[i] != (char)c)
@@ -35,6 +22,5 @@ char	*ft_strname(char *s, int c)
 		if (!s[--i])
 			return ((char *)s);
 	}
-	//tmp = &new[i + 1];
 	return ((char *)&s[i + 1]);
 }

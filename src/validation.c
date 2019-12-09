@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 17:54:51 by emaveric          #+#    #+#             */
-/*   Updated: 2019/12/05 15:43:23 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/12/09 18:35:56 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ int 	flag_sum(int ac, char **av, t_ls *ls)
 			break;
 		i++;
 	}
-	if (!(ls->f_index = (int *)ft_memalloc(sizeof(int) * (f_sum + 1))))
+	if (!(ls->f_index = (int *)malloc(sizeof(int) * (f_sum + 1))))
 		return (ERROR);
 	flag_ind(ac, av, ls);
 	return (0);

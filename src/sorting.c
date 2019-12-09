@@ -6,18 +6,19 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/31 15:11:20 by emaveric          #+#    #+#             */
-/*   Updated: 2019/12/05 21:07:29 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/12/09 19:37:26 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_ls.h"
 
-void			mode_to_rwx(struct s_node *tree, struct stat buf)
+int			mode_to_rwx(struct s_node *tree, struct stat buf)
 {
 	int		i;
 
 	i = 0;
-	tree->mode = (char *)ft_memalloc(sizeof(char) * 11);
+	if (!(tree->mode = (char *)ft_memalloc(sizeof(char) * 11)))
+		return (ERROR);
 	if ((buf.st_mode & S_IFLNK) == 40960)
 		tree->mode[i] = 'l';
 	else
@@ -33,6 +34,7 @@ void			mode_to_rwx(struct s_node *tree, struct stat buf)
 	tree->mode[i++] = ((buf.st_mode & S_IWOTH) ? 'w' : '-');
 	tree->mode[i++] = ((buf.st_mode & S_IXOTH) ? 'x' : '-');
 	tree->mode[i] = '\0';
+	return (0);
 }
 
 struct s_node	*tree_create(char *str, struct stat buf, t_ls *ls)
@@ -41,11 +43,10 @@ struct s_node	*tree_create(char *str, struct stat buf, t_ls *ls)
 	struct group	*grp;
 	struct s_node	*tree;
 
-//	if (!(tree = (struct s_node *)ft_memalloc(sizeof(struct s_node))))
-//		return (NULL);
 	if (!(tree = (struct s_node *)malloc(sizeof(struct s_node))))
 		return (NULL);
-	mode_to_rwx(tree, buf);
+	if (mode_to_rwx(tree, buf) == ERROR)
+		return (NULL);
 	pws = getpwuid(buf.st_uid);
 	grp = getgrgid(buf.st_gid);
 	if (pws != NULL)
@@ -61,7 +62,8 @@ struct s_node	*tree_create(char *str, struct stat buf, t_ls *ls)
 	else if (ft_strname(str, '/')[0] != '.')
 		ls->blocks += buf.st_blocks;
 	tree->sec = buf.st_mtimespec.tv_sec;
-	tree->time = ft_strdup(ctime((long int *)&buf.st_ctimespec));
+	//tree->time = ft_strdup(ctime((long int *)&buf.st_ctimespec));
+	tree->time = ctime((long int *)&buf.st_ctimespec);
 	tree->left = NULL;
 	tree->right = NULL; //ветви инициализируем пустотой
 	return (tree);
@@ -69,8 +71,6 @@ struct s_node	*tree_create(char *str, struct stat buf, t_ls *ls)
 
 struct s_node	*addnode(char *str, struct s_node *tree, struct stat buf, t_ls *ls)
 {
-	char *tmp;
-
 	if (tree == NULL)     // Если дерева нет, то формируем корень
 	{
 		if (!(tree = tree_create(str, buf, ls)))
@@ -80,17 +80,9 @@ struct s_node	*addnode(char *str, struct s_node *tree, struct stat buf, t_ls *ls
 		}
 		//	return (NULL);
 		tree->flag = 0;
-		if (ft_strcmp_free(tmp = ft_strname(tree->field, '/'), ".", 1) == 0 ||
-			ft_strcmp_free(tmp = ft_strname(tree->field, '/'), "..", 1) == 0)
+		if (ft_strcmp(ft_strname(tree->field, '/'), ".") == 0 ||
+			ft_strcmp(ft_strname(tree->field, '/'), "..") == 0)
 			tree->flag = 1;
-		/*if (!(tree = (struct s_node *)malloc(sizeof(struct s_node))))
-			return (NULL);
-		tree->field = str;   //поле данных
-		tree->ino = buf.st_ino;
-		tree->left = NULL;
-		tree->right = NULL; //ветви инициализируем пустотой*/
-	/*	if (tmp)
-			free(tmp);*/
 	}
 	else     // иначе
 	{
@@ -115,7 +107,7 @@ int				sorting(int	ac, char **av, t_ls *ls, struct stat buf)
 	{
 		if (sub_tree == NULL)
 			sub_tree = tree;
-		if (i != ls->f_index[i] && i != ls->dh_index)
+		if ((ls->f_sum < i || i != ls->f_index[i]) && i != ls->dh_index)
 		{
 			if (ls->t == 1)
 			{
@@ -132,7 +124,6 @@ int				sorting(int	ac, char **av, t_ls *ls, struct stat buf)
 					free_tree(sub_tree);
 					return(ERROR);
 				}
-					//return (ERROR);
 			}
 			else if (!(tree = addnode(av[i], tree, buf, ls)))
 			{
@@ -143,5 +134,7 @@ int				sorting(int	ac, char **av, t_ls *ls, struct stat buf)
 		i++;
 	}
 	output(ls, tree);
+	free_first_tree(tree);
+	free_tree(tree);
 	return (0);
 }
