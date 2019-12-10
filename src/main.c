@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 20:23:06 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/12/09 19:38:03 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/12/10 19:13:10 by mplutarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,6 +139,8 @@ int		main(int ac, char **av)
 	int 		i;
 
 	if (!(ls = init()))
+		return (ERROR);
+	if (!(ls->col = init_col()))
 		return (ERROR);
 	if (validation(ac, av, ls) == ERROR)
 	{

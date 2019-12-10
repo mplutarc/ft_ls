@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/14 17:25:24 by emaveric          #+#    #+#             */
-/*   Updated: 2019/12/09 16:47:54 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/12/10 19:23:54 by mplutarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,20 +67,21 @@ void    l_flag_print(struct s_node *tree, t_ls *ls)
 	if (ls->flag == 2 || (ls->flag == 0 && files(tree, ".") == 0))
 		if (ft_strname(tree->field, '/')[0] != '.' || ls->a == 1)
 		{
-			ft_putstr(tree->mode);
-			ft_putchar(' ');
-			ft_putnbr(tree->links);
-			ft_putchar(' ');
-			ft_putstr(tree->uid);
-			ft_putchar(' ');
-			ft_putstr(tree->gid);
-			ft_putchar(' ');
-			ft_putnbr(tree->size);
-			ft_putchar(' ');
-			tree->time = ft_strncut(tree->time, 4, 16);
-			ft_putstr(tree->time);
-			ft_putchar(' ');
-			ft_putendl(ft_strname(tree->field, '/'));
+			ft_putendl(into_string(tree, ls));
+			// ft_putstr(tree->mode);
+			// ft_putchar(' ');
+			// ft_putnbr(tree->links);
+			// ft_putchar(' ');
+			// ft_putstr(tree->uid);
+			// ft_putchar(' ');
+			// ft_putstr(tree->gid);
+			// ft_putchar(' ');
+			// ft_putnbr(tree->size);
+			// ft_putchar(' ');
+			// tree->time = ft_strncut(tree->time, 4, 16);
+			// ft_putstr(tree->time);
+			// ft_putchar(' ');
+			// ft_putendl(ft_strname(tree->field, '/'));
 		}
 }
 

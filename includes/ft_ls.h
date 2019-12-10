@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 20:23:13 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/12/09 18:46:06 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/12/10 19:12:27 by mplutarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,13 @@
 # include <string.h>
 # include <limits.h>
 # include "../libft/libft.h"
+
+typedef struct		s_column
+{
+	int				link;
+	int				size;
+}					t_column;
+
 
 struct				s_node
 {
@@ -62,6 +69,7 @@ typedef struct		s_ls
     int 			dh_index; //индекс для --
     int 			*f_index; // индекс для флагов
 	char 			**c_dir; // for "."
+	t_column		*col;
 }					t_ls;
 
 int					files(struct s_node *tree, char *theDir);
@@ -89,5 +97,7 @@ void				last_dir_check(struct s_node *tree, t_ls *ls);
 void				free_tree(struct s_node *tree);
 void				free_ls(t_ls *ls);
 void				free_first_tree(struct s_node *tree);
+char				*into_string(struct s_node *tree, t_ls *ls);
+t_column			*init_col(void);
 
 #endif
