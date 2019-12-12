@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/14 17:25:24 by emaveric          #+#    #+#             */
-/*   Updated: 2019/12/10 19:23:54 by mplutarc         ###   ########.fr       */
+/*   Updated: 2019/12/12 20:51:40 by mplutarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,8 @@ void    l_flag_print(struct s_node *tree, t_ls *ls)
 			// tree->time = ft_strncut(tree->time, 4, 16);
 			// ft_putstr(tree->time);
 			// ft_putchar(' ');
-			// ft_putendl(ft_strname(tree->field, '/'));
+			ft_putendl(ft_strname(tree->field, '/'));
+			ft_putchar('\n');
 		}
 }
 
