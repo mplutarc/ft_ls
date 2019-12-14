@@ -6,36 +6,31 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 20:42:27 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/12/12 20:54:28 by mplutarc         ###   ########.fr       */
+/*   Updated: 2019/12/14 12:38:26 by mplutarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_ls.h"
 
-char		*itostr(struct s_node *tree, t_ls *ls)
+t_ls		*itostr(struct s_node *tree, t_ls *ls)
 {
-	char	*str_link;
-	char	*str_size;
 	int		sizeofstr;
 	int		i;
+	int		tmp;
 
 	sizeofstr = 0;
-	while ((ls->col->link / 10) > 0)
-	{
-		ls->col->link /= 10;
+	tmp = ls->col->link;
+	while ((tmp /= 10) > 0)
 		sizeofstr++;
-	}
-	printf("size of str |%d|\n", sizeofstr);
-	if (!(str_link = (char *)malloc(sizeof(char *) * (sizeofstr + 3))))
-		return (NULL);
-	i = 0;
-	while (i < sizeofstr + 3)
-	{
-		str_link[i] = '.';
-		printf("|%s|\n", str_link);
-		i++;
-	}
-	return (str_link);
+	sizeofstr += 3;
+	ls->col->str_link = ft_itoa_rev(tree->links, sizeofstr);
+	sizeofstr = 0;
+	tmp = ls->col->size;
+	while ((tmp /= 10) > 0)
+		sizeofstr++;
+	sizeofstr += 3;
+	ls->col->str_size = ft_itoa_rev(tree->size, sizeofstr);
+	return (ls);
 }
 
 t_column	*init_col(void)
@@ -49,27 +44,26 @@ t_column	*init_col(void)
 	return(new);
 }
 
-t_ls		*max_str(struct s_node *tree, t_ls *ls)
-{
-	if (tree != NULL)
-	{
-		max_str(tree->left, ls);
-		if (ls->col->link < tree->links)
-			ls->col->link = tree->links;
-		if (ls->col->size < tree->size)
-			ls->col->size = tree->size;
-		max_str(tree->right, ls);
-	}
-	return (ls);
-}
+// t_ls		*max_str(struct s_node *tree, t_ls *ls)
+// {
+// 	if (tree != NULL)
+// 	{
+// 		ft_putstr(tree->field);
+// 		ft_putchar('\n');
+// 		max_str(tree->left, ls);
+// 		printf("Check LINKS: %d < %d\n", ls->col->link, tree->links);
+// 		printf("Check SIZE:  %d < %d\n\n", ls->col->size, tree->size);
+// 		if (ls->col->link <= tree->links)
+// 			ls->col->link = tree->links;
+// 		if (ls->col->size <= tree->size)
+// 			ls->col->size = tree->size;
+// 		max_str(tree->right, ls);
+// 	}
+// 	return (ls);
+// }
 
-char		*into_string(struct s_node *tree, t_ls *ls)
+void		into_string(struct s_node *tree, t_ls *ls)
 {
-	char	*res;
-
-	ls = max_str(tree, ls);
-	printf("max link = %d, max size = %d\n",ls->col->link, ls->col->size);
-	res = ft_strcat(tree->mode, itostr(tree, ls));
-	printf("res: |%s|\n", res);
-	return(res);
+	ls = itostr(tree, ls);
+	// printf("link = |%s| size = |%s|\n",ls->col->str_link, ls->col->str_size);
 }

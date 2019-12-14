@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 20:23:13 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/12/12 20:48:01 by mplutarc         ###   ########.fr       */
+/*   Updated: 2019/12/13 16:13:13 by mplutarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ typedef struct		s_column
 {
 	int				link;
 	int				size;
+	char			*str_link;
+	char			*str_size;
 }					t_column;
 
 struct				s_node
@@ -99,8 +101,9 @@ void				last_dir_check(struct s_node *tree, t_ls *ls);
 void				free_tree(struct s_node *tree);
 void				free_ls(t_ls *ls);
 void				free_first_tree(struct s_node *tree);
-char				*into_string(struct s_node *tree, t_ls *ls);
+void				into_string(struct s_node *tree, t_ls *ls);
 t_column			*init_col(void);
 t_ls				*max_str(struct s_node *tree, t_ls *ls);
+t_ls				*itostr(struct s_node *tree, t_ls *ls);
 
 #endif

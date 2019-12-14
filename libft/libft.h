@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/08 20:00:49 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/12/04 19:41:23 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/12/13 15:14:36 by mplutarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,5 +99,6 @@ char				*ft_strname(char *s, int c);
 char				*ft_strbchr(const char *s, int c);
 char				*ft_strjoin_free(char *s1, char *s2, int opt);
 int 				ft_strcmp_free(char *s1, char *s2, int opt);
+char				*ft_itoa_rev(int n, int size);
 
 #endif

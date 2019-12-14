@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/31 15:11:20 by emaveric          #+#    #+#             */
-/*   Updated: 2019/12/12 20:48:47 by mplutarc         ###   ########.fr       */
+/*   Updated: 2019/12/14 12:29:42 by mplutarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,11 @@ struct s_node	*tree_create(char *str, struct stat buf, t_ls *ls)
 	tree->field = str;   //поле данных
 	tree->ino = buf.st_ino;
 	tree->size = buf.st_size;
+	if (ls->col->size <= tree->size)
+		ls->col->size = tree->size;
 	tree->links = buf.st_nlink;
+	if (ls->col->link <= tree->links)
+		ls->col->link = tree->links;
 	if (ls->a == 1)
 		ls->blocks += buf.st_blocks;
 	else if (ft_strname(str, '/')[0] != '.')
