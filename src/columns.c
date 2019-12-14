@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 20:42:27 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/12/14 15:25:58 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/12/14 18:19:17 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,16 @@ t_ls		*itostr(struct s_node *tree, t_ls *ls)
 		sizeofstr++;
 	sizeofstr += 3;
 	ls->col->str_size = ft_itoa_rev(tree->size, sizeofstr);
+	if (ls->i == 1)
+	{
+		sizeofstr = 0;
+		tmp = ls->col->ino;
+		while ((tmp /= 10) > 0)
+			sizeofstr++;
+		sizeofstr += 3;
+		ls->col->str_ino = ft_itoa_rev(tree->ino, sizeofstr);
+		ft_strncut(ls->col->str_ino, 2, ft_strlen(ls->col->str_ino));
+	}
 	return (ls);
 }
 
@@ -41,6 +51,7 @@ t_column	*init_col(void)
 		    return (NULL);
 	new->link = 0;
 	new->size = 0;
+	new->ino = 0;
 	return(new);
 }
 

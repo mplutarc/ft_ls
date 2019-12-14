@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/28 17:41:40 by emaveric          #+#    #+#             */
-/*   Updated: 2019/12/14 15:46:58 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/12/14 18:28:43 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,13 @@ void		free_ls(t_ls *ls)
 {
 	if (ls->f_index)
 		free(ls->f_index);
+	if (ls->col->str_ino)
+		free(ls->col->str_ino);
+	if (ls->col->str_link)
+		free(ls->col->str_link);
+	if (ls->col->str_size)
+		free(ls->col->str_size);
+	free(ls->col);
 	free(ls);
 }
 

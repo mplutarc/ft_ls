@@ -879,6 +879,33 @@ libft/ft_memset.c.s:
 	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/libft/ft_memset.c.s
 .PHONY : libft/ft_memset.c.s
 
+libft/ft_numlen.o: libft/ft_numlen.c.o
+
+.PHONY : libft/ft_numlen.o
+
+# target to build an object file
+libft/ft_numlen.c.o:
+	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/libft/ft_numlen.c.o
+.PHONY : libft/ft_numlen.c.o
+
+libft/ft_numlen.i: libft/ft_numlen.c.i
+
+.PHONY : libft/ft_numlen.i
+
+# target to preprocess a source file
+libft/ft_numlen.c.i:
+	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/libft/ft_numlen.c.i
+.PHONY : libft/ft_numlen.c.i
+
+libft/ft_numlen.s: libft/ft_numlen.c.s
+
+.PHONY : libft/ft_numlen.s
+
+# target to generate assembly for a file
+libft/ft_numlen.c.s:
+	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/libft/ft_numlen.c.s
+.PHONY : libft/ft_numlen.c.s
+
 libft/ft_putchar.o: libft/ft_putchar.c.o
 
 .PHONY : libft/ft_putchar.o
@@ -2457,6 +2484,9 @@ help:
 	@echo "... libft/ft_memset.o"
 	@echo "... libft/ft_memset.i"
 	@echo "... libft/ft_memset.s"
+	@echo "... libft/ft_numlen.o"
+	@echo "... libft/ft_numlen.i"
+	@echo "... libft/ft_numlen.s"
 	@echo "... libft/ft_putchar.o"
 	@echo "... libft/ft_putchar.i"
 	@echo "... libft/ft_putchar.s"

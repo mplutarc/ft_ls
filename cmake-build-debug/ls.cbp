@@ -186,6 +186,9 @@
 		<Unit filename="/Users/emaveric/ls/libft/ft_memset.c">
 			<Option target="ls"/>
 		</Unit>
+		<Unit filename="/Users/emaveric/ls/libft/ft_numlen.c">
+			<Option target="ls"/>
+		</Unit>
 		<Unit filename="/Users/emaveric/ls/libft/ft_putchar.c">
 			<Option target="ls"/>
 		</Unit>

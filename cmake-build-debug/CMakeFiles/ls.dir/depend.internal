@@ -80,6 +80,9 @@ CMakeFiles/ls.dir/libft/ft_memmove.c.o
 CMakeFiles/ls.dir/libft/ft_memset.c.o
  /Users/emaveric/ls/libft/ft_memset.c
  /Users/emaveric/ls/libft/libft.h
+CMakeFiles/ls.dir/libft/ft_numlen.c.o
+ /Users/emaveric/ls/libft/ft_numlen.c
+ /Users/emaveric/ls/libft/libft.h
 CMakeFiles/ls.dir/libft/ft_putchar.c.o
  /Users/emaveric/ls/libft/ft_putchar.c
  /Users/emaveric/ls/libft/libft.h

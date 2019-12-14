@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 20:23:13 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/12/14 15:25:58 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/12/14 19:04:01 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,10 @@ typedef struct		s_column
 {
 	int				link;
 	int				size;
+	int 			ino;
 	char			*str_link;
 	char			*str_size;
+	char 			*str_ino;
 }					t_column;
 
 struct				s_node
@@ -67,7 +69,6 @@ typedef struct		s_ls
     int 			f_sum;
     int 			dh_index; //индекс для --
     int 			*f_index; // индекс для флагов
-	char 			**c_dir; // for "."
 	t_column		*col;
 }					t_ls;
 
@@ -78,7 +79,6 @@ int					validation(int ac, char **av, t_ls *ls);
 int 				flags(int ac, char **av, t_ls *ls);
 int 				sorting(int ac, char **av, t_ls *ls, struct stat buf);
 int					dhyp_check(int ac, char **av, t_ls *ls);
-int					cur_dir(char *theDir, t_ls *ls);
 void				print(struct s_node *tree, t_ls *ls);
 void				e_print(struct s_node *tree, t_ls *ls);
 int					output(t_ls *ls, struct s_node *tree);

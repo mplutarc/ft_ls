@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 14:56:53 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/12/14 12:32:30 by mplutarc         ###   ########.fr       */
+/*   Updated: 2019/12/14 18:02:17 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static char		*ft_ft_strnew(int size)
 
 	if (size + 1 < 0)
 		return (NULL);
-	if (!(res = (char *)malloc(size + 1)))
+	if (!(res = (char *)ft_memalloc(size + 1)))
 		return (NULL);
 	i = 0;
 	while (i < size + 1)
@@ -34,8 +34,10 @@ char			*ft_itoa_rev(int n, int size)
 {
 	char	*res;
 	int		i;
+	int 	j;
 
-	if (!(res = ft_ft_strnew(sizeof(char) * (size))))
+	j = size;
+	if (!(res = ft_ft_strnew(sizeof(char) * (size + 1))))
 		return (NULL);
 	res[size] = ' ';
 	size--;
@@ -52,5 +54,6 @@ char			*ft_itoa_rev(int n, int size)
 			res[i] = ' ';
 		i++;
 	}
+	res[j + 1] = '\0';
 	return (res);
 }

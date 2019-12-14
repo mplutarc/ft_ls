@@ -100,5 +100,6 @@ char				*ft_strbchr(const char *s, int c);
 char				*ft_strjoin_free(char *s1, char *s2, int opt);
 int 				ft_strcmp_free(char *s1, char *s2, int opt);
 char				*ft_itoa_rev(int n, int size);
+int 				ft_numlen(int num);
 
 #endif

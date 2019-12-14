@@ -6,7 +6,7 @@
 #    By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/09 17:15:07 by kdune             #+#    #+#              #
-#    Updated: 2019/12/14 15:16:09 by emaveric         ###   ########.fr        #
+#    Updated: 2019/12/14 15:17:29 by emaveric         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ ft_lstiter.c ft_memdel.c ft_putnbr_fd.c ft_strdel.c ft_strmap.c ft_strnstr.c \
 ft_isascii.c ft_lstmap.c ft_memmove.c ft_putstr.c ft_strdup.c ft_strmapi.c \
 ft_strrchr.c ft_free.c ft_lstfree.c ft_isspace.c ft_strnchr.c ft_count_words.c \
 get_next_line.c ft_atol.c ft_strcut.c ft_strncut.c ft_strname.c ft_strbchr.c \
-ft_strjoin_free.c ft_strcmp_free.c ft_itoa_rev.c
+ft_strjoin_free.c ft_strcmp_free.c ft_itoa_rev.c ft_numlen.c
 
 SRCS_O = $(SRCS_C:.c=.o)
 
