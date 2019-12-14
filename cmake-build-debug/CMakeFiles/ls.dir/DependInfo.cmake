@@ -76,6 +76,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/emaveric/ls/libft/ft_tolower.c" "/Users/emaveric/ls/cmake-build-debug/CMakeFiles/ls.dir/libft/ft_tolower.c.o"
   "/Users/emaveric/ls/libft/ft_toupper.c" "/Users/emaveric/ls/cmake-build-debug/CMakeFiles/ls.dir/libft/ft_toupper.c.o"
   "/Users/emaveric/ls/libft/get_next_line.c" "/Users/emaveric/ls/cmake-build-debug/CMakeFiles/ls.dir/libft/get_next_line.c.o"
+  "/Users/emaveric/ls/src/columns.c" "/Users/emaveric/ls/cmake-build-debug/CMakeFiles/ls.dir/src/columns.c.o"
   "/Users/emaveric/ls/src/flags.c" "/Users/emaveric/ls/cmake-build-debug/CMakeFiles/ls.dir/src/flags.c.o"
   "/Users/emaveric/ls/src/flags_output.c" "/Users/emaveric/ls/cmake-build-debug/CMakeFiles/ls.dir/src/flags_output.c.o"
   "/Users/emaveric/ls/src/flags_sorting.c" "/Users/emaveric/ls/cmake-build-debug/CMakeFiles/ls.dir/src/flags_sorting.c.o"

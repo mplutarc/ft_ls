@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 20:23:13 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/12/10 19:12:27 by mplutarc         ###   ########.fr       */
+/*   Updated: 2019/12/11 16:52:57 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,6 @@ typedef struct		s_ls
     int				flag;
     int 			ind;
     long int		sec;
-    int 			e_sum;
-    int 			*e_index; // индекс для ошибок
 	int 			blocks;
     int 			f_sum;
     int 			dh_index; //индекс для --
@@ -79,7 +77,6 @@ int					validation(int ac, char **av, t_ls *ls);
 int 				dhyp_check(int ac, char **av, t_ls *ls);
 int 				flags(int ac, char **av, t_ls *ls);
 int 				sorting(int ac, char **av, t_ls *ls, struct stat buf);
-int 				cur_dir(char *theDir, t_ls *ls);
 void				print(struct s_node *tree, t_ls *ls);
 void				e_print(struct s_node *tree, t_ls *ls);
 int 				output(t_ls *ls, struct s_node *tree);
@@ -88,7 +85,6 @@ struct s_node		*addnode(char *str, struct s_node *tree, struct stat buf, t_ls *l
 void				big_r_flag_print(struct s_node *tree, t_ls *ls);
 struct s_node		*addnode_flag_r(char *str, struct s_node *tree, struct stat buf, t_ls *ls);
 void				l_flag_print(struct s_node *tree, t_ls *ls);
-void    			a_flag_print(struct s_node *tree, t_ls *ls);
 void    			i_flag_print(struct s_node *tree, t_ls *ls);
 int					mode_to_rwx(struct s_node *tree, struct stat buf);
 struct s_node		*tree_create(char *str, struct stat buf, t_ls *ls);

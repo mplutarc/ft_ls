@@ -321,6 +321,9 @@
 		<Unit filename="/Users/emaveric/ls/libft/libft.h">
 			<Option target="ls"/>
 		</Unit>
+		<Unit filename="/Users/emaveric/ls/src/columns.c">
+			<Option target="ls"/>
+		</Unit>
 		<Unit filename="/Users/emaveric/ls/src/flags.c">
 			<Option target="ls"/>
 		</Unit>

@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/28 17:41:40 by emaveric          #+#    #+#             */
-/*   Updated: 2019/12/09 18:57:55 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/12/12 19:36:06 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	free_tree(struct s_node *tree)
 			if (tree->uid)
 				free(tree->uid);
 			if (tree->time)
-				tree->time = NULL;
+				free(tree->time);
 			if (tree->right)
 				tree->right = NULL;
 			if (tree->left)

@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 20:23:06 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/12/10 19:13:10 by mplutarc         ###   ########.fr       */
+/*   Updated: 2019/12/11 16:52:57 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ t_ls	*init(void)
 	if (!(new = (t_ls *)malloc(sizeof(t_ls))))
 	    return (NULL);
 	new->flag = 0;
-	new->e_sum = 0;
 	new->dh_index = 0;
 	new->l = 0;
 	new->i = 0;

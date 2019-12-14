@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/31 15:11:20 by emaveric          #+#    #+#             */
-/*   Updated: 2019/12/09 19:37:26 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/12/12 19:34:18 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ struct s_node	*tree_create(char *str, struct stat buf, t_ls *ls)
 	struct passwd	*pws;
 	struct group	*grp;
 	struct s_node	*tree;
+	char 			*tmp;
 
 	if (!(tree = (struct s_node *)malloc(sizeof(struct s_node))))
 		return (NULL);
@@ -62,8 +63,13 @@ struct s_node	*tree_create(char *str, struct stat buf, t_ls *ls)
 	else if (ft_strname(str, '/')[0] != '.')
 		ls->blocks += buf.st_blocks;
 	tree->sec = buf.st_mtimespec.tv_sec;
-	//tree->time = ft_strdup(ctime((long int *)&buf.st_ctimespec));
-	tree->time = ctime((long int *)&buf.st_ctimespec);
+	//tree->time = ctime((long int *)&buf.st_ctimespec);
+	if (!(tree->time = ft_strdup(ctime((long int *)&buf.st_ctimespec))))
+		return (NULL);
+	//tree->time = ctime((long int *)&buf.st_ctimespec);
+/*	tree->time = tmp;
+
+	free(tmp);*/
 	tree->left = NULL;
 	tree->right = NULL; //ветви инициализируем пустотой
 	return (tree);

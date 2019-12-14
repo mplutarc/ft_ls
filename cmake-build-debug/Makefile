@@ -2067,6 +2067,33 @@ libft/get_next_line.c.s:
 	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/libft/get_next_line.c.s
 .PHONY : libft/get_next_line.c.s
 
+src/columns.o: src/columns.c.o
+
+.PHONY : src/columns.o
+
+# target to build an object file
+src/columns.c.o:
+	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/src/columns.c.o
+.PHONY : src/columns.c.o
+
+src/columns.i: src/columns.c.i
+
+.PHONY : src/columns.i
+
+# target to preprocess a source file
+src/columns.c.i:
+	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/src/columns.c.i
+.PHONY : src/columns.c.i
+
+src/columns.s: src/columns.c.s
+
+.PHONY : src/columns.s
+
+# target to generate assembly for a file
+src/columns.c.s:
+	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/src/columns.c.s
+.PHONY : src/columns.c.s
+
 src/flags.o: src/flags.c.o
 
 .PHONY : src/flags.o
@@ -2535,6 +2562,9 @@ help:
 	@echo "... libft/get_next_line.o"
 	@echo "... libft/get_next_line.i"
 	@echo "... libft/get_next_line.s"
+	@echo "... src/columns.o"
+	@echo "... src/columns.i"
+	@echo "... src/columns.s"
 	@echo "... src/flags.o"
 	@echo "... src/flags.i"
 	@echo "... src/flags.s"
