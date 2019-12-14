@@ -16,6 +16,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/emaveric/ls/libft/ft_isprint.c" "/Users/emaveric/ls/cmake-build-debug/CMakeFiles/ls.dir/libft/ft_isprint.c.o"
   "/Users/emaveric/ls/libft/ft_isspace.c" "/Users/emaveric/ls/cmake-build-debug/CMakeFiles/ls.dir/libft/ft_isspace.c.o"
   "/Users/emaveric/ls/libft/ft_itoa.c" "/Users/emaveric/ls/cmake-build-debug/CMakeFiles/ls.dir/libft/ft_itoa.c.o"
+  "/Users/emaveric/ls/libft/ft_itoa_rev.c" "/Users/emaveric/ls/cmake-build-debug/CMakeFiles/ls.dir/libft/ft_itoa_rev.c.o"
   "/Users/emaveric/ls/libft/ft_lstadd.c" "/Users/emaveric/ls/cmake-build-debug/CMakeFiles/ls.dir/libft/ft_lstadd.c.o"
   "/Users/emaveric/ls/libft/ft_lstdel.c" "/Users/emaveric/ls/cmake-build-debug/CMakeFiles/ls.dir/libft/ft_lstdel.c.o"
   "/Users/emaveric/ls/libft/ft_lstdelone.c" "/Users/emaveric/ls/cmake-build-debug/CMakeFiles/ls.dir/libft/ft_lstdelone.c.o"

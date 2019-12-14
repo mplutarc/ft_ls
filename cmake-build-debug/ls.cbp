@@ -138,6 +138,9 @@
 		<Unit filename="/Users/emaveric/ls/libft/ft_itoa.c">
 			<Option target="ls"/>
 		</Unit>
+		<Unit filename="/Users/emaveric/ls/libft/ft_itoa_rev.c">
+			<Option target="ls"/>
+		</Unit>
 		<Unit filename="/Users/emaveric/ls/libft/ft_lstadd.c">
 			<Option target="ls"/>
 		</Unit>

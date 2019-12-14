@@ -1,0 +1,56 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa_rev.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/12/13 14:56:53 by mplutarc          #+#    #+#             */
+/*   Updated: 2019/12/14 12:32:30 by mplutarc         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+static char		*ft_ft_strnew(int size)
+{
+	char	*res;
+	int		i;
+
+	if (size + 1 < 0)
+		return (NULL);
+	if (!(res = (char *)malloc(size + 1)))
+		return (NULL);
+	i = 0;
+	while (i < size + 1)
+	{
+		res[i] = ' ';
+		i++;
+	}
+	return (res);
+}
+
+char			*ft_itoa_rev(int n, int size)
+{
+	char	*res;
+	int		i;
+
+	if (!(res = ft_ft_strnew(sizeof(char) * (size))))
+		return (NULL);
+	res[size] = ' ';
+	size--;
+	while (size)
+	{
+		res[size] = (n % 10) + '0';
+		n /= 10;
+		size--;
+	}
+	i = 1;
+	while (res[i] == '0')
+	{
+		if (res[i + 1] != '\0')
+			res[i] = ' ';
+		i++;
+	}
+	return (res);
+}

@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 20:23:06 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/12/11 16:52:57 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/12/14 15:25:58 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ t_ls	*init(void)
 	new->f_sum = 0;
 	new->ind = 0;
 	new->sec = 0;
+	new->col = init_col();
 	return (new);
 }
 
@@ -138,8 +139,6 @@ int		main(int ac, char **av)
 	int 		i;
 
 	if (!(ls = init()))
-		return (ERROR);
-	if (!(ls->col = init_col()))
 		return (ERROR);
 	if (validation(ac, av, ls) == ERROR)
 	{

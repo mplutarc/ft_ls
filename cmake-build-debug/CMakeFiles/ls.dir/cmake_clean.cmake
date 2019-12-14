@@ -81,6 +81,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/ls.dir/libft/ft_strjoin_free.c.o"
   "CMakeFiles/ls.dir/libft/ft_strcmp_free.c.o"
   "CMakeFiles/ls.dir/src/columns.c.o"
+  "CMakeFiles/ls.dir/libft/ft_itoa_rev.c.o"
   "ls.pdb"
   "ls"
 )

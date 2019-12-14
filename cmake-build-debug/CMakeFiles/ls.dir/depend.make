@@ -32,6 +32,9 @@ CMakeFiles/ls.dir/libft/ft_isspace.c.o: ../libft/ft_isspace.c
 CMakeFiles/ls.dir/libft/ft_itoa.c.o: ../libft/ft_itoa.c
 CMakeFiles/ls.dir/libft/ft_itoa.c.o: ../libft/libft.h
 
+CMakeFiles/ls.dir/libft/ft_itoa_rev.c.o: ../libft/ft_itoa_rev.c
+CMakeFiles/ls.dir/libft/ft_itoa_rev.c.o: ../libft/libft.h
+
 CMakeFiles/ls.dir/libft/ft_lstadd.c.o: ../libft/ft_lstadd.c
 CMakeFiles/ls.dir/libft/ft_lstadd.c.o: ../libft/libft.h
 

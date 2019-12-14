@@ -6,6 +6,34 @@
 
 #IncludeRegexTransform: 
 
+/Users/emaveric/ls/includes/ft_ls.h
+unistd.h
+-
+stdio.h
+-
+sys/types.h
+-
+sys/stat.h
+-
+pwd.h
+-
+time.h
+-
+grp.h
+-
+dirent.h
+-
+stdlib.h
+-
+errno.h
+-
+string.h
+-
+limits.h
+-
+../libft/libft.h
+/Users/emaveric/ls/libft/libft.h
+
 /Users/emaveric/ls/libft/ft_strncut.c
 libft.h
 /Users/emaveric/ls/libft/libft.h
@@ -17,4 +45,8 @@ stdlib.h
 -
 string.h
 -
+
+/Users/emaveric/ls/src/sorting.c
+../includes/ft_ls.h
+/Users/emaveric/ls/includes/ft_ls.h
 
