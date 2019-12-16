@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/14 17:25:24 by emaveric          #+#    #+#             */
-/*   Updated: 2019/12/14 18:28:22 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/12/16 20:59:45 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,6 +135,7 @@ void    i_flag_print(struct s_node *tree, t_ls *ls)
 				free(ls->col->str_link);
 			if (ls->col->str_size)
 				free(ls->col->str_size);
+		/*	max_ino_len(tree, ls);*/
 			into_string(tree, ls);
 			ft_putstr(ls->col->str_ino);
 		//	free(ls->col->str_ino);

@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 20:23:06 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/12/14 15:25:58 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/12/16 18:58:04 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,9 +150,10 @@ int		main(int ac, char **av)
 	{
 		directory(".", ls);
 		free_ls(ls);
+		ft_putchar('\n');
 		return (0);
 	}
-	i = 1;
+	i = 0;
 	while (i < ac)
 	{
 		stat(av[i], &buf);
@@ -169,5 +170,6 @@ int		main(int ac, char **av)
 		return (ERROR);
 	}
 	free_ls(ls);
+	ft_putchar('\n');
 	return (0);
 }

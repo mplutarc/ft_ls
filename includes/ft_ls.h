@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 20:23:13 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/12/16 16:33:01 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/12/16 20:01:41 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,9 @@ typedef struct		s_column
 	int				link;
 	int				size;
 	int 			ino;
+	int 			max_ino;
+	int 			max_link;
+	int 			max_size;
 	char			*str_link;
 	char			*str_size;
 	char 			*str_ino;
@@ -103,5 +106,6 @@ void				into_string(struct s_node *tree, t_ls *ls);
 t_column			*init_col(void);
 t_ls				*max_str(struct s_node *tree, t_ls *ls);
 t_ls				*itostr(struct s_node *tree, t_ls *ls);
+void				max_len(struct s_node *tree, t_ls *ls);
 
 #endif

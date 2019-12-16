@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 19:11:32 by emaveric          #+#    #+#             */
-/*   Updated: 2019/12/09 18:30:12 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/12/16 20:34:58 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,11 @@ void	print(struct s_node *tree, t_ls *ls)
 
 int 	output(t_ls *ls, struct s_node *tree)
 {
+	ls->col->max_ino = 0;
+	ls->col->max_size = 0;
+	ls->col->max_link = 0;
+	if (ls->l == 1 || ls->i == 1)
+		max_len(tree, ls);
 	if (ls->flag == 0)
 		e_print(tree, ls);
 	if (ls->l == 1 && ls->flag != 0)
