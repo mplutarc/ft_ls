@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 20:42:27 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/12/14 18:19:17 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/12/16 16:35:39 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,9 @@ t_column	*init_col(void)
 	new->link = 0;
 	new->size = 0;
 	new->ino = 0;
+	new->str_link = NULL;
+	new->str_ino = NULL;
+	new->str_size =  NULL;
 	return(new);
 }
 
