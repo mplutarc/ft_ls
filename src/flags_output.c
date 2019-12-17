@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/14 17:25:24 by emaveric          #+#    #+#             */
-/*   Updated: 2019/12/16 20:59:45 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/12/17 18:53:46 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ void	big_r_flag_print(struct s_node *tree, t_ls *ls)
 		big_r_flag_print(tree->left, ls);  //Рекурсивная функция вывода левого поддерева
 		if (tree->mode[0] == 'd')
 		{
-			if (ls->ind == 3 && tree->flag != 1)
-			/*	if (ft_strcmp(ft_strname(tree->field, '/'), ".") != 0 &&
-					ft_strcmp(ft_strname(tree->field, '/'), "..") != 0)*/
+			/*if (ls->ind == 3 && tree->flag != 1)
+			*//*	if (ft_strcmp(ft_strname(tree->field, '/'), ".") != 0 &&
+					ft_strcmp(ft_strname(tree->field, '/'), "..") != 0)*//*
 				{
 					ft_putchar('\n');
 					last_dir_check(tree, ls);
@@ -44,14 +44,17 @@ void	big_r_flag_print(struct s_node *tree, t_ls *ls)
 				{
 					ft_putchar('\n');
 					//ls->ind = 3;
-				}
+				}*/
 		/*	if (ft_strcmp(ft_strname(tree->field, '/'), ".") != 0 &&
 				ft_strcmp(ft_strname(tree->field, '/'), "..") != 0 &&
 					(ft_strname(tree->field, '/')[0] != '.' || ls->a == 1)
 					&& tree->mode[0] != 'l')*/
-		if ((ft_strname(tree->field, '/')[0] != '.' || ls->a == 1) &&
-			tree->mode[0] != 'l' && tree->flag != 1)
+			if ((ft_strname(tree->field, '/')[0] != '.' || ls->a == 1) &&
+				tree->mode[0] != 'l' && tree->flag != 1)
 			{
+				if (ls->l != 1)
+					ft_putchar('\n');
+				ft_putchar('\n');
 				ft_putstr(tree->field);
 				ft_putstr(":\n");
 				directory(tree->field, ls);

@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 19:11:32 by emaveric          #+#    #+#             */
-/*   Updated: 2019/12/16 20:34:58 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/12/17 18:54:18 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,11 @@ void	e_print(struct s_node *tree, t_ls *ls)
 	if (tree != NULL)
 	{      //Пока не встретится пустой узел
 		e_print(tree->left, ls);  //Рекурсивная функция вывода левого поддерева
-		if (files(tree, ".") == ERROR && (tree->mode[0] != 'd' && ls->flag != 0)) //&& !opendir(tree->field))
+		if (files(tree, ".") == ERROR) //&& (tree->mode[0] != 'd' && ls->flag != 0))
+		{
+			tree->mode[0] = 'e';
 			directory(tree->field, ls);
+		}
 		e_print(tree->right, ls); //Рекурсивная функция вывода правого поддерева
 	}
 }
@@ -28,7 +31,7 @@ void	print(struct s_node *tree, t_ls *ls)
 	if (tree != NULL)
 	{      //Пока не встретится пустой узел
 		print(tree->left, ls);  //Рекурсивная функция вывода левого поддерева
-		if (ls->flag == 2 || (ls->flag == 0 && files(tree, ".") == 0))
+		if (ls->flag == 2 || (ls->flag == 0 && tree->mode[0] == '-'))//(ls->flag == 0 && files(tree, ".") == 0))
 		{
 			//tree->field = ft_strcut(tree->field, '/');
 			if ((ft_strname(tree->field, '/'))[0] != '.' || ls->a == 1)
@@ -45,8 +48,17 @@ void	print(struct s_node *tree, t_ls *ls)
 			}
 			//ft_putendl(tree->field);
 		}
-		else if (tree->mode[0] == 'd' || ls->flag == 0)// && tree->mode[0] != 'l')
+		else if (tree->mode[0] == 'd')// || ls->flag == 0)// && tree->mode[0] != 'l')
+		{
+			if (ls->ac > 2 && tree->mode[0] == 'd' && ls->flag == 0 && ls->l != 1)
+			{
+				ft_putstr(tree->field);
+				ft_putstr(":\n");
+			}
 			directory(tree->field, ls);
+			if (ls->l != 1)
+				ft_putstr("\n\n");
+		}
 		print(tree->right, ls); //Рекурсивная функция вывода правого поддерева
 		/*if (ft_strcmp(ft_strname(tree->field, '/'), ".") == 0 && ls->big_r == 1
 			&& ls->ind != 1)
@@ -65,6 +77,7 @@ int 	output(t_ls *ls, struct s_node *tree)
 		e_print(tree, ls);
 	if (ls->l == 1 && ls->flag != 0)
 	{
+		//ft_putchar('\n');
 		ft_putstr("total");
 		ft_putchar(' ');
 		ft_putnbr(ls->blocks);

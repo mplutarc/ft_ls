@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 20:23:06 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/12/16 18:58:04 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/12/17 18:27:23 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ t_ls	*init(void)
 	new->ind = 0;
 	new->sec = 0;
 	new->col = init_col();
+	new->f_index = NULL;
 	return (new);
 }
 
@@ -59,7 +60,7 @@ int		files(struct s_node *tree, char *theDir)
 	dir = opendir(theDir); //открытие директории
 	while((entry = readdir(dir)))  //пока директория читаема
 	{
-		if (entry->d_type == 8 && ft_strcmp(tree->field, entry->d_name) == 0)
+		if (/*entry->d_type == 8 && */ft_strcmp(tree->field, entry->d_name) == 0)
 		{
 			closedir(dir);
 			return (0);
@@ -140,6 +141,7 @@ int		main(int ac, char **av)
 
 	if (!(ls = init()))
 		return (ERROR);
+	ls->ac = ac;
 	if (validation(ac, av, ls) == ERROR)
 	{
 		free_ls(ls);
@@ -149,8 +151,9 @@ int		main(int ac, char **av)
 		|| (ft_strcmp(av[ls->f_sum + 1], "--") == 0 && ac == ls->f_sum + 2))
 	{
 		directory(".", ls);
+		if (ls->l != 1 && ls->big_r == 1)
+			ft_putchar('\n');
 		free_ls(ls);
-		ft_putchar('\n');
 		return (0);
 	}
 	i = 0;
@@ -169,7 +172,8 @@ int		main(int ac, char **av)
 		free_ls(ls);
 		return (ERROR);
 	}
+	if (ls->l != 1 && ls->big_r == 1)
+		ft_putchar('\n');
 	free_ls(ls);
-	ft_putchar('\n');
 	return (0);
 }

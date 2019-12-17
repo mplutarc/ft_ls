@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 20:23:13 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/12/16 20:01:41 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/12/17 18:27:23 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ typedef struct		s_ls
 	int				a;
 	int				t;
 	int				r;
+	int 			ac;
 	int				big_r;
     int				flag;
     int 			ind;
