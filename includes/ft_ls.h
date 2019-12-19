@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 20:23:13 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/12/17 18:27:23 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/12/19 13:15:57 by mplutarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ struct				s_node
 	int				ino;
 	int				size;
 	int				links;
+	char			str_link;
 	char			*uid;
 	char			*gid;
 	char			*mode;
