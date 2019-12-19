@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 20:23:13 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/12/19 14:34:40 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/12/19 16:32:26 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ struct				s_node
 	int				ino;
 	int				size;
 	int				links;
+	char			*str_link;
 	char			*uid;
 	char			*gid;
 	char			*mode;
@@ -68,6 +69,7 @@ typedef struct		s_ls
 	int				big_r;
     int				flag;
     int 			ind;
+    int 			point;
     long int		sec;
 	int 			blocks;
     int 			f_sum;

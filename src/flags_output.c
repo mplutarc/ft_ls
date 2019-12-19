@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/14 17:25:24 by emaveric          #+#    #+#             */
-/*   Updated: 2019/12/17 18:53:46 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/12/19 16:58:29 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,8 @@ void	big_r_flag_print(struct s_node *tree, t_ls *ls)
 			{
 				if (ls->l != 1)
 					ft_putchar('\n');
-				ft_putchar('\n');
+				if (ls->blocks != 0 || ls->a == 1)
+					ft_putchar('\n');
 				ft_putstr(tree->field);
 				ft_putstr(":\n");
 				directory(tree->field, ls);
@@ -101,7 +102,14 @@ void    l_flag_print(struct s_node *tree, t_ls *ls)
 			tree->time = ft_strncut(tree->time, 4, 16);
 			ft_putstr(tree->time);
 			ft_putchar(' ');
-			ft_putendl(ft_strname(tree->field, '/'));
+			if (tree->mode[0] == 'l')
+			{
+				ft_putstr(ft_strname(tree->field, '/'));
+				ft_putstr(" -> ");
+				ft_putendl(tree->str_link);
+			}
+			else
+				ft_putendl(ft_strname(tree->field, '/'));
 			/*free(ls->col->str_link);
 			free(ls->col->str_size);*/
 		}

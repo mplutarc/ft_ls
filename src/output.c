@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 19:11:32 by emaveric          #+#    #+#             */
-/*   Updated: 2019/12/17 18:54:18 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/12/19 16:59:48 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	e_print(struct s_node *tree, t_ls *ls)
 		if (files(tree, ".") == ERROR) //&& (tree->mode[0] != 'd' && ls->flag != 0))
 		{
 			tree->mode[0] = 'e';
+			ls->ac--;
 			directory(tree->field, ls);
 		}
 		e_print(tree->right, ls); //Рекурсивная функция вывода правого поддерева
@@ -50,14 +51,23 @@ void	print(struct s_node *tree, t_ls *ls)
 		}
 		else if (tree->mode[0] == 'd')// || ls->flag == 0)// && tree->mode[0] != 'l')
 		{
-			if (ls->ac > 2 && tree->mode[0] == 'd' && ls->flag == 0 && ls->l != 1)
+			if (ls->ac > 0 /*&& tree->mode[0] == 'd'*/ && ls->flag == 0 /*&& ls->l != 1*/)
 			{
 				ft_putstr(tree->field);
 				ft_putstr(":\n");
+				if (ls->point != 0)
+					ls->ac--;
+				ls->point = 1;
 			}
 			directory(tree->field, ls);
-			if (ls->l != 1)
-				ft_putstr("\n\n");
+			if (/*ls->l != 1 &&*/ (/*ls->f_sum == 0 ||*/ ls->ac > 0))
+			{
+				ft_putstr("\n");
+				if ((ls->blocks != 0 || ls->a == 1) && ls->l != 1)
+					ft_putstr("\n");
+			/*	if (ls->flag != 0)
+					ls->ac--;*/
+			}
 		}
 		print(tree->right, ls); //Рекурсивная функция вывода правого поддерева
 		/*if (ft_strcmp(ft_strname(tree->field, '/'), ".") == 0 && ls->big_r == 1
@@ -75,7 +85,7 @@ int 	output(t_ls *ls, struct s_node *tree)
 		max_len(tree, ls);
 	if (ls->flag == 0)
 		e_print(tree, ls);
-	if (ls->l == 1 && ls->flag != 0)
+	if (ls->l == 1 && ls->flag != 0 && (ls->blocks != 0 || ls->a == 1))
 	{
 		//ft_putchar('\n');
 		ft_putstr("total");

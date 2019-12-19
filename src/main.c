@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 20:23:06 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/12/19 14:34:39 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/12/19 16:40:03 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ t_ls	*init(void)
 	new->f_sum = 0;
 	new->ind = 0;
 	new->sec = 0;
+	new->point = 0;
 	new->col = init_col();
 	new->f_index = NULL;
 	return (new);
@@ -141,17 +142,17 @@ int		main(int ac, char **av)
 
 	if (!(ls = init()))
 		return (ERROR);
-	ls->ac = ac;
 	if (validation(ac, av, ls) == ERROR)
 	{
 		free_ls(ls);
 		return (ERROR);
 	}
+	ls->ac = ac - ls->f_sum - 2;
 	if (ac == 1 || (ft_strcmp(av[1], "--") == 0 && ac == 2) || ls->f_sum == ac - 1
 		|| (ft_strcmp(av[ls->f_sum + 1], "--") == 0 && ac == ls->f_sum + 2))
 	{
 		directory(".", ls);
-		if (ls->l != 1 && ls->big_r == 1)
+		if ((ls->l != 1 /*&& ls->big_r == 1*/) || ls->f_sum == 0)
 			ft_putchar('\n');
 		free_ls(ls);
 		return (0);
@@ -172,7 +173,7 @@ int		main(int ac, char **av)
 		free_ls(ls);
 		return (ERROR);
 	}
-	if (ls->l != 1 && ls->big_r == 1)
+	if ((ls->l != 1 /*&& ls->big_r == 1*/) || ls->f_sum == 0)
 		ft_putchar('\n');
 	free_ls(ls);
 	return (0);
