@@ -15,7 +15,7 @@
 char	*ft_strbchr(const char *s, int c)
 {
 	int		i;
-	char 	*new;
+	char	*new;
 
 	i = ft_strlen(s) - 1;
 	new = ft_strdup(s);

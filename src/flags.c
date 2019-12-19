@@ -27,11 +27,3 @@ void			find_flag(t_ls *ls, char **av, int i)
 	if (ft_strchr(av[ls->f_index[i]], 'R'))
 		ls->big_r = 1;
 }
-
-int 	flags(int ac, char **av, t_ls *ls)
-{
-/*	if (flag_valid(ac, av, ls) == ERROR)
-		return (ERROR);
-	// find_flag(ls, av);*/
-	return (0);
-}

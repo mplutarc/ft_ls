@@ -20,7 +20,7 @@ char	*ft_strdup(const char *s1)
 	i = 0;
 	while (s1[i])
 		i++;
-	str = (char *)ft_memalloc(sizeof(char) * (i + 1));//(sizeof(*str) * (i + 1));
+	str = (char *)ft_memalloc(sizeof(char) * (i + 1));
 	i = 0;
 	if (str)
 	{
@@ -33,5 +33,5 @@ char	*ft_strdup(const char *s1)
 		return (str);
 	}
 	else
-		return(NULL);
+		return (NULL);
 }

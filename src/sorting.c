@@ -6,13 +6,13 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/31 15:11:20 by emaveric          #+#    #+#             */
-/*   Updated: 2019/12/19 17:33:02 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/12/19 17:57:30 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_ls.h"
 
-int			mode_to_rwx(struct s_node *tree, struct stat buf)
+int				mode_to_rwx(struct s_node *tree, struct stat buf)
 {
 	int		i;
 
@@ -53,11 +53,11 @@ struct s_node	*tree_create(char *str, struct stat buf, t_ls *ls)
 		tree->uid = ft_strdup(pws->pw_name);
 	if (grp != NULL)
 		tree->gid = ft_strdup(grp->gr_name);
-	tree->field = str;   //поле данных
+	tree->field = str;
 	if (tree->mode[0] == 'l' && ls->l == 1)
 	{
 		if (!(tree->str_link = (char *)ft_memalloc(sizeof(char) * (buf.st_size + 1))))
-			return(NULL);
+			return (NULL);
 		readlink(tree->field, tree->str_link, buf.st_size);
 	}
 	tree->ino = buf.st_ino;
@@ -71,36 +71,35 @@ struct s_node	*tree_create(char *str, struct stat buf, t_ls *ls)
 	if (!(tree->time = ft_strdup(ctime((long int *)&buf.st_ctimespec))))
 		return (NULL);
 	tree->left = NULL;
-	tree->right = NULL; //ветви инициализируем пустотой
+	tree->right = NULL;
 	return (tree);
 }
 
 struct s_node	*addnode(char *str, struct s_node *tree, struct stat buf, t_ls *ls)
 {
-	if (tree == NULL)     // Если дерева нет, то формируем корень
+	if (tree == NULL)
 	{
 		if (!(tree = tree_create(str, buf, ls)))
 		{
 			free_tree(tree);
 			return (NULL);
 		}
-		//	return (NULL);
 		tree->flag = 0;
 		if (ft_strcmp(ft_strname(tree->field, '/'), ".") == 0 ||
 			ft_strcmp(ft_strname(tree->field, '/'), "..") == 0)
 			tree->flag = 1;
 	}
-	else     // иначе
+	else
 	{
-		if (ft_strcmp(str, tree->field) < 0)   //Если элемент str меньше корневого, уходим влево
-			tree->left = addnode(str, tree->left, buf, ls); //Рекурсивно добавляем элемент
-		else  //иначе уходим вправо
-			tree->right = addnode(str, tree->right, buf, ls); //Рекурсивно добавляем элемент
+		if (ft_strcmp(str, tree->field) < 0)
+			tree->left = addnode(str, tree->left, buf, ls);
+		else
+			tree->right = addnode(str, tree->right, buf, ls);
 	}
 	return (tree);
 }
 
-int				sorting(int	ac, char **av, t_ls *ls, struct stat buf)
+int				sorting(int ac, char **av, t_ls *ls, struct stat buf)
 {
 	struct s_node	*tree;
 	struct s_node	*sub_tree;
@@ -120,7 +119,7 @@ int				sorting(int	ac, char **av, t_ls *ls, struct stat buf)
 				if (!(tree = addnode_flag_t(av[i], tree, buf, ls)))
 				{
 					free_tree(sub_tree);
-					return(ERROR);
+					return (ERROR);
 				}
 			}
 			else if (ls->r == 1)
@@ -128,13 +127,13 @@ int				sorting(int	ac, char **av, t_ls *ls, struct stat buf)
 				if (!(tree = addnode_flag_r(av[i], tree, buf, ls)))
 				{
 					free_tree(sub_tree);
-					return(ERROR);
+					return (ERROR);
 				}
 			}
 			else if (!(tree = addnode(av[i], tree, buf, ls)))
 			{
 				free_tree(sub_tree);
-				return(ERROR);
+				return (ERROR);
 			}
 		}
 		i++;

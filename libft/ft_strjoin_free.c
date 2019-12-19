@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-char 	*ft_strjoin_free(char *s1, char *s2, int opt)
+char		*ft_strjoin_free(char *s1, char *s2, int opt)
 {
 	char *res;
 
@@ -21,7 +21,5 @@ char 	*ft_strjoin_free(char *s1, char *s2, int opt)
 		free(s1);
 	if (opt >= 2)
 		free(s2);
-/*	if (!res)
-		return (NULL);*/
 	return (res);
 }

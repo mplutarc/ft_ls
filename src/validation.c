@@ -6,24 +6,20 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 17:54:51 by emaveric          #+#    #+#             */
-/*   Updated: 2019/12/19 14:34:29 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/12/19 18:00:10 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_ls.h"
 
-// проверка на ''
-// проверка на --
-// проверка с флагами
-
 int		valid_error(int ac, char **av)
 {
 	int		i;
-	int			j;
+	int		j;
 
 	i = 1;
 	j = 1;
-	while (ac > 1  && i < ac && av[i][0] == '-')
+	while (ac > 1 && i < ac && av[i][0] == '-')
 	{
 		while (av[i][j] != '\0')
 		{
@@ -50,7 +46,7 @@ int		valid_error(int ac, char **av)
 	return (0);
 }
 
-int 	flag_ind(int ac, char **av, t_ls *ls)
+int		flag_ind(int ac, char **av, t_ls *ls)
 {
 	int		i;
 
@@ -65,16 +61,16 @@ int 	flag_ind(int ac, char **av, t_ls *ls)
 			ls->f_sum++;
 		}
 		else
-			break;
+			break ;
 		i++;
 	}
 	return (0);
 }
 
-int 	flag_sum(int ac, char **av, t_ls *ls)
+int		flag_sum(int ac, char **av, t_ls *ls)
 {
-	int 	i;
-	int 	f_sum;
+	int		i;
+	int		f_sum;
 
 	i = 1;
 	f_sum = 0;
@@ -83,7 +79,7 @@ int 	flag_sum(int ac, char **av, t_ls *ls)
 		if ((i < ls->dh_index || ls->dh_index == 0) && (av[i][0] == '-' && ft_strcmp(av[i], "-") != 0))
 			f_sum++;
 		else
-			break;
+			break ;
 		i++;
 	}
 	if (!(ls->f_index = (int *)malloc(sizeof(int) * (f_sum + 1))))
@@ -92,22 +88,22 @@ int 	flag_sum(int ac, char **av, t_ls *ls)
 	return (0);
 }
 
-int 	dhyp_check(int ac, char **av, t_ls *ls)
+int		dhyp_check(int ac, char **av, t_ls *ls)
 {
-	int 	i;
+	int		i;
 
 	i = 1;
 	while (i < ac)
 	{
 		if (av[i][0] != '-' || ft_strcmp(av[i], "-") == 0)
-			break;
+			break ;
 		if (av[i][0] == '-' && av[i][1] == '-')
 		{
 			if (av[i][2] != '\0')
 				return (ERROR);
 			else
 			{
-				ls->dh_index = i; // запоминаем с какого индекса --
+				ls->dh_index = i;
 				return (1);
 			}
 		}
@@ -121,8 +117,8 @@ int		validation(int ac, char **av, t_ls *ls)
 	if (valid_error(ac, av) == ERROR)
 		return (ERROR);
 	if (dhyp_check(ac, av, ls) == ERROR)
-		return (ERROR); //посмотреть ошибку ориг лс если ввести 3 --- и тп
+		return (ERROR);
 	if (flag_sum(ac, av, ls) == ERROR)
 		return (ERROR);
-    return (0);
+	return (0);
 }

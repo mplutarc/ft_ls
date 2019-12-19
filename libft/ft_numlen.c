@@ -12,9 +12,9 @@
 
 #include "libft.h"
 
-int 	ft_numlen(int num)
+int		ft_numlen(int num)
 {
-	int 	i;
+	int		i;
 
 	i = 0;
 	while (num != 0)

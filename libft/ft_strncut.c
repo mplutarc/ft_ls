@@ -30,5 +30,5 @@ char	*ft_strncut(char *s, int start, int end)
 		s[start + j] = '\0';
 		j++;
 	}
-	return(s);
+	return (s);
 }

@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/19 18:51:41 by emaveric          #+#    #+#             */
-/*   Updated: 2019/12/11 16:52:57 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/12/19 18:09:36 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 struct s_node	*addnode_flag_t(char *str, struct s_node *tree, struct stat buf, t_ls *ls)
 {
-	if (tree == NULL)     // Если дерева нет, то формируем корень
+	if (tree == NULL)
 	{
 		if (!(tree = tree_create(str, buf, ls)))
-			return(NULL);
+			return (NULL);
 		tree->flag = 0;
 		if (ft_strcmp((ft_strname(tree->field, '/')), ".") == 0 ||
 			ft_strcmp(ft_strname(tree->field, '/'), "..") == 0)
 			tree->flag = 1;
 	}
-	else     // иначе
+	else
 	{
-		if (ls->sec > tree->sec)   //Если элемент str меньше корневого, уходим влево
+		if (ls->sec > tree->sec)
 		{
 			if (ls->r == 0)
 			{
@@ -33,7 +33,7 @@ struct s_node	*addnode_flag_t(char *str, struct s_node *tree, struct stat buf, t
 				{
 					free_tree(tree);
 					return (NULL);
-				}//Рекурсивно добавляем элемент
+				}
 			}
 			else if (ls->r == 1)
 				if (!(tree->right = addnode_flag_t(str, tree->right, buf, ls)))
@@ -42,7 +42,7 @@ struct s_node	*addnode_flag_t(char *str, struct s_node *tree, struct stat buf, t
 					return (NULL);
 				}
 		}
-		else  //иначе уходим вправо
+		else
 		{
 			if (ls->r == 1)
 			{
@@ -50,14 +50,14 @@ struct s_node	*addnode_flag_t(char *str, struct s_node *tree, struct stat buf, t
 				{
 					free_tree(tree);
 					return (NULL);
-				}//Рекурсивно добавляем элемент
+				}
 			}
 			else if (ls->r == 0)
 				if (!(tree->right = addnode_flag_t(str, tree->right, buf, ls)))
 				{
 					free_tree(tree);
 					return (NULL);
-				} //Рекурсивно добавляем элемент
+				}
 		}
 	}
 	return (tree);
@@ -65,7 +65,7 @@ struct s_node	*addnode_flag_t(char *str, struct s_node *tree, struct stat buf, t
 
 struct s_node	*addnode_flag_r(char *str, struct s_node *tree, struct stat buf, t_ls *ls)
 {
-	if (tree == NULL)     // Если дерева нет, то формируем корень
+	if (tree == NULL)
 	{
 		if (!(tree = tree_create(str, buf, ls)))
 			return (NULL);
@@ -74,12 +74,12 @@ struct s_node	*addnode_flag_r(char *str, struct s_node *tree, struct stat buf, t
 			ft_strcmp(ft_strname(tree->field, '/'), "..") == 0)
 			tree->flag = 1;
 	}
-	else     // иначе
+	else
 	{
-		if (ft_strcmp(str, tree->field) > 0)   //Если элемент str меньше корневого, уходим влево
-			tree->left = addnode_flag_r(str, tree->left, buf, ls); //Рекурсивно добавляем элемент
-		else  //иначе уходим вправо
-			tree->right = addnode_flag_r(str, tree->right, buf, ls); //Рекурсивно добавляем элемент
+		if (ft_strcmp(str, tree->field) > 0)
+			tree->left = addnode_flag_r(str, tree->left, buf, ls);
+		else
+			tree->right = addnode_flag_r(str, tree->right, buf, ls);
 	}
 	return (tree);
 }

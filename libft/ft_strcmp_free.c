@@ -12,9 +12,9 @@
 
 #include "libft.h"
 
-int 	ft_strcmp_free(char *s1, char *s2, int opt)
+int		ft_strcmp_free(char *s1, char *s2, int opt)
 {
-	int 	numb;
+	int		numb;
 
 	numb = ft_strcmp(s1, s2);
 	if (opt == 1 || opt > 2)
