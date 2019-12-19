@@ -12,10 +12,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cd382817-5c5e-4437-93c1-619f60bd8795" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ls.dir/src/free_tree.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/flags_output.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/flags_output.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/free_tree.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/free_tree.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/output.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/output.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sorting.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/sorting.c" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -74,8 +71,8 @@
               <file pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/src/sorting.c">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="634">
-                      <caret line="58" column="83" selection-start-line="58" selection-start-column="83" selection-end-line="58" selection-end-column="83" />
+                    <state relative-caret-position="604">
+                      <caret line="56" column="42" selection-start-line="56" selection-start-column="42" selection-end-line="56" selection-end-column="42" />
                     </state>
                   </provider>
                 </entry>
@@ -83,8 +80,8 @@
               <file pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/jm,/jm,/free_tree.c">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="650">
-                      <caret line="59" column="30" lean-forward="true" selection-start-line="59" selection-start-column="30" selection-end-line="59" selection-end-column="30" />
+                    <state relative-caret-position="510">
+                      <caret line="34" column="27" selection-start-line="34" selection-start-column="27" selection-end-line="34" selection-end-column="27" />
                     </state>
                   </provider>
                 </entry>
@@ -177,8 +174,8 @@
         <option value="$PROJECT_DIR$/includes/ft_ls.h" />
         <option value="$PROJECT_DIR$/src/main.c" />
         <option value="$PROJECT_DIR$/src/output.c" />
-        <option value="$PROJECT_DIR$/src/sorting.c" />
         <option value="$PROJECT_DIR$/src/flags_output.c" />
+        <option value="$PROJECT_DIR$/src/sorting.c" />
         <option value="$PROJECT_DIR$/jm,/jm,/free_tree.c" />
       </list>
     </option>
@@ -262,7 +259,7 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="ls" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="-Rtrial . rege" WORKING_DIR="file://$PROJECT_DIR$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ls" TARGET_NAME="ls" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ls" RUN_TARGET_NAME="ls">
+    <configuration name="ls" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="-Rtrial jm, sfew" WORKING_DIR="file://$PROJECT_DIR$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ls" TARGET_NAME="ls" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ls" RUN_TARGET_NAME="ls">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -321,12 +318,12 @@
       <workItem from="1576501329993" duration="16441000" />
       <workItem from="1576586445439" duration="15983000" />
       <workItem from="1576755270131" duration="168000" />
-      <workItem from="1576757751665" duration="5925000" />
+      <workItem from="1576757751665" duration="6436000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="312573000" />
+    <option name="totallyTimeSpent" value="313084000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -339,7 +336,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="2560" height="1440" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15250199" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -655,13 +651,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sorting.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="634">
-          <caret line="58" column="83" selection-start-line="58" selection-start-column="83" selection-end-line="58" selection-end-column="83" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="303">
@@ -690,10 +679,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/sorting.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="604">
+          <caret line="56" column="42" selection-start-line="56" selection-start-column="42" selection-end-line="56" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/jm,/jm,/free_tree.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="650">
-          <caret line="59" column="30" lean-forward="true" selection-start-line="59" selection-start-column="30" selection-end-line="59" selection-end-column="30" />
+        <state relative-caret-position="510">
+          <caret line="34" column="27" selection-start-line="34" selection-start-column="27" selection-end-line="34" selection-end-column="27" />
         </state>
       </provider>
     </entry>
