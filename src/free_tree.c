@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/28 17:41:40 by emaveric          #+#    #+#             */
-/*   Updated: 2019/12/14 18:28:43 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/12/19 17:23:22 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,24 +50,22 @@ void	free_tree(struct s_node *tree)
 	{      //Пока не встретится пустой узел
 		free_tree(tree->left);  //Рекурсивная функция вывода левого поддерева
 		free_tree(tree->right);
-		/*if (tree->left == NULL && tree->right == NULL)
-		{*/
-			if (tree->field)
-				free(tree->field);
-			if (tree->mode)
-				free(tree->mode);
-			if (tree->gid)
-				free(tree->gid);
-			if (tree->uid)
-				free(tree->uid);
-			if (tree->time)
-				free(tree->time);
-			if (tree->right)
-				tree->right = NULL;
-			if (tree->left)
-				tree->left = NULL;
-			free(tree);
-			tree = NULL;
+		if (tree->field)
+			free(tree->field);
+		if (tree->mode)
+			free(tree->mode);
+		if (tree->gid)
+			free(tree->gid);
+		if (tree->uid)
+			free(tree->uid);
+		if (tree->time)
+			free(tree->time);
+		if (tree->right)
+			tree->right = NULL;
+		if (tree->left)
+			tree->left = NULL;
+		free(tree);
+		tree = NULL;
 	//	free_tree(sub_tree->right); //Рекурсивная функция вывода правого поддерева
 	}
 }

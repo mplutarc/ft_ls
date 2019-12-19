@@ -42,11 +42,7 @@ stdlib.h
 string.h
 -
 
-/Users/emaveric/ls/src/flags_output.c
-../includes/ft_ls.h
-/Users/emaveric/ls/includes/ft_ls.h
-
-/Users/emaveric/ls/src/output.c
+/Users/emaveric/ls/src/free_tree.c
 ../includes/ft_ls.h
 /Users/emaveric/ls/includes/ft_ls.h
 
