@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/28 17:41:40 by emaveric          #+#    #+#             */
-/*   Updated: 2019/12/19 17:55:27 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/12/23 19:58:22 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,10 @@ void	free_ls(t_ls *ls)
 		free(ls->col->str_link);
 	if (ls->col->str_size)
 		free(ls->col->str_size);
+	if (ls->col->str_uid)
+		free(ls->col->str_uid);
+	if (ls->col->str_gid)
+		free(ls->col->str_gid);
 	free(ls->col);
 	free(ls);
 }
@@ -32,7 +36,6 @@ void	free_first_tree(struct s_node *tree)
 	{
 		free_first_tree(tree->left);
 		free_first_tree(tree->right);
-		tree->field = NULL;
 		free(tree->uid);
 		tree->uid = NULL;
 		free(tree->gid);
@@ -41,6 +44,9 @@ void	free_first_tree(struct s_node *tree)
 		tree->mode = NULL;
 		free(tree->time);
 		tree->time = NULL;
+		if (tree->ind == 1)
+			free(tree->field);
+		tree->field = NULL;
 	}
 }
 

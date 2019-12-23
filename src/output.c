@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 19:11:32 by emaveric          #+#    #+#             */
-/*   Updated: 2019/12/23 14:34:04 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/12/23 19:58:22 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	e_print(struct s_node *tree, t_ls *ls)
 	if (tree != NULL)
 	{
 		e_print(tree->left, ls);
-		if (files(tree, ".") == ERROR)
+		if (tree->ind == 0 && files(tree, ".") == ERROR)
 		{
 			tree->mode[0] = 'e';
 			ls->ac--;
@@ -74,6 +74,8 @@ int		output(t_ls *ls, struct s_node *tree)
 	ls->col->max_ino = 0;
 	ls->col->max_size = 0;
 	ls->col->max_link = 0;
+	ls->col->max_uid = 0;
+	ls->col->max_gid = 0;
 	if (ls->l == 1 || ls->i == 1)
 		max_len(tree, ls);
 	if (ls->flag == 0)

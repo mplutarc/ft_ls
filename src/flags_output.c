@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/14 17:25:24 by emaveric          #+#    #+#             */
-/*   Updated: 2019/12/23 14:34:04 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/12/23 17:45:51 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,20 @@ void	big_r_flag_print(struct s_node *tree, t_ls *ls)
 	}
 }
 
+
+void	l_flag_print_link(struct s_node *tree)
+{
+	if (tree->mode[0] == 'l')
+	{
+		ft_putstr(ft_strname(tree->field, '/'));
+		ft_putstr(" -> ");
+		ft_putendl(tree->str_link);
+		free(tree->str_link);
+	}
+	else
+		ft_putendl(ft_strname(tree->field, '/'));
+}
+
 void	l_flag_print(struct s_node *tree, t_ls *ls)
 {
 	if (ls->flag == 2 || (ls->flag == 0 && files(tree, ".") == 0))
@@ -46,25 +60,20 @@ void	l_flag_print(struct s_node *tree, t_ls *ls)
 				free(ls->col->str_link);
 			if (ls->col->str_size)
 				free(ls->col->str_size);
+			if (ls->col->str_uid)
+				free(ls->col->str_uid);
+			if (ls->col->str_gid)
+				free(ls->col->str_gid);
 			into_string(tree, ls);
 			ft_putstr(tree->mode);
 			ft_putstr(ls->col->str_link);
-			ft_putstr(tree->uid);
-			ft_putchar(' ');
-			ft_putstr(tree->gid);
+			ft_putstr(ls->col->str_uid);
+			ft_putstr(ls->col->str_gid);
 			ft_putstr(ls->col->str_size);
 			tree->time = ft_strncut(tree->time, 4, 16);
 			ft_putstr(tree->time);
 			ft_putchar(' ');
-			if (tree->mode[0] == 'l')
-			{
-				ft_putstr(ft_strname(tree->field, '/'));
-				ft_putstr(" -> ");
-				ft_putendl(tree->str_link);
-				free(tree->str_link);
-			}
-			else
-				ft_putendl(ft_strname(tree->field, '/'));
+			l_flag_print_link(tree);
 		}
 }
 
@@ -79,6 +88,10 @@ void	i_flag_print(struct s_node *tree, t_ls *ls)
 				free(ls->col->str_link);
 			if (ls->col->str_size)
 				free(ls->col->str_size);
+			if (ls->col->str_uid)
+				free(ls->col->str_uid);
+			if (ls->col->str_gid)
+				free(ls->col->str_gid);
 			into_string(tree, ls);
 			ft_putstr(ls->col->str_ino);
 			ft_putchar(' ');

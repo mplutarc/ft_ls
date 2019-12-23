@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 20:23:06 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/12/23 14:38:36 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/12/23 15:06:38 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,7 +135,7 @@ int		main(int ac, char **av)
 		free_ls(ls);
 		return (ERROR);
 	}
-	ls->ac = ac - ls->f_sum - 2;
+	ls->ac = ac - ls->f_sum - 1;
 	if (ac == 1 || (ft_strcmp(av[1], "--") == 0 && ac == 2) || ls->f_sum == ac - 1
 		|| (ft_strcmp(av[ls->f_sum + 1], "--") == 0 && ac == ls->f_sum + 2))
 	{

@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 20:23:13 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/12/23 14:38:36 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/12/23 19:58:22 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,13 @@ typedef struct		s_column
 	int				max_ino;
 	int				max_link;
 	int				max_size;
+	int 			max_uid;
+	int 			max_gid;
 	char			*str_link;
 	char			*str_size;
 	char			*str_ino;
+	char 			*str_uid;
+	char 			*str_gid;
 }					t_column;
 
 struct				s_node
@@ -43,6 +47,7 @@ struct				s_node
 	int				ino;
 	int				size;
 	int				links;
+	int 			ind;
 	char			*str_link;
 	char			*uid;
 	char			*gid;
