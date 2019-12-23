@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 20:23:13 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/12/19 18:17:16 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/12/23 14:38:36 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,8 +74,8 @@ typedef struct		s_ls
 	t_column		*col;
 }					t_ls;
 
-int					files(struct s_node *tree, char *theDir);
-int					directory(char *theDir, t_ls *ls);
+int					files(struct s_node *tree, char *the_dir);
+int					directory(char *the_dir, t_ls *ls);
 int					main(int ac, char **av);
 int					validation(int ac, char **av, t_ls *ls);
 int					sorting(int ac, char **av, t_ls *ls, struct stat buf);

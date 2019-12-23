@@ -2337,33 +2337,6 @@ src/sorting.c.s:
 	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/src/sorting.c.s
 .PHONY : src/sorting.c.s
 
-src/test/test.o: src/test/test.c.o
-
-.PHONY : src/test/test.o
-
-# target to build an object file
-src/test/test.c.o:
-	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/src/test/test.c.o
-.PHONY : src/test/test.c.o
-
-src/test/test.i: src/test/test.c.i
-
-.PHONY : src/test/test.i
-
-# target to preprocess a source file
-src/test/test.c.i:
-	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/src/test/test.c.i
-.PHONY : src/test/test.c.i
-
-src/test/test.s: src/test/test.c.s
-
-.PHONY : src/test/test.s
-
-# target to generate assembly for a file
-src/test/test.c.s:
-	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/src/test/test.c.s
-.PHONY : src/test/test.c.s
-
 src/validation.o: src/validation.c.o
 
 .PHONY : src/validation.o
@@ -2646,9 +2619,6 @@ help:
 	@echo "... src/sorting.o"
 	@echo "... src/sorting.i"
 	@echo "... src/sorting.s"
-	@echo "... src/test/test.o"
-	@echo "... src/test/test.i"
-	@echo "... src/test/test.s"
 	@echo "... src/validation.o"
 	@echo "... src/validation.i"
 	@echo "... src/validation.s"

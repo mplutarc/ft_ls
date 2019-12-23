@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 20:42:27 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/12/19 17:54:40 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/12/23 14:34:39 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,9 +61,6 @@ t_column	*init_col(void)
 
 	if (!(new = (t_column *)malloc(sizeof(t_column))))
 		return (NULL);
-	new->link = 0;
-	new->size = 0;
-	new->ino = 0;
 	new->max_ino = 0;
 	new->max_link = 0;
 	new->max_size = 0;

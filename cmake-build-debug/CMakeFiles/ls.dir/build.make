@@ -980,22 +980,9 @@ CMakeFiles/ls.dir/src/validation.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ls.dir/src/validation.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/emaveric/ls/src/validation.c -o CMakeFiles/ls.dir/src/validation.c.s
 
-CMakeFiles/ls.dir/src/test/test.c.o: CMakeFiles/ls.dir/flags.make
-CMakeFiles/ls.dir/src/test/test.c.o: ../src/test/test.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/emaveric/ls/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_72) "Building C object CMakeFiles/ls.dir/src/test/test.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ls.dir/src/test/test.c.o   -c /Users/emaveric/ls/src/test/test.c
-
-CMakeFiles/ls.dir/src/test/test.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ls.dir/src/test/test.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/emaveric/ls/src/test/test.c > CMakeFiles/ls.dir/src/test/test.c.i
-
-CMakeFiles/ls.dir/src/test/test.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ls.dir/src/test/test.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/emaveric/ls/src/test/test.c -o CMakeFiles/ls.dir/src/test/test.c.s
-
 CMakeFiles/ls.dir/libft/ft_strcut.c.o: CMakeFiles/ls.dir/flags.make
 CMakeFiles/ls.dir/libft/ft_strcut.c.o: ../libft/ft_strcut.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/emaveric/ls/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_73) "Building C object CMakeFiles/ls.dir/libft/ft_strcut.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/emaveric/ls/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_72) "Building C object CMakeFiles/ls.dir/libft/ft_strcut.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ls.dir/libft/ft_strcut.c.o   -c /Users/emaveric/ls/libft/ft_strcut.c
 
 CMakeFiles/ls.dir/libft/ft_strcut.c.i: cmake_force
@@ -1008,7 +995,7 @@ CMakeFiles/ls.dir/libft/ft_strcut.c.s: cmake_force
 
 CMakeFiles/ls.dir/src/flags_output.c.o: CMakeFiles/ls.dir/flags.make
 CMakeFiles/ls.dir/src/flags_output.c.o: ../src/flags_output.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/emaveric/ls/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_74) "Building C object CMakeFiles/ls.dir/src/flags_output.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/emaveric/ls/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_73) "Building C object CMakeFiles/ls.dir/src/flags_output.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ls.dir/src/flags_output.c.o   -c /Users/emaveric/ls/src/flags_output.c
 
 CMakeFiles/ls.dir/src/flags_output.c.i: cmake_force
@@ -1021,7 +1008,7 @@ CMakeFiles/ls.dir/src/flags_output.c.s: cmake_force
 
 CMakeFiles/ls.dir/libft/ft_strncut.c.o: CMakeFiles/ls.dir/flags.make
 CMakeFiles/ls.dir/libft/ft_strncut.c.o: ../libft/ft_strncut.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/emaveric/ls/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_75) "Building C object CMakeFiles/ls.dir/libft/ft_strncut.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/emaveric/ls/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_74) "Building C object CMakeFiles/ls.dir/libft/ft_strncut.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ls.dir/libft/ft_strncut.c.o   -c /Users/emaveric/ls/libft/ft_strncut.c
 
 CMakeFiles/ls.dir/libft/ft_strncut.c.i: cmake_force
@@ -1034,7 +1021,7 @@ CMakeFiles/ls.dir/libft/ft_strncut.c.s: cmake_force
 
 CMakeFiles/ls.dir/libft/ft_strname.c.o: CMakeFiles/ls.dir/flags.make
 CMakeFiles/ls.dir/libft/ft_strname.c.o: ../libft/ft_strname.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/emaveric/ls/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_76) "Building C object CMakeFiles/ls.dir/libft/ft_strname.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/emaveric/ls/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_75) "Building C object CMakeFiles/ls.dir/libft/ft_strname.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ls.dir/libft/ft_strname.c.o   -c /Users/emaveric/ls/libft/ft_strname.c
 
 CMakeFiles/ls.dir/libft/ft_strname.c.i: cmake_force
@@ -1047,7 +1034,7 @@ CMakeFiles/ls.dir/libft/ft_strname.c.s: cmake_force
 
 CMakeFiles/ls.dir/src/flags_sorting.c.o: CMakeFiles/ls.dir/flags.make
 CMakeFiles/ls.dir/src/flags_sorting.c.o: ../src/flags_sorting.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/emaveric/ls/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_77) "Building C object CMakeFiles/ls.dir/src/flags_sorting.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/emaveric/ls/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_76) "Building C object CMakeFiles/ls.dir/src/flags_sorting.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ls.dir/src/flags_sorting.c.o   -c /Users/emaveric/ls/src/flags_sorting.c
 
 CMakeFiles/ls.dir/src/flags_sorting.c.i: cmake_force
@@ -1060,7 +1047,7 @@ CMakeFiles/ls.dir/src/flags_sorting.c.s: cmake_force
 
 CMakeFiles/ls.dir/libft/ft_strbchr.c.o: CMakeFiles/ls.dir/flags.make
 CMakeFiles/ls.dir/libft/ft_strbchr.c.o: ../libft/ft_strbchr.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/emaveric/ls/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_78) "Building C object CMakeFiles/ls.dir/libft/ft_strbchr.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/emaveric/ls/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_77) "Building C object CMakeFiles/ls.dir/libft/ft_strbchr.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ls.dir/libft/ft_strbchr.c.o   -c /Users/emaveric/ls/libft/ft_strbchr.c
 
 CMakeFiles/ls.dir/libft/ft_strbchr.c.i: cmake_force
@@ -1073,7 +1060,7 @@ CMakeFiles/ls.dir/libft/ft_strbchr.c.s: cmake_force
 
 CMakeFiles/ls.dir/src/free_tree.c.o: CMakeFiles/ls.dir/flags.make
 CMakeFiles/ls.dir/src/free_tree.c.o: ../src/free_tree.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/emaveric/ls/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_79) "Building C object CMakeFiles/ls.dir/src/free_tree.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/emaveric/ls/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_78) "Building C object CMakeFiles/ls.dir/src/free_tree.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ls.dir/src/free_tree.c.o   -c /Users/emaveric/ls/src/free_tree.c
 
 CMakeFiles/ls.dir/src/free_tree.c.i: cmake_force
@@ -1086,7 +1073,7 @@ CMakeFiles/ls.dir/src/free_tree.c.s: cmake_force
 
 CMakeFiles/ls.dir/libft/ft_strjoin_free.c.o: CMakeFiles/ls.dir/flags.make
 CMakeFiles/ls.dir/libft/ft_strjoin_free.c.o: ../libft/ft_strjoin_free.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/emaveric/ls/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_80) "Building C object CMakeFiles/ls.dir/libft/ft_strjoin_free.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/emaveric/ls/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_79) "Building C object CMakeFiles/ls.dir/libft/ft_strjoin_free.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ls.dir/libft/ft_strjoin_free.c.o   -c /Users/emaveric/ls/libft/ft_strjoin_free.c
 
 CMakeFiles/ls.dir/libft/ft_strjoin_free.c.i: cmake_force
@@ -1099,7 +1086,7 @@ CMakeFiles/ls.dir/libft/ft_strjoin_free.c.s: cmake_force
 
 CMakeFiles/ls.dir/libft/ft_strcmp_free.c.o: CMakeFiles/ls.dir/flags.make
 CMakeFiles/ls.dir/libft/ft_strcmp_free.c.o: ../libft/ft_strcmp_free.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/emaveric/ls/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_81) "Building C object CMakeFiles/ls.dir/libft/ft_strcmp_free.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/emaveric/ls/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_80) "Building C object CMakeFiles/ls.dir/libft/ft_strcmp_free.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ls.dir/libft/ft_strcmp_free.c.o   -c /Users/emaveric/ls/libft/ft_strcmp_free.c
 
 CMakeFiles/ls.dir/libft/ft_strcmp_free.c.i: cmake_force
@@ -1112,7 +1099,7 @@ CMakeFiles/ls.dir/libft/ft_strcmp_free.c.s: cmake_force
 
 CMakeFiles/ls.dir/src/columns.c.o: CMakeFiles/ls.dir/flags.make
 CMakeFiles/ls.dir/src/columns.c.o: ../src/columns.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/emaveric/ls/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_82) "Building C object CMakeFiles/ls.dir/src/columns.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/emaveric/ls/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_81) "Building C object CMakeFiles/ls.dir/src/columns.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ls.dir/src/columns.c.o   -c /Users/emaveric/ls/src/columns.c
 
 CMakeFiles/ls.dir/src/columns.c.i: cmake_force
@@ -1125,7 +1112,7 @@ CMakeFiles/ls.dir/src/columns.c.s: cmake_force
 
 CMakeFiles/ls.dir/libft/ft_itoa_rev.c.o: CMakeFiles/ls.dir/flags.make
 CMakeFiles/ls.dir/libft/ft_itoa_rev.c.o: ../libft/ft_itoa_rev.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/emaveric/ls/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_83) "Building C object CMakeFiles/ls.dir/libft/ft_itoa_rev.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/emaveric/ls/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_82) "Building C object CMakeFiles/ls.dir/libft/ft_itoa_rev.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ls.dir/libft/ft_itoa_rev.c.o   -c /Users/emaveric/ls/libft/ft_itoa_rev.c
 
 CMakeFiles/ls.dir/libft/ft_itoa_rev.c.i: cmake_force
@@ -1138,7 +1125,7 @@ CMakeFiles/ls.dir/libft/ft_itoa_rev.c.s: cmake_force
 
 CMakeFiles/ls.dir/libft/ft_numlen.c.o: CMakeFiles/ls.dir/flags.make
 CMakeFiles/ls.dir/libft/ft_numlen.c.o: ../libft/ft_numlen.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/emaveric/ls/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_84) "Building C object CMakeFiles/ls.dir/libft/ft_numlen.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/emaveric/ls/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_83) "Building C object CMakeFiles/ls.dir/libft/ft_numlen.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ls.dir/libft/ft_numlen.c.o   -c /Users/emaveric/ls/libft/ft_numlen.c
 
 CMakeFiles/ls.dir/libft/ft_numlen.c.i: cmake_force
@@ -1222,7 +1209,6 @@ ls_OBJECTS = \
 "CMakeFiles/ls.dir/src/output.c.o" \
 "CMakeFiles/ls.dir/src/sorting.c.o" \
 "CMakeFiles/ls.dir/src/validation.c.o" \
-"CMakeFiles/ls.dir/src/test/test.c.o" \
 "CMakeFiles/ls.dir/libft/ft_strcut.c.o" \
 "CMakeFiles/ls.dir/src/flags_output.c.o" \
 "CMakeFiles/ls.dir/libft/ft_strncut.c.o" \
@@ -1310,7 +1296,6 @@ ls: CMakeFiles/ls.dir/src/main.c.o
 ls: CMakeFiles/ls.dir/src/output.c.o
 ls: CMakeFiles/ls.dir/src/sorting.c.o
 ls: CMakeFiles/ls.dir/src/validation.c.o
-ls: CMakeFiles/ls.dir/src/test/test.c.o
 ls: CMakeFiles/ls.dir/libft/ft_strcut.c.o
 ls: CMakeFiles/ls.dir/src/flags_output.c.o
 ls: CMakeFiles/ls.dir/libft/ft_strncut.c.o
@@ -1325,7 +1310,7 @@ ls: CMakeFiles/ls.dir/libft/ft_itoa_rev.c.o
 ls: CMakeFiles/ls.dir/libft/ft_numlen.c.o
 ls: CMakeFiles/ls.dir/build.make
 ls: CMakeFiles/ls.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/emaveric/ls/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_85) "Linking C executable ls"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/emaveric/ls/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_84) "Linking C executable ls"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ls.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 19:11:32 by emaveric          #+#    #+#             */
-/*   Updated: 2019/12/19 17:49:25 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/12/23 14:34:04 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,6 @@ int		output(t_ls *ls, struct s_node *tree)
 		else if (ls->flag == 2)
 		{
 			print(tree, ls);
-			ls->ind = 3;
 			big_r_flag_print(tree, ls);
 		}
 	}

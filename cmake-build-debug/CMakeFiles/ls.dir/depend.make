@@ -248,8 +248,6 @@ CMakeFiles/ls.dir/src/sorting.c.o: ../includes/ft_ls.h
 CMakeFiles/ls.dir/src/sorting.c.o: ../libft/libft.h
 CMakeFiles/ls.dir/src/sorting.c.o: ../src/sorting.c
 
-CMakeFiles/ls.dir/src/test/test.c.o: ../src/test/test.c
-
 CMakeFiles/ls.dir/src/validation.c.o: ../includes/ft_ls.h
 CMakeFiles/ls.dir/src/validation.c.o: ../libft/libft.h
 CMakeFiles/ls.dir/src/validation.c.o: ../src/validation.c

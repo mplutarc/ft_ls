@@ -70,7 +70,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/ls.dir/src/output.c.o"
   "CMakeFiles/ls.dir/src/sorting.c.o"
   "CMakeFiles/ls.dir/src/validation.c.o"
-  "CMakeFiles/ls.dir/src/test/test.c.o"
   "CMakeFiles/ls.dir/libft/ft_strcut.c.o"
   "CMakeFiles/ls.dir/src/flags_output.c.o"
   "CMakeFiles/ls.dir/libft/ft_strncut.c.o"

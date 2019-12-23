@@ -86,7 +86,6 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/emaveric/ls/src/main.c" "/Users/emaveric/ls/cmake-build-debug/CMakeFiles/ls.dir/src/main.c.o"
   "/Users/emaveric/ls/src/output.c" "/Users/emaveric/ls/cmake-build-debug/CMakeFiles/ls.dir/src/output.c.o"
   "/Users/emaveric/ls/src/sorting.c" "/Users/emaveric/ls/cmake-build-debug/CMakeFiles/ls.dir/src/sorting.c.o"
-  "/Users/emaveric/ls/src/test/test.c" "/Users/emaveric/ls/cmake-build-debug/CMakeFiles/ls.dir/src/test/test.c.o"
   "/Users/emaveric/ls/src/validation.c" "/Users/emaveric/ls/cmake-build-debug/CMakeFiles/ls.dir/src/validation.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")

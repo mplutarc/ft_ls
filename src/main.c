@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 20:23:06 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/12/19 18:06:18 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/12/23 14:38:36 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ t_ls	*init(void)
 	new->r = 0;
 	new->big_r = 0;
 	new->f_sum = 0;
-	new->ind = 0;
 	new->sec = 0;
 	new->point = 0;
 	new->col = init_col();
@@ -35,21 +34,21 @@ t_ls	*init(void)
 	return (new);
 }
 
-void	error(char *theDir)
+void	error(char *the_dir)
 {
 	ft_putstr("Error opening ");
-	ft_putstr(theDir);
+	ft_putstr(the_dir);
 	ft_putstr(": ");
 	ft_putstr(strerror(errno));
 	ft_putstr("\n");
 }
 
-int		files(struct s_node *tree, char *theDir)
+int		files(struct s_node *tree, char *the_dir)
 {
 	DIR				*dir;
 	struct dirent	*entry;
 
-	dir = opendir(theDir);
+	dir = opendir(the_dir);
 	while ((entry = readdir(dir)))
 	{
 		if (ft_strcmp(tree->field, entry->d_name) == 0)
@@ -62,7 +61,7 @@ int		files(struct s_node *tree, char *theDir)
 	return (ERROR);
 }
 
-int		directory(char *theDir, t_ls *ls)
+int		directory(char *the_dir, t_ls *ls)
 {
 	DIR				*dir;
 	struct dirent	*entry;
@@ -72,15 +71,15 @@ int		directory(char *theDir, t_ls *ls)
 	char			*tmp;
 
 	ls->blocks = 0;
-	dir = opendir(theDir);
+	dir = opendir(the_dir);
 	if (!dir)
 	{
-		error(theDir);
+		error(the_dir);
 		return (0);
 	}
 	sub_tree = NULL;
-	str = (char *)ft_memalloc(sizeof(char) * (ft_strlen(theDir) + 2));
-	str = ft_strcpy(str, theDir);
+	str = (char *)ft_memalloc(sizeof(char) * (ft_strlen(the_dir) + 2));
+	str = ft_strcpy(str, the_dir);
 	ft_strcat(str, "/");
 	while ((entry = readdir(dir)))
 	{
