@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/31 15:11:20 by emaveric          #+#    #+#             */
-/*   Updated: 2019/12/23 19:58:22 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/12/23 21:43:15 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ struct s_node	*tree_create(char *str, struct stat buf, t_ls *ls)
 	struct passwd	*pws;
 	struct group	*grp;
 	struct s_node	*tree;
+	char 			*tmp;
 
 	if (!(tree = (struct s_node *) malloc(sizeof(struct s_node))))
 		return (NULL);
@@ -56,12 +57,15 @@ struct s_node	*tree_create(char *str, struct stat buf, t_ls *ls)
 	tree->ind = 0;
 	if (str[0] == '~')
 	{
+		tree->ind = 1;
 		if (!(tree->field = ft_strjoin("/Users/", pws->pw_name)))
 			return (NULL);
-		tree->ind = 1;
 	}
 	else
 		tree->field = str;
+	if (ft_strcmp(tree->field, tmp = ft_strjoin("/Users/", tree->uid)))
+		tree->mode[0] = 'q';
+	free(tmp);
 	if (tree->mode[0] == 'l' && ls->l == 1)
 	{
 		if (!(tree->str_link = (char *)ft_memalloc(sizeof(char) * (buf.st_size + 1))))

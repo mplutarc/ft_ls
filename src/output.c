@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 19:11:32 by emaveric          #+#    #+#             */
-/*   Updated: 2019/12/23 19:58:22 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/12/23 21:33:15 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,14 @@ void	e_print(struct s_node *tree, t_ls *ls)
 	if (tree != NULL)
 	{
 		e_print(tree->left, ls);
-		if (tree->ind == 0 && files(tree, ".") == ERROR)
+		if (tree->mode[0] == 'q' /*tree->ind == 0*/ && files(tree, ".") == ERROR)
 		{
 			tree->mode[0] = 'e';
 			ls->ac--;
 			directory(tree->field, ls);
 		}
+		if (tree->mode[0] == 'q')
+			tree->mode[0] = 'd';
 		e_print(tree->right, ls);
 	}
 }

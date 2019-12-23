@@ -12,9 +12,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cd382817-5c5e-4437-93c1-619f60bd8795" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/ls" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/ft_ls.h" beforeDir="false" afterPath="$PROJECT_DIR$/includes/ft_ls.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/columns.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/columns.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/flags_output.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/flags_output.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/free_tree.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/free_tree.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.c" afterDir="false" />
@@ -38,10 +36,10 @@
         <splitter split-orientation="horizontal" split-proportion="0.5">
           <split-first>
             <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-              <file pinned="false" current-in-tab="true">
+              <file pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/src/main.c">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="1022">
+                    <state relative-caret-position="402">
                       <caret line="137" selection-start-line="137" selection-end-line="137" />
                     </state>
                   </provider>
@@ -50,7 +48,7 @@
               <file pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/jm,/jm,/flags_sorting.c">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="984">
+                    <state relative-caret-position="990">
                       <caret line="66" column="1" selection-start-line="66" selection-start-column="1" selection-end-line="66" selection-end-column="1" />
                     </state>
                   </provider>
@@ -74,11 +72,11 @@
                   </provider>
                 </entry>
               </file>
-              <file pinned="false" current-in-tab="false">
+              <file pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/src/sorting.c">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="647">
-                      <caret line="71" column="29" selection-start-line="71" selection-start-column="29" selection-end-line="71" selection-end-column="29" />
+                    <state relative-caret-position="564">
+                      <caret line="66" column="14" selection-start-line="66" selection-start-column="14" selection-end-line="66" selection-end-column="14" />
                     </state>
                   </provider>
                 </entry>
@@ -90,8 +88,8 @@
               <file pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/src/output.c">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="760">
-                      <caret line="90" selection-start-line="90" selection-end-line="90" />
+                    <state relative-caret-position="348">
+                      <caret line="26" column="32" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
                     </state>
                   </provider>
                 </entry>
@@ -108,8 +106,8 @@
               <file pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/src/flags_output.c">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="632">
-                      <caret line="47" column="8" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="8" />
+                    <state relative-caret-position="330">
+                      <caret line="22" column="56" selection-start-line="22" selection-start-column="56" selection-end-line="22" selection-end-column="56" />
                     </state>
                   </provider>
                 </entry>
@@ -126,8 +124,8 @@
               <file pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/src/free_tree.c">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="510">
-                      <caret line="34" selection-start-line="34" selection-end-line="34" />
+                    <state relative-caret-position="945">
+                      <caret line="63" selection-start-line="63" selection-end-line="64" selection-end-column="33" />
                     </state>
                   </provider>
                 </entry>
@@ -150,8 +148,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/includes/ft_ls.h">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="78">
-                  <caret line="6" column="37" selection-start-line="6" selection-start-column="37" selection-end-line="6" selection-end-column="37" />
+                <state relative-caret-position="543">
+                  <caret line="49" column="24" selection-start-line="49" selection-start-column="24" selection-end-line="49" selection-end-column="24" />
                 </state>
               </provider>
             </entry>
@@ -191,14 +189,14 @@
         <option value="$PROJECT_DIR$/libft/ft_numlen.c" />
         <option value="$PROJECT_DIR$/jm,/jm,/flags_sorting.c" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/src/main.c" />
         <option value="$PROJECT_DIR$/jm,/jm,/columns.c" />
-        <option value="$PROJECT_DIR$/src/flags_output.c" />
         <option value="$PROJECT_DIR$/src/columns.c" />
         <option value="$PROJECT_DIR$/jm,/jm,/free_tree.c" />
-        <option value="$PROJECT_DIR$/includes/ft_ls.h" />
-        <option value="$PROJECT_DIR$/src/sorting.c" />
         <option value="$PROJECT_DIR$/src/free_tree.c" />
+        <option value="$PROJECT_DIR$/src/flags_output.c" />
+        <option value="$PROJECT_DIR$/includes/ft_ls.h" />
+        <option value="$PROJECT_DIR$/src/main.c" />
+        <option value="$PROJECT_DIR$/src/sorting.c" />
         <option value="$PROJECT_DIR$/src/output.c" />
       </list>
     </option>
@@ -225,11 +223,6 @@
               <item name="ls" type="b2602c69:ProjectViewProjectNode" />
               <item name="ls" type="462c0819:PsiDirectoryNode" />
               <item name="cmake-build-debug" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ls" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ls" type="462c0819:PsiDirectoryNode" />
-              <item name="libft" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ls" type="b2602c69:ProjectViewProjectNode" />
@@ -276,7 +269,7 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="ls" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="-l ~ src /homeergerg " WORKING_DIR="file://$PROJECT_DIR$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ls" TARGET_NAME="ls" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ls" RUN_TARGET_NAME="ls">
+    <configuration name="ls" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="-l ~ src erferf /hwefwef" WORKING_DIR="file://$PROJECT_DIR$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ls" TARGET_NAME="ls" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ls" RUN_TARGET_NAME="ls">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -339,12 +332,12 @@
       <workItem from="1576848061160" duration="4000" />
       <workItem from="1576858061345" duration="734000" />
       <workItem from="1576863563043" duration="422000" />
-      <workItem from="1577100692052" duration="15550000" />
+      <workItem from="1577100692052" duration="20081000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="332663000" />
+    <option name="totallyTimeSpent" value="337194000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -363,14 +356,14 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32919708" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
       <window_info anchor="bottom" id="Messages" order="8" weight="0.32258064" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.2851613" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.2851613" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.32919708" />
       <window_info anchor="bottom" id="CMake" order="12" weight="0.32903227" />
@@ -426,6 +419,11 @@
           <url>file://$PROJECT_DIR$/src/output.c</url>
           <line>18</line>
           <option name="timeStamp" value="128" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/sorting.c</url>
+          <line>55</line>
+          <option name="timeStamp" value="129" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -659,13 +657,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jm,/jm,/flags_sorting.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="984">
-          <caret line="66" column="1" selection-start-line="66" selection-start-column="1" selection-end-line="66" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/validation.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="16">
@@ -677,13 +668,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/flags_output.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="632">
-          <caret line="47" column="8" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -701,38 +685,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/includes/ft_ls.h">
+    <entry file="file://$PROJECT_DIR$/src/free_tree.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="6" column="37" selection-start-line="6" selection-start-column="37" selection-end-line="6" selection-end-column="37" />
+        <state relative-caret-position="945">
+          <caret line="63" selection-start-line="63" selection-end-line="64" selection-end-column="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sorting.c">
+    <entry file="file://$PROJECT_DIR$/src/flags_output.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="647">
-          <caret line="71" column="29" selection-start-line="71" selection-start-column="29" selection-end-line="71" selection-end-column="29" />
+        <state relative-caret-position="330">
+          <caret line="22" column="56" selection-start-line="22" selection-start-column="56" selection-end-line="22" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jm,/jm,/flags_sorting.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="990">
+          <caret line="66" column="1" selection-start-line="66" selection-start-column="1" selection-end-line="66" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/ft_ls.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="543">
+          <caret line="49" column="24" selection-start-line="49" selection-start-column="24" selection-end-line="49" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1022">
+        <state relative-caret-position="402">
           <caret line="137" selection-start-line="137" selection-end-line="137" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/free_tree.c">
+    <entry file="file://$PROJECT_DIR$/src/sorting.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
+        <state relative-caret-position="564">
+          <caret line="66" column="14" selection-start-line="66" selection-start-column="14" selection-end-line="66" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/output.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="760">
-          <caret line="90" selection-start-line="90" selection-end-line="90" />
+        <state relative-caret-position="348">
+          <caret line="26" column="32" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
         </state>
       </provider>
     </entry>
