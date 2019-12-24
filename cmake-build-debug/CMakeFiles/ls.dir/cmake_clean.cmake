@@ -82,6 +82,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/ls.dir/src/columns.c.o"
   "CMakeFiles/ls.dir/libft/ft_itoa_rev.c.o"
   "CMakeFiles/ls.dir/libft/ft_numlen.c.o"
+  "CMakeFiles/ls.dir/src/valid_error.c.o"
+  "CMakeFiles/ls.dir/src/tree_create.c.o"
   "ls.pdb"
   "ls"
 )

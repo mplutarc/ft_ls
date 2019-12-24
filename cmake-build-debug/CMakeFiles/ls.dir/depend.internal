@@ -248,6 +248,14 @@ CMakeFiles/ls.dir/src/sorting.c.o
  /Users/emaveric/ls/includes/ft_ls.h
  /Users/emaveric/ls/libft/libft.h
  /Users/emaveric/ls/src/sorting.c
+CMakeFiles/ls.dir/src/tree_create.c.o
+ /Users/emaveric/ls/includes/ft_ls.h
+ /Users/emaveric/ls/libft/libft.h
+ /Users/emaveric/ls/src/tree_create.c
+CMakeFiles/ls.dir/src/valid_error.c.o
+ /Users/emaveric/ls/includes/ft_ls.h
+ /Users/emaveric/ls/libft/libft.h
+ /Users/emaveric/ls/src/valid_error.c
 CMakeFiles/ls.dir/src/validation.c.o
  /Users/emaveric/ls/includes/ft_ls.h
  /Users/emaveric/ls/libft/libft.h

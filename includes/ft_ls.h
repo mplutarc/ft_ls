@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 20:23:13 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/12/23 20:58:14 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/12/24 16:18:04 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ typedef struct		s_ls
 	t_column		*col;
 }					t_ls;
 
-int					files(struct s_node *tree, char *the_dir);
+int					files(char *str, char *the_dir);
 int					directory(char *the_dir, t_ls *ls);
 int					main(int ac, char **av);
 int					validation(int ac, char **av, t_ls *ls);
@@ -107,5 +107,7 @@ void				into_string(struct s_node *tree, t_ls *ls);
 t_column			*init_col(void);
 t_ls				*itostr(struct s_node *tree, t_ls *ls);
 void				max_len(struct s_node *tree, t_ls *ls);
+int					valid_error(int ac, char **av);
+struct s_node		*tree_create(char *str, struct stat buf, t_ls *ls);
 
 #endif

@@ -95,4 +95,6 @@ add_executable(ls
         libft/ft_strjoin_free.c
         libft/ft_strcmp_free.c
         src/columns.c
-        libft/ft_itoa_rev.c libft/ft_numlen.c)
+        libft/ft_itoa_rev.c libft/ft_numlen.c
+        src/valid_error.c
+        src/tree_create.c)

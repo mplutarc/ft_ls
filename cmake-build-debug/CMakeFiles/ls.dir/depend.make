@@ -248,6 +248,14 @@ CMakeFiles/ls.dir/src/sorting.c.o: ../includes/ft_ls.h
 CMakeFiles/ls.dir/src/sorting.c.o: ../libft/libft.h
 CMakeFiles/ls.dir/src/sorting.c.o: ../src/sorting.c
 
+CMakeFiles/ls.dir/src/tree_create.c.o: ../includes/ft_ls.h
+CMakeFiles/ls.dir/src/tree_create.c.o: ../libft/libft.h
+CMakeFiles/ls.dir/src/tree_create.c.o: ../src/tree_create.c
+
+CMakeFiles/ls.dir/src/valid_error.c.o: ../includes/ft_ls.h
+CMakeFiles/ls.dir/src/valid_error.c.o: ../libft/libft.h
+CMakeFiles/ls.dir/src/valid_error.c.o: ../src/valid_error.c
+
 CMakeFiles/ls.dir/src/validation.c.o: ../includes/ft_ls.h
 CMakeFiles/ls.dir/src/validation.c.o: ../libft/libft.h
 CMakeFiles/ls.dir/src/validation.c.o: ../src/validation.c

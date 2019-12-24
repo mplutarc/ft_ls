@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 20:23:06 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/12/23 20:58:14 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/12/24 15:30:07 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ t_ls	*init(void)
 		return (NULL);
 	new->flag = 0;
 	new->dh_index = 0;
+	new->ac = 0;
 	new->l = 0;
 	new->i = 0;
 	new->a = 0;
@@ -43,7 +44,7 @@ void	error(char *the_dir)
 	ft_putstr("\n");
 }
 
-int		files(struct s_node *tree, char *the_dir)
+int		files(char *str, char *the_dir)
 {
 	DIR				*dir;
 	struct dirent	*entry;
@@ -51,7 +52,7 @@ int		files(struct s_node *tree, char *the_dir)
 	dir = opendir(the_dir);
 	while ((entry = readdir(dir)))
 	{
-		if (ft_strcmp(tree->field, entry->d_name) == 0)
+		if (ft_strcmp(str, entry->d_name) == 0)
 		{
 			closedir(dir);
 			return (0);
@@ -135,7 +136,8 @@ int		main(int ac, char **av)
 		free_ls(ls);
 		return (ERROR);
 	}
-	ls->ac = ac - ls->f_sum - 1;
+	if (ac - ls->f_sum > 2)
+		ls->ac = ac - ls->f_sum - 1;
 	if (ac == 1 || (ft_strcmp(av[1], "--") == 0 && ac == 2) || ls->f_sum == ac - 1
 		|| (ft_strcmp(av[ls->f_sum + 1], "--") == 0 && ac == ls->f_sum + 2))
 	{

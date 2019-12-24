@@ -2337,6 +2337,60 @@ src/sorting.c.s:
 	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/src/sorting.c.s
 .PHONY : src/sorting.c.s
 
+src/tree_create.o: src/tree_create.c.o
+
+.PHONY : src/tree_create.o
+
+# target to build an object file
+src/tree_create.c.o:
+	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/src/tree_create.c.o
+.PHONY : src/tree_create.c.o
+
+src/tree_create.i: src/tree_create.c.i
+
+.PHONY : src/tree_create.i
+
+# target to preprocess a source file
+src/tree_create.c.i:
+	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/src/tree_create.c.i
+.PHONY : src/tree_create.c.i
+
+src/tree_create.s: src/tree_create.c.s
+
+.PHONY : src/tree_create.s
+
+# target to generate assembly for a file
+src/tree_create.c.s:
+	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/src/tree_create.c.s
+.PHONY : src/tree_create.c.s
+
+src/valid_error.o: src/valid_error.c.o
+
+.PHONY : src/valid_error.o
+
+# target to build an object file
+src/valid_error.c.o:
+	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/src/valid_error.c.o
+.PHONY : src/valid_error.c.o
+
+src/valid_error.i: src/valid_error.c.i
+
+.PHONY : src/valid_error.i
+
+# target to preprocess a source file
+src/valid_error.c.i:
+	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/src/valid_error.c.i
+.PHONY : src/valid_error.c.i
+
+src/valid_error.s: src/valid_error.c.s
+
+.PHONY : src/valid_error.s
+
+# target to generate assembly for a file
+src/valid_error.c.s:
+	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/src/valid_error.c.s
+.PHONY : src/valid_error.c.s
+
 src/validation.o: src/validation.c.o
 
 .PHONY : src/validation.o
@@ -2619,6 +2673,12 @@ help:
 	@echo "... src/sorting.o"
 	@echo "... src/sorting.i"
 	@echo "... src/sorting.s"
+	@echo "... src/tree_create.o"
+	@echo "... src/tree_create.i"
+	@echo "... src/tree_create.s"
+	@echo "... src/valid_error.o"
+	@echo "... src/valid_error.i"
+	@echo "... src/valid_error.s"
 	@echo "... src/validation.o"
 	@echo "... src/validation.i"
 	@echo "... src/validation.s"

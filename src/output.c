@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 19:11:32 by emaveric          #+#    #+#             */
-/*   Updated: 2019/12/23 21:33:15 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/12/24 15:30:07 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,26 @@
 
 void	e_print(struct s_node *tree, t_ls *ls)
 {
+	char	*tmp;
+	char	*new;
+
+	tmp = NULL;
+	new = NULL;
 	if (tree != NULL)
 	{
+		tmp = ft_strname(tree->field, '/');
+		if (!(new = ft_strchr(tree->field, '/')) ||
+		ft_strcmp(tree->field, new) == 0)
+			new = ft_strdup(".");
 		e_print(tree->left, ls);
-		if (tree->mode[0] == 'q' /*tree->ind == 0*/ && files(tree, ".") == ERROR)
+		if (/tree->ind == 0 && files(tmp, new) == ERROR)
 		{
 			tree->mode[0] = 'e';
 			ls->ac--;
 			directory(tree->field, ls);
 		}
+		if (new[0] == '.')
+			free(new);
 		if (tree->mode[0] == 'q')
 			tree->mode[0] = 'd';
 		e_print(tree->right, ls);
@@ -41,7 +52,10 @@ void	print(struct s_node *tree, t_ls *ls)
 				if (ls->i == 1)
 					i_flag_print(tree, ls);
 				if (ls->l == 1)
+				{
 					l_flag_print(tree, ls);
+					ft_putchar('\n');
+				}
 				else
 				{
 					ft_putstr(ft_strname(tree->field, '/'));
@@ -60,9 +74,10 @@ void	print(struct s_node *tree, t_ls *ls)
 				ls->point = 1;
 			}
 			directory(tree->field, ls);
-			if (ls->ac > 0)
+			if (ls->ac > 1)
 			{
-				ft_putstr("\n");
+				//if ((ls->ac > 0 && ls->l == 0) || (ls->ac > 1 && ls->l == 1))
+					ft_putstr("\n");
 				if ((ls->blocks != 0 || ls->a == 1) && ls->l != 1)
 					ft_putstr("\n");
 			}

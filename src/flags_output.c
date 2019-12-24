@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/14 17:25:24 by emaveric          #+#    #+#             */
-/*   Updated: 2019/12/23 20:58:14 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/12/24 16:18:04 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,15 +42,15 @@ void	l_flag_print_link(struct s_node *tree)
 	{
 		ft_putstr(ft_strname(tree->field, '/'));
 		ft_putstr(" -> ");
-		ft_putendl(tree->str_link);
+		ft_putstr(tree->str_link);
 	}
 	else
-		ft_putendl(ft_strname(tree->field, '/'));
+		ft_putstr(ft_strname(tree->field, '/'));
 }
 
 void	l_flag_print(struct s_node *tree, t_ls *ls)
 {
-	if (ls->flag == 2 || (ls->flag == 0 && files(tree, ".") == 0))
+	if (ls->flag == 2 || (ls->flag == 0 && files(tree->field, ".") == 0))
 		if (ft_strname(tree->field, '/')[0] != '.' || ls->a == 1)
 		{
 			if (ls->col->str_ino)
@@ -78,7 +78,7 @@ void	l_flag_print(struct s_node *tree, t_ls *ls)
 
 void	i_flag_print(struct s_node *tree, t_ls *ls)
 {
-	if (ls->flag == 2 || (ls->flag == 0 && files(tree, ".") == 0))
+	if (ls->flag == 2 || (ls->flag == 0 && files(tree->field, ".") == 0))
 		if (ft_strname(tree->field, '/')[0] != '.' || ls->a == 1)
 		{
 			if (ls->col->str_ino)

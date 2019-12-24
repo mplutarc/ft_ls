@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/31 15:11:20 by emaveric          #+#    #+#             */
-/*   Updated: 2019/12/23 21:43:15 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/12/24 16:18:39 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,56 +35,6 @@ int				mode_to_rwx(struct s_node *tree, struct stat buf)
 	tree->mode[i++] = ((buf.st_mode & S_IXOTH) ? 'x' : '-');
 	tree->mode[i] = '\0';
 	return (0);
-}
-
-struct s_node	*tree_create(char *str, struct stat buf, t_ls *ls)
-{
-	struct passwd	*pws;
-	struct group	*grp;
-	struct s_node	*tree;
-	char 			*tmp;
-
-	if (!(tree = (struct s_node *) malloc(sizeof(struct s_node))))
-		return (NULL);
-	if (mode_to_rwx(tree, buf) == ERROR)
-		return (NULL);
-	pws = getpwuid(buf.st_uid);
-	grp = getgrgid(buf.st_gid);
-	if (pws != NULL)
-		tree->uid = ft_strdup(pws->pw_name);
-	if (grp != NULL)
-		tree->gid = ft_strdup(grp->gr_name);
-	tree->ind = 0;
-	if (str[0] == '~')
-	{
-		tree->ind = 1;
-		if (!(tree->field = ft_strjoin("/Users/", pws->pw_name)))
-			return (NULL);
-	}
-	else
-		tree->field = str;
-	if (ft_strcmp(tree->field, tmp = ft_strjoin("/Users/", tree->uid)))
-		tree->mode[0] = 'q';
-	free(tmp);
-	if (tree->mode[0] == 'l' && ls->l == 1)
-	{
-		if (!(tree->str_link = (char *)ft_memalloc(sizeof(char) * (buf.st_size + 1))))
-			return (NULL);
-		readlink(tree->field, tree->str_link, buf.st_size);
-	}
-	tree->ino = buf.st_ino;
-	tree->size = buf.st_size;
-	tree->links = buf.st_nlink;
-	if (ls->a == 1)
-		ls->blocks += buf.st_blocks;
-	else if (ft_strname(str, '/')[0] != '.')
-		ls->blocks += buf.st_blocks;
-	tree->sec = buf.st_mtimespec.tv_sec;
-	if (!(tree->time = ft_strdup(ctime((long int *)&buf.st_ctimespec))))
-		return (NULL);
-	tree->left = NULL;
-	tree->right = NULL;
-	return (tree);
 }
 
 struct s_node	*addnode(char *str, struct s_node *tree, struct stat buf, t_ls *ls)
