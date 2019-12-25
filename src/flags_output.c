@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/14 17:25:24 by emaveric          #+#    #+#             */
-/*   Updated: 2019/12/24 16:18:04 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/12/25 14:36:17 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ void	big_r_flag_print(struct s_node *tree, t_ls *ls)
 		big_r_flag_print(tree->right, ls);
 	}
 }
-
 
 void	l_flag_print_link(struct s_node *tree)
 {

@@ -6,13 +6,14 @@
 #    By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/08 20:23:00 by mplutarc          #+#    #+#              #
-#    Updated: 2019/12/24 16:01:16 by emaveric         ###   ########.fr        #
+#    Updated: 2019/12/25 16:15:13 by emaveric         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ft_ls
 FILES = main.c validation.c flags.c sorting.c output.c flags_output.c \
-flags_sorting.c free_tree.c columns.c valid_error.c tree_create.c
+flags_sorting.c free_tree.c columns.c valid_error.c tree_create.c \
+files_and_dir.c
 SRC = $(addprefix src/, $(FILES))
 INC = includes/ft_ls.h
 OBJ = $(addprefix obj/, $(FILES:.c=.o))
@@ -20,19 +21,19 @@ LIBFT = libft/libft.a
 FLAGS = -Wall -Wextra -Werror -Weverything
 
 
-all: lib ft_ls
+all: lib $(NAME)
 
 lib:
 	@make -C libft
 
-ft_ls: $(OBJ)
+$(NAME): $(OBJ)
 	gcc $(FLAGS) $(OBJ) $(LIBFT) -o $(NAME) 
 
 obj/%.o: src/%.c | obj
 	gcc -c -I./libft $< -o $@
 
 clean:
-	/bin/rm -rf ./obj
+	/bin/rm -rf $(OBJ)
 	make -C libft clean
 
 obj:

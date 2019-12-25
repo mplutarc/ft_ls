@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 20:23:06 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/12/24 15:30:07 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/12/25 15:55:53 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ t_ls	*init(void)
 	return (new);
 }
 
-void	error(char *the_dir)
+void	ft_error(char *the_dir)
 {
 	ft_putstr("Error opening ");
 	ft_putstr(the_dir);
@@ -44,109 +44,11 @@ void	error(char *the_dir)
 	ft_putstr("\n");
 }
 
-int		files(char *str, char *the_dir)
+int		main_p2(int ac, char **av, t_ls *ls)
 {
-	DIR				*dir;
-	struct dirent	*entry;
-
-	dir = opendir(the_dir);
-	while ((entry = readdir(dir)))
-	{
-		if (ft_strcmp(str, entry->d_name) == 0)
-		{
-			closedir(dir);
-			return (0);
-		}
-	}
-	closedir(dir);
-	return (ERROR);
-}
-
-int		directory(char *the_dir, t_ls *ls)
-{
-	DIR				*dir;
-	struct dirent	*entry;
-	struct s_node	*sub_tree;
-	char			*str;
 	struct stat	buf;
-	char			*tmp;
-
-	ls->blocks = 0;
-	dir = opendir(the_dir);
-	if (!dir)
-	{
-		error(the_dir);
-		return (0);
-	}
-	sub_tree = NULL;
-	str = (char *)ft_memalloc(sizeof(char) * (ft_strlen(the_dir) + 2));
-	str = ft_strcpy(str, the_dir);
-	ft_strcat(str, "/");
-	while ((entry = readdir(dir)))
-	{
-		lstat(tmp = ft_strjoin(str, entry->d_name), &buf);
-		free(tmp);
-		ls->sec = buf.st_mtimespec.tv_sec;
-		if (ls->t == 1)
-		{
-			if (!(sub_tree = addnode_flag_t(ft_strjoin(str, entry->d_name), sub_tree, buf, ls)))
-			{
-				free_tree(sub_tree);
-				closedir(dir);
-				free(str);
-				return (ERROR);
-			}
-		}
-		else if (ls->r == 1)
-		{
-			if (!(sub_tree = addnode_flag_r(ft_strjoin(str, entry->d_name), sub_tree, buf, ls)))
-			{
-				closedir(dir);
-				free(str);
-				free_tree(sub_tree);
-				return (ERROR);
-			}
-		}
-		else if (!(sub_tree = addnode(ft_strjoin(str, entry->d_name), sub_tree, buf, ls)))
-		{
-			free_tree(sub_tree);
-			free(str);
-			closedir(dir);
-			return (ERROR);
-		}
-	}
-	ls->flag = 2;
-	closedir(dir);
-	output(ls, sub_tree);
-	free(str);
-	free_tree(sub_tree);
-	return (0);
-}
-
-int		main(int ac, char **av)
-{
-	struct stat buf;
-	t_ls		*ls;
 	int			i;
 
-	if (!(ls = init()))
-		return (ERROR);
-	if (validation(ac, av, ls) == ERROR)
-	{
-		free_ls(ls);
-		return (ERROR);
-	}
-	if (ac - ls->f_sum > 2)
-		ls->ac = ac - ls->f_sum - 1;
-	if (ac == 1 || (ft_strcmp(av[1], "--") == 0 && ac == 2) || ls->f_sum == ac - 1
-		|| (ft_strcmp(av[ls->f_sum + 1], "--") == 0 && ac == ls->f_sum + 2))
-	{
-		directory(".", ls);
-		if (ls->l != 1 || ls->f_sum == 0)
-			ft_putchar('\n');
-		free_ls(ls);
-		return (0);
-	}
 	i = 0;
 	while (i < ac)
 	{
@@ -158,8 +60,36 @@ int		main(int ac, char **av)
 		free_ls(ls);
 		return (ERROR);
 	}
-	if (ls->l != 1 || ls->f_sum == 0)
+	if ((ls->l != 1 || ls->f_sum == 0) && ls->ac > -1)
 		ft_putchar('\n');
+	return (0);
+}
+
+int		main(int ac, char **av)
+{
+	t_ls		*ls;
+
+	if (!(ls = init()))
+		return (ERROR);
+	if (validation(ac, av, ls) == ERROR)
+	{
+		free_ls(ls);
+		return (ERROR);
+	}
+	if (ac - ls->f_sum > 2)
+		ls->ac = ac - ls->f_sum - 1;
+	if (ac == 1 || (ft_strcmp(av[1], "--") == 0 && ac == 2)
+		|| ls->f_sum == ac - 1
+		|| (ft_strcmp(av[ls->f_sum + 1], "--") == 0 && ac == ls->f_sum + 2))
+	{
+		directory(".", ls);
+		if (ls->l != 1 || ls->f_sum == 0)
+			ft_putchar('\n');
+		free_ls(ls);
+		return (0);
+	}
+	if (main_p2(ac, av, ls) == ERROR)
+		return (ERROR);
 	free_ls(ls);
 	return (0);
 }

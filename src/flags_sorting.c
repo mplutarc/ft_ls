@@ -6,13 +6,14 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/19 18:51:41 by emaveric          #+#    #+#             */
-/*   Updated: 2019/12/24 15:54:59 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/12/25 15:55:31 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_ls.h"
 
-struct s_node	*addnode_flag_t_p3(char *str, struct s_node *tree, struct stat buf, t_ls *ls)
+struct s_node	*addnode_flag_t_p3(char *str, struct s_node *tree,
+		struct stat buf, t_ls *ls)
 {
 	if (ls->r == 1)
 	{
@@ -31,7 +32,8 @@ struct s_node	*addnode_flag_t_p3(char *str, struct s_node *tree, struct stat buf
 	return (tree);
 }
 
-struct s_node	*addnode_flag_t_p2(char *str, struct s_node *tree, struct stat buf, t_ls *ls)
+struct s_node	*addnode_flag_t_p2(char *str, struct s_node *tree,
+		struct stat buf, t_ls *ls)
 {
 	if (ls->sec > tree->sec)
 	{
@@ -50,13 +52,13 @@ struct s_node	*addnode_flag_t_p2(char *str, struct s_node *tree, struct stat buf
 				return (NULL);
 			}
 	}
-	else
-		if (!(tree = addnode_flag_t_p3(str, tree, buf, ls)))
-			return (NULL);
+	else if (!(tree = addnode_flag_t_p3(str, tree, buf, ls)))
+		return (NULL);
 	return (tree);
 }
 
-struct s_node	*addnode_flag_t(char *str, struct s_node *tree, struct stat buf, t_ls *ls)
+struct s_node	*addnode_flag_t(char *str, struct s_node *tree,
+		struct stat buf, t_ls *ls)
 {
 	if (tree == NULL)
 	{
@@ -67,13 +69,13 @@ struct s_node	*addnode_flag_t(char *str, struct s_node *tree, struct stat buf, t
 			ft_strcmp(ft_strname(tree->field, '/'), "..") == 0)
 			tree->flag = 1;
 	}
-	else
-		if (!(tree = addnode_flag_t_p2(str, tree, buf, ls)))
-			return (NULL);
+	else if (!(tree = addnode_flag_t_p2(str, tree, buf, ls)))
+		return (NULL);
 	return (tree);
 }
 
-struct s_node	*addnode_flag_r(char *str, struct s_node *tree, struct stat buf, t_ls *ls)
+struct s_node	*addnode_flag_r(char *str, struct s_node *tree,
+		struct stat buf, t_ls *ls)
 {
 	if (tree == NULL)
 	{

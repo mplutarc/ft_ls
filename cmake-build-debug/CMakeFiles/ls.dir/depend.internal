@@ -220,6 +220,10 @@ CMakeFiles/ls.dir/src/columns.c.o
  /Users/emaveric/ls/includes/ft_ls.h
  /Users/emaveric/ls/libft/libft.h
  /Users/emaveric/ls/src/columns.c
+CMakeFiles/ls.dir/src/files_and_dir.c.o
+ /Users/emaveric/ls/includes/ft_ls.h
+ /Users/emaveric/ls/libft/libft.h
+ /Users/emaveric/ls/src/files_and_dir.c
 CMakeFiles/ls.dir/src/flags.c.o
  /Users/emaveric/ls/includes/ft_ls.h
  /Users/emaveric/ls/libft/libft.h

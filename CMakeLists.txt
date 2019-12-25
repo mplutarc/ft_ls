@@ -97,4 +97,5 @@ add_executable(ls
         src/columns.c
         libft/ft_itoa_rev.c libft/ft_numlen.c
         src/valid_error.c
-        src/tree_create.c)
+        src/tree_create.c
+        src/files_and_dir.c)

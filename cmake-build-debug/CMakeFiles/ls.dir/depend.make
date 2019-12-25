@@ -220,6 +220,10 @@ CMakeFiles/ls.dir/src/columns.c.o: ../includes/ft_ls.h
 CMakeFiles/ls.dir/src/columns.c.o: ../libft/libft.h
 CMakeFiles/ls.dir/src/columns.c.o: ../src/columns.c
 
+CMakeFiles/ls.dir/src/files_and_dir.c.o: ../includes/ft_ls.h
+CMakeFiles/ls.dir/src/files_and_dir.c.o: ../libft/libft.h
+CMakeFiles/ls.dir/src/files_and_dir.c.o: ../src/files_and_dir.c
+
 CMakeFiles/ls.dir/src/flags.c.o: ../includes/ft_ls.h
 CMakeFiles/ls.dir/src/flags.c.o: ../libft/libft.h
 CMakeFiles/ls.dir/src/flags.c.o: ../src/flags.c

@@ -2148,6 +2148,33 @@ src/columns.c.s:
 	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/src/columns.c.s
 .PHONY : src/columns.c.s
 
+src/files_and_dir.o: src/files_and_dir.c.o
+
+.PHONY : src/files_and_dir.o
+
+# target to build an object file
+src/files_and_dir.c.o:
+	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/src/files_and_dir.c.o
+.PHONY : src/files_and_dir.c.o
+
+src/files_and_dir.i: src/files_and_dir.c.i
+
+.PHONY : src/files_and_dir.i
+
+# target to preprocess a source file
+src/files_and_dir.c.i:
+	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/src/files_and_dir.c.i
+.PHONY : src/files_and_dir.c.i
+
+src/files_and_dir.s: src/files_and_dir.c.s
+
+.PHONY : src/files_and_dir.s
+
+# target to generate assembly for a file
+src/files_and_dir.c.s:
+	$(MAKE) -f CMakeFiles/ls.dir/build.make CMakeFiles/ls.dir/src/files_and_dir.c.s
+.PHONY : src/files_and_dir.c.s
+
 src/flags.o: src/flags.c.o
 
 .PHONY : src/flags.o
@@ -2652,6 +2679,9 @@ help:
 	@echo "... src/columns.o"
 	@echo "... src/columns.i"
 	@echo "... src/columns.s"
+	@echo "... src/files_and_dir.o"
+	@echo "... src/files_and_dir.i"
+	@echo "... src/files_and_dir.s"
 	@echo "... src/flags.o"
 	@echo "... src/flags.i"
 	@echo "... src/flags.s"

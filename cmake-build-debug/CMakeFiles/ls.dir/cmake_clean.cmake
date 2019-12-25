@@ -84,6 +84,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/ls.dir/libft/ft_numlen.c.o"
   "CMakeFiles/ls.dir/src/valid_error.c.o"
   "CMakeFiles/ls.dir/src/tree_create.c.o"
+  "CMakeFiles/ls.dir/src/files_and_dir.c.o"
   "ls.pdb"
   "ls"
 )

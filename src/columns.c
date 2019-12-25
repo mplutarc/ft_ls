@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 20:42:27 by mplutarc          #+#    #+#             */
-/*   Updated: 2019/12/23 18:50:12 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/12/25 14:36:17 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,9 @@ void		max_len(struct s_node *tree, t_ls *ls)
 char		*ft_str_space(int size)
 {
 	int		i;
-	char 	*str;
+	char	*str;
 
-	if (!(str = (char *)ft_memalloc(sizeof(char)*(size + 1))))
+	if (!(str = (char *)ft_memalloc(sizeof(char) * (size + 1))))
 		return (NULL);
 	i = 0;
 	while (i < size)
@@ -56,7 +56,7 @@ char		*ft_str_space(int size)
 t_ls		*itostr(struct s_node *tree, t_ls *ls)
 {
 	int		sizeofstr;
-	char 	*str;
+	char	*str;
 
 	sizeofstr = ls->col->max_link + 2;
 	ls->col->str_link = ft_itoa_rev(tree->links, sizeofstr);

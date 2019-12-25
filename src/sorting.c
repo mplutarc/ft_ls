@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/31 15:11:20 by emaveric          #+#    #+#             */
-/*   Updated: 2019/12/24 16:18:39 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/12/25 15:55:31 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,8 @@ int				mode_to_rwx(struct s_node *tree, struct stat buf)
 	return (0);
 }
 
-struct s_node	*addnode(char *str, struct s_node *tree, struct stat buf, t_ls *ls)
+struct s_node	*addnode(char *str, struct s_node *tree,
+		struct stat buf, t_ls *ls)
 {
 	if (tree == NULL)
 	{
@@ -61,6 +62,24 @@ struct s_node	*addnode(char *str, struct s_node *tree, struct stat buf, t_ls *ls
 	return (tree);
 }
 
+struct s_node	*sorting_p2(char *av, t_ls *ls,
+		struct stat buf, struct s_node *tree)
+{
+	if (ls->t == 1)
+	{
+		if (!(tree = addnode_flag_t(av, tree, buf, ls)))
+			return (NULL);
+	}
+	else if (ls->r == 1)
+	{
+		if (!(tree = addnode_flag_r(av, tree, buf, ls)))
+			return (NULL);
+	}
+	else if (!(tree = addnode(av, tree, buf, ls)))
+		return (NULL);
+	return (tree);
+}
+
 int				sorting(int ac, char **av, t_ls *ls, struct stat buf)
 {
 	struct s_node	*tree;
@@ -75,29 +94,11 @@ int				sorting(int ac, char **av, t_ls *ls, struct stat buf)
 		if (sub_tree == NULL)
 			sub_tree = tree;
 		if ((ls->f_sum < i || i != ls->f_index[i]) && i != ls->dh_index)
-		{
-			if (ls->t == 1)
-			{
-				if (!(tree = addnode_flag_t(av[i], tree, buf, ls)))
-				{
-					free_tree(sub_tree);
-					return (ERROR);
-				}
-			}
-			else if (ls->r == 1)
-			{
-				if (!(tree = addnode_flag_r(av[i], tree, buf, ls)))
-				{
-					free_tree(sub_tree);
-					return (ERROR);
-				}
-			}
-			else if (!(tree = addnode(av[i], tree, buf, ls)))
+			if (!(tree = sorting_p2(av[i], ls, buf, tree)))
 			{
 				free_tree(sub_tree);
 				return (ERROR);
 			}
-		}
 		i++;
 	}
 	output(ls, tree);

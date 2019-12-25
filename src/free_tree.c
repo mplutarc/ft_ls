@@ -6,7 +6,7 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/28 17:41:40 by emaveric          #+#    #+#             */
-/*   Updated: 2019/12/24 15:04:36 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/12/25 14:36:17 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,6 @@ void	free_first_tree(struct s_node *tree)
 		tree->uid = NULL;
 		free(tree->gid);
 		tree->gid = NULL;
-		/*if (tree->mode && tree->mode[0] == 'l')
-			free(tree->str_link);*/
 		free(tree->mode);
 		tree->mode = NULL;
 		free(tree->time);

@@ -6,7 +6,7 @@
 /*   By: mplutarc <mplutarc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 19:11:32 by emaveric          #+#    #+#             */
-/*   Updated: 2019/12/24 15:30:07 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/12/25 15:55:31 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	e_print(struct s_node *tree, t_ls *ls)
 		ft_strcmp(tree->field, new) == 0)
 			new = ft_strdup(".");
 		e_print(tree->left, ls);
-		if (/tree->ind == 0 && files(tmp, new) == ERROR)
+		if (tree->ind == 0 && files(tmp, new) == ERROR)
 		{
 			tree->mode[0] = 'e';
 			ls->ac--;
@@ -37,6 +37,25 @@ void	e_print(struct s_node *tree, t_ls *ls)
 		if (tree->mode[0] == 'q')
 			tree->mode[0] = 'd';
 		e_print(tree->right, ls);
+	}
+}
+
+void	print_p2(struct s_node *tree, t_ls *ls)
+{
+	if (ls->ac > 0 && ls->flag == 0)
+	{
+		ft_putstr(tree->field);
+		ft_putstr(":\n");
+		if (ls->point != 0)
+			ls->ac--;
+		ls->point = 1;
+	}
+	directory(tree->field, ls);
+	if (ls->ac > 1)
+	{
+		ft_putstr("\n");
+		if ((ls->blocks != 0 || ls->a == 1) && ls->l != 1)
+			ft_putstr("\n");
 	}
 }
 
@@ -64,25 +83,19 @@ void	print(struct s_node *tree, t_ls *ls)
 			}
 		}
 		else if (tree->mode[0] == 'd')
-		{
-			if (ls->ac > 0 && ls->flag == 0)
-			{
-				ft_putstr(tree->field);
-				ft_putstr(":\n");
-				if (ls->point != 0)
-					ls->ac--;
-				ls->point = 1;
-			}
-			directory(tree->field, ls);
-			if (ls->ac > 1)
-			{
-				//if ((ls->ac > 0 && ls->l == 0) || (ls->ac > 1 && ls->l == 1))
-					ft_putstr("\n");
-				if ((ls->blocks != 0 || ls->a == 1) && ls->l != 1)
-					ft_putstr("\n");
-			}
-		}
+			print_p2(tree, ls);
 		print(tree->right, ls);
+	}
+}
+
+void	output_big_r(t_ls *ls, struct s_node *tree)
+{
+	if (ls->flag == 0)
+		print(tree, ls);
+	else if (ls->flag == 2)
+	{
+		print(tree, ls);
+		big_r_flag_print(tree, ls);
 	}
 }
 
@@ -107,15 +120,7 @@ int		output(t_ls *ls, struct s_node *tree)
 	if (ls->big_r == 0)
 		print(tree, ls);
 	if (ls->big_r == 1)
-	{
-		if (ls->flag == 0)
-			print(tree, ls);
-		else if (ls->flag == 2)
-		{
-			print(tree, ls);
-			big_r_flag_print(tree, ls);
-		}
-	}
+		output_big_r(ls, tree);
 	ls->flag = 0;
 	return (0);
 }

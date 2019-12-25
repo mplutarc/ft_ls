@@ -6,13 +6,14 @@
 /*   By: emaveric <emaveric@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/24 16:05:16 by emaveric          #+#    #+#             */
-/*   Updated: 2019/12/24 16:18:04 by emaveric         ###   ########.fr       */
+/*   Updated: 2019/12/25 15:55:31 by emaveric         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_ls.h"
 
-struct s_node	*tree_create_p3(char *str, struct stat buf, t_ls *ls, struct s_node	*tree)
+struct s_node	*tree_create_p3(char *str, struct stat buf,
+		t_ls *ls, struct s_node	*tree)
 {
 	tree->ino = buf.st_ino;
 	tree->size = buf.st_size;
@@ -25,9 +26,10 @@ struct s_node	*tree_create_p3(char *str, struct stat buf, t_ls *ls, struct s_nod
 	return (tree);
 }
 
-struct s_node	*tree_create_p2(char *str, struct stat buf, t_ls *ls, struct s_node	*tree)
+struct s_node	*tree_create_p2(char *str, struct stat buf,
+		t_ls *ls, struct s_node	*tree)
 {
-	char 			*tmp;
+	char	*tmp;
 
 	tmp = NULL;
 	if (tree->ind != 1 &&
@@ -57,15 +59,13 @@ struct s_node	*tree_create(char *str, struct stat buf, t_ls *ls)
 	struct group	*grp;
 	struct s_node	*tree;
 
-	if (!(tree = (struct s_node *) malloc(sizeof(struct s_node))))
+	if (!(tree = (struct s_node *)malloc(sizeof(struct s_node))))
 		return (NULL);
 	if (mode_to_rwx(tree, buf) == ERROR)
 		return (NULL);
-	pws = getpwuid(buf.st_uid);
-	grp = getgrgid(buf.st_gid);
-	if (pws != NULL)
+	if ((pws = getpwuid(buf.st_uid)))
 		tree->uid = ft_strdup(pws->pw_name);
-	if (grp != NULL)
+	if ((grp = getgrgid(buf.st_gid)))
 		tree->gid = ft_strdup(grp->gr_name);
 	tree->ind = 0;
 	if (str[0] == '~' && str[1] == '\0')
